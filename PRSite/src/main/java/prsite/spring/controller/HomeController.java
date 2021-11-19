@@ -1,4 +1,4 @@
-package yuhan.spring.project;
+package prsite.spring.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -45,7 +45,37 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		System.out.println("----home----");
 		return "home";
+		
+		//Bootstrap 임시
+		//System.out.println("----index----");
+		//return "index";
+	}
+	
+	//Bootstrap 임시
+	@RequestMapping("/index")
+	public String index(Model model) {
+		System.out.println("----index----");
+		return "index";
+	}
+	
+	@RequestMapping("/menu")
+	public String menu(Model model) {
+		System.out.println("----menu----");
+		return "menu";
+	}
+	
+	@RequestMapping("/about")
+	public String about(Model model) {
+		System.out.println("----about----");
+		return "about";
+	}
+	
+	@RequestMapping("/book")
+	public String book(Model model) {
+		System.out.println("----book----");
+		return "book";
 	}
 	
 }

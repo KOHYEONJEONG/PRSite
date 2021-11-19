@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="yuhan.spring.project" />
+	<context:component-scan base-package="prsite.spring.controller" />
 	
 	<!-- Jdbc Template ~ DataSource : 2021/11/16 LMY -->
 	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

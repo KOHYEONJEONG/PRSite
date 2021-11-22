@@ -68,33 +68,52 @@ public class InfluencerDao implements IInfluencerDao {
 	}
 
 	@Override
-	public ArrayList<InfluencerDto> influencerRanking() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<InfluencerDto> influencerInstaRanking() {
+		// 인스타그램 구독자수 기준
+		ArrayList<InfluencerDto> dtos = null;
+		String query = "select * from ( select * from influencer order by instsubs desc) where rownum<=10"; //상위 10
+		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
+		return dtos;
+	}
+	
+	@Override
+	public ArrayList<InfluencerDto> influencerYtbRanking() {
+		// 유튜브 구독자수 기준
+		ArrayList<InfluencerDto> dtos = null;
+		String query = "select * from ( select * from influencer order by ytbsubs desc) where rownum<=10"; //상위 10
+		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
+		return dtos;
 	}
 
 	@Override
 	public ArrayList<InfluencerDto> influencerSearch(String search) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<InfluencerDto>dtos = null;
+		String query = "select * from influencer where id like '%" + search + "%'";
+		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
+		return dtos;
 	}
 
 	@Override
-	public ArrayList<InfluencerDto> influencerRcmm() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<InfluencerDto> influencerRcmm() { //SUBCNT
+		ArrayList<InfluencerDto> dtos = null;
+		String query = "select * from ( select * from influencer order by subcnt desc) where rownum<=10"; //상위 10
+		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
+		return dtos;
 	}
 
 	@Override
-	public ArrayList<InfluencerDto> influencerNews() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<InfluencerDto> influencerNews(String cat) { //카테고리별
+		ArrayList<InfluencerDto>dtos = null;
+		String query = "select * from ( select * from influencer where cat like '" + cat +"' order by memsince desc) where rownum<=10"; //상위 10
+		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
+		return dtos;
 	}
 
 	@Override
 	public ArrayList<InfluencerDto> influencerRelCat(String cat) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<InfluencerDto> dtos = null;
+		String query = "select * from ( select * from influencer where cat like '" + cat + "' order by DBMS_RANDOM.RANDOM) where rownum<=10"; // 랜덤 정렬
+		return dtos;
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package prsite.spring.dao;
+package prsite.spring.subscibe.dao;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package prsite.spring.dao;
+package prsite.spring.member.dao;
 
 import prsite.spring.dto.MemberDto;
 

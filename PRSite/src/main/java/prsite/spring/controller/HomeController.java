@@ -46,7 +46,7 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		System.out.println("----home----");
-		return "home";
+		return "index";
 		
 		//Bootstrap 임시
 		//System.out.println("----index----");
@@ -54,11 +54,10 @@ public class HomeController {
 	}
 	
 	//Bootstrap 임시
-	@RequestMapping("/index")
-	public String index(Model model) {
-		System.out.println("----index----");
-		return "index";
-	}
+	/*
+	 * @RequestMapping("/index") public String index(Model model) {
+	 * System.out.println("----index----"); return "index"; }
+	 */
 	
 	@RequestMapping("/menu")
 	public String menu(Model model) {

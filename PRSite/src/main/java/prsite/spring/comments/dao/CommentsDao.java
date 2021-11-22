@@ -1,4 +1,4 @@
-package prsite.spring.dao;
+package prsite.spring.comments.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

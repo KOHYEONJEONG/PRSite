@@ -23,11 +23,11 @@
 	
 	<context:component-scan base-package="prsite.spring.controller" />
 	
-	<!-- Jdbc Template ~ DataSource : 2021/11/16 LMY -->
+	<!-- Jdbc Template ~ DataSource : 2021/11/20 KHJ -->
 	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url" value="jdbc:orcle:thin:@localhost:1521:orcl"/>
-		<beans:property name="username" value="c##scott"/> <!-- #수정 필요 -->
+		<beans:property name="username" value="scott"/> <!-- #수정 필요 -->
 		<beans:property name="password" value="tiger"/>
 	</beans:bean>
 	

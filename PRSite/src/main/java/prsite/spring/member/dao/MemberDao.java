@@ -1,4 +1,4 @@
-package prsite.spring.dao;
+package prsite.spring.member.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -35,7 +35,7 @@ public class MemberDao implements IMemberDao {
 
 	@Override
 	public void memberUpdate(final MemberDto member) {
-		String query = "update member set id=?, pwd=?, influyn=?, name=? where id=?";
+		String query = "update member set pwd=?, influyn=?, name=? where id=?";
 		this.template.update(query,new PreparedStatementSetter(){
 			@Override
 			public void setValues(PreparedStatement preparedStatement) throws SQLException {

@@ -1,4 +1,4 @@
-package prsite.spring.dao;
+package prsite.spring.influencer.dao;
 
 import java.util.ArrayList;
 

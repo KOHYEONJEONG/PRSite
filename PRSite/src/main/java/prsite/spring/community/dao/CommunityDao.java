@@ -1,4 +1,4 @@
-package prsite.spring.dao;
+package prsite.spring.community.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -20,9 +20,11 @@ public class CommunityDao implements ICommunityDao {
 
 	@Override
 	public ArrayList<CommunityDto> communitylist() {
-		ArrayList<CommunityDto>dtos = null;
+		ArrayList<CommunityDto> dtos = null;
 		String query = "select * from community order by bno desc";
+		
 		dtos= (ArrayList<CommunityDto>)template.query(query, new BeanPropertyRowMapper<CommunityDto>(CommunityDto.class));
+		
 		return dtos;
 	}
 

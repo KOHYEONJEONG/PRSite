@@ -3,9 +3,9 @@ package prsite.spring.member.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import javax.activation.DataSource;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

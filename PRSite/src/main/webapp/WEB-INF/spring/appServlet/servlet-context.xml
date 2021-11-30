@@ -24,14 +24,16 @@
 	<context:component-scan base-package="prsite.spring.controller" />
 	
 	<!-- Jdbc Template ~ DataSource : 2021/11/20 KHJ -->
+	<!-- DataSource: DB를 읽어오는 일 -->
 	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url" value="jdbc:orcle:thin:@localhost:1521:orcl"/>
-		<beans:property name="username" value="scott"/> <!-- #수정 필요 -->
-		<beans:property name="password" value="tiger"/>
+		<beans:property name="username" value="DATA"/> 
+		<beans:property name="password" value="1234"/>
 	</beans:bean>
 	
-	<!-- Jdbc Template ~  jdbc template : 2021/11/16 LMY -->
+	<!-- Jdbc Template been설정 : 2021/11/16 LMY -->
+	<!-- Jdbc Templat : 드라이버로드, 커넥션 생성 및 db연결, sql실행, 자원해제 반복적인 코딩을 대신해줌,  이 작업들을 안해도 됨. -->
 	<beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>

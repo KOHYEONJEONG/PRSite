@@ -8,7 +8,7 @@
 <table style="border-collapse:collapse;" align="center">	
 	<tr>
 		<td>
-			<jsp:include page="include/menu.jsp" flush="false" />
+			<!-- <jsp:include page="" flush="false" /> -->
 		</td>
 	</tr>
 	<tr align="right">
@@ -34,7 +34,7 @@
 				</tr>
 				<tr>
 					<td>
-						<jsp:include page="include/recommendSlide.jsp" flush="false" />						
+						<!--<jsp:include page="" flush="false" />	 -->					
 					</td>
 				</tr>
 			</table>

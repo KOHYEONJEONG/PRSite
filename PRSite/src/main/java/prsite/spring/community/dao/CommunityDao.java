@@ -4,6 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.activation.DataSource;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
@@ -13,8 +17,20 @@ import prsite.spring.util.ConstantTemplate;
 
 public class CommunityDao implements ICommunityDao {
 	
+	DataSource dataSource;
 	JdbcTemplate template;
+	
 	public CommunityDao() {
+		
+		try {
+			Context context = new InitialContext();//was와 연결된 context
+			dataSource =(DataSource)context.lookup("java:comp/env/jdbc/Oracle");//oracle드라이버를 찾음.
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 		this.template=ConstantTemplate.template; //공유된 Jdbc Template 사용
 	}
 

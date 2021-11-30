@@ -59,6 +59,12 @@ public class HomeController {
 	 * System.out.println("----index----"); return "index"; }
 	 */
 	
+	//Bootstrap юс╫ц
+	/*
+	 * @RequestMapping("/index") public String index(Model model) {
+	 * System.out.println("----index----"); return "index"; }
+	 */
+	
 	@RequestMapping("/menu")
 	public String menu(Model model) {
 		System.out.println("----menu----");
@@ -75,6 +81,30 @@ public class HomeController {
 	public String book(Model model) {
 		System.out.println("----book----");
 		return "book";
+	}
+	
+	@RequestMapping("/loginpage")
+	public String loginpage(Model model) {
+		System.out.println("----login page----");
+		return "loginpage";
+	}
+	
+	@RequestMapping("/index")
+	public String index(Model model) {
+		System.out.println("----index page----");
+		return "index";
+	}
+	
+	@RequestMapping("/joinForm")
+	public String joinForm(Model model) {
+		System.out.println("----join Form page----");
+		return "joinForm";
+	}
+	
+	@RequestMapping("/mypage")
+	public String mypage(Model model) {
+		System.out.println("----my page----");
+		return "mypage";
 	}
 	
 }

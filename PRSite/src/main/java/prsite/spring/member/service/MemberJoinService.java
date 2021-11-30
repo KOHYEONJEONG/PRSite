@@ -22,7 +22,7 @@ public class MemberJoinService implements IMemberService {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		String influyn = request.getParameter("influyn");
-		String name = request.getParameter("name");
+		String name = request.getParameter("nickname");
 		
 		MemberDto member =new  MemberDto(id ,pwd,influyn, name);
 		

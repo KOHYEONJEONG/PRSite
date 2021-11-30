@@ -52,6 +52,7 @@
 			<h2>LOGIN</h2>
 		</div>
 	<div class="row">
+      <form method="post" action="login">
         <div class="col-md-6">
           <div class="form_container">
             
@@ -63,7 +64,7 @@
               	</div>
               	
               	<div class="btn_box">
-                	<button>
+                	<button type="submit">
                 		  Login
                		</button>
                		<button  onclick="location.href='joinForm';">
@@ -77,6 +78,7 @@
           		<img src="https://cdn-icons-png.flaticon.com/512/1599/1599933.png" width="200" height="200"/>
 				
         </div>
+        </form>
       </div>
     </div>
 </section>

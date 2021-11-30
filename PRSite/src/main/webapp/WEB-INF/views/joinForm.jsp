@@ -57,7 +57,7 @@
 	  <div class="row">
         <div class="col-md-6">
           <div class="form_container">			
-				<form"C:/Users/kogus/OneDrive/바탕 화면/StudentBuild" method=post action="MemberJoin">
+				<form method=post action="MemberJoin">
 				<fieldset><legend>기본정보</legend>
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15>
 					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20>  

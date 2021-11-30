@@ -25,7 +25,11 @@ public class MemberloginService implements IMemberService {
 		
 		//로그인되면 true, false 반환됨
 		boolean result = dao.memberLogin(id, pwd);
-		System.out.println("로그인 상태 : "+ result);
+		if(result==true) {
+			System.out.println("<script>alert(로그인성공);</script>");
+		}else {
+			System.out.println("<script>alert(로그인실패);</script>");
+		}
 		
 	}
 

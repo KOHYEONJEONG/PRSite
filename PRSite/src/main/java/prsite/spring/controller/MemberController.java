@@ -75,7 +75,7 @@ public class MemberController {
 	
 	@RequestMapping("/MemberJoin")
 	public String MemberJoin(HttpServletRequest request, Model model) {
-		//회원 가입 버튼 클릭
+		//회원 가입 버튼 클릭(가입하기)
 		
 		System.out.println("---------MemberJoin()-----------");
 		

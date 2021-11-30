@@ -3,9 +3,9 @@ package prsite.spring.member.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import javax.activation.DataSource;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -70,8 +70,9 @@ public class MemberDao implements IMemberDao {
 	}
 
 	@Override
-	public boolean memberLogin(String id, String pwd) {
-		String query = "select pwd from member where id =" + id;
+	public boolean memberLogin(String id, String pwd) {//로그인
+		//프론트 : 로그아웃으로 바꾸세요.
+		String query = "select pwd from member where id ='" + id+"'";
 		String password = this.template.queryForObject(query, String.class);
 		
 		if (password.equals(password) ) return true;

@@ -4,9 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.activation.DataSource;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

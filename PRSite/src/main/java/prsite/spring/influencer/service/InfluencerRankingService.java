@@ -21,9 +21,9 @@ public class InfluencerRankingService implements IInfluencerService {
 		
 		InfluencerDao dao = new InfluencerDao();
 
-		ArrayList<InfluencerDto> dtos = dao.influencerRanking();
+		//ArrayList<InfluencerDto> dtos = dao.influencerRanking();
 		
-		model.addAttribute("ranking", dtos);
+		//model.addAttribute("ranking", dtos);
 	}
 
 }

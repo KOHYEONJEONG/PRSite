@@ -2,7 +2,6 @@ package prsite.spring.community.dao;
 
 import java.util.ArrayList;
 
-import prsite.spring.dto.CommentsDto;
 import prsite.spring.dto.CommunityDto;
 
 public interface ICommunityDao {

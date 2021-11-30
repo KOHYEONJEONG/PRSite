@@ -10,7 +10,7 @@
 <table align="center" width="1000">	
 	<tr>
 		<td>
-			<jsp:include page="include/menu.jsp" flush="false" />
+			
 		</td>
 	</tr>
 	<tr>
@@ -36,7 +36,7 @@
 				</tr>
 				<tr>
 					<td>
-						<jsp:include page="include/recommendSlide.jsp" flush="false" />						
+										
 					</td>
 				</tr>
 		</table>

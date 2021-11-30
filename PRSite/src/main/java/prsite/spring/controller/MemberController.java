@@ -13,6 +13,10 @@ import prsite.spring.member.service.MemberJoinService;
 import prsite.spring.member.service.MemberModifyService;
 import prsite.spring.member.service.MemberProfileService;
 import prsite.spring.member.service.MemberloginService;
+import prsite.spring.subscribe.service.ISubscribeService;
+import prsite.spring.subscribe.service.SubscribeAddService;
+import prsite.spring.subscribe.service.SubscribeCancelService;
+import prsite.spring.subscribe.service.SubscribeListService;
 import prsite.spring.util.ConstantTemplate;
 
 @Controller
@@ -20,6 +24,7 @@ public class MemberController {
 	//controller class에서 명시 Template선언(bean으로 설정)
 	public JdbcTemplate template;
 	IMemberService service;
+	ISubscribeService SubService;
 	
 	@Autowired //객체를 자동으로 이용
 	public void setTemplate(JdbcTemplate template) {
@@ -64,7 +69,7 @@ public class MemberController {
 		System.out.println("---------join_view()-----------");
 
 
-		return "join_view";//jsp 만들기.
+		return "joinForm";//jsp 만들기.
 	}
 
 	
@@ -78,7 +83,7 @@ public class MemberController {
 		service = new MemberJoinService();
 		service.execute(model);
 		
-		return  "redirect:login_view";//회원가입되면 login화면으로 이동.
+		return  "redirect:loginpage";//회원가입되면 login화면으로 이동.
 	}
 	
 	
@@ -106,7 +111,34 @@ public class MemberController {
 		return  "redirect:MemberProfile";//수정되면 '마이페이지'로 다시 돌아감.
 	}
 	
+	//구독자 불러오기(list)
+	@RequestMapping("/SubList")
+	public String SubList(Model model) {
+		
+		System.out.println("-----------SubscribeList()-----------");
+		SubService = new SubscribeListService();
+		SubService.execute(model);
+		
+		return "MemberProfile";//마이페이지
+	}
 	
+	
+	//인플루언서 구독 추가
+	@RequestMapping("/SubInsert")
+	public void SubInsert(HttpServletRequest request, Model model) {
+		System.out.println("-----------subscribeInsert()-----------");
+		SubService = new SubscribeAddService();
+		SubService.execute(model);
+		
+	}
+	
+	//구독 취소
+	@RequestMapping("/SubCancel")
+	public void SubCancel(HttpServletRequest request, Model model) {
+		System.out.println("-----------subscribeInsert()-----------");
+		SubService = new SubscribeCancelService();
+		SubService.execute(model);
+	}
 	
 
 	

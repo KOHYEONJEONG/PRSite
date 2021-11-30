@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Feane </title>
+  <title> Influencer Recommend Site </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -31,6 +31,8 @@
   <link href="/project/resources/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
+  
+ 
 
 </head>
 
@@ -38,15 +40,15 @@
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="/project/resources/images/hero-bg.jpg" alt="">
+      <img src="/project/resources/images/Main.PNG" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index">
+          <a class="navbar-brand" href="index.jsp">
             <span>
-              Feane
+              Influencer
             </span>
           </a>
 
@@ -56,17 +58,23 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="index">Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about">About</a>
-              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="book">Book Table <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="category">패션</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu">요리</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about">일상</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ranking">랭킹</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="community">커뮤니티</a>
               </li>
             </ul>
             <div class="user_option">
@@ -132,8 +140,8 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
+              <a href="loginpage" class="order_online">
+                Login|Join
               </a>
             </div>
           </div>
@@ -142,13 +150,12 @@
     </header>
     <!-- end header section -->
   </div>
-
   <!-- book section -->
   <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
-          Book A Table
+          Login
         </h2>
       </div>
       <div class="row">

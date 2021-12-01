@@ -46,7 +46,7 @@ public class InfluencerController {
 	
 	//index.jsp(메인화면)-----------------------------------------------------------------------------
 	//구독자수 추천
-	@RequestMapping("/")
+	@RequestMapping("/test1")
 	public String InfluencerRcmm(Model model) {
 		
 		System.out.println("---------InfluencerRcmm()-----------");
@@ -57,7 +57,7 @@ public class InfluencerController {
 	}
 	
 	//인플루언서 신규
-	@RequestMapping("/")
+	@RequestMapping("/test2")
 	public String InfluencerNews(Model model) {
 		
 		System.out.println("---------InfluencerNews()-----------");
@@ -94,7 +94,7 @@ public class InfluencerController {
 	}
 	
 	//인플루언서 연관 카테고리 추천-InfluencerRelCatService
-	@RequestMapping("/")
+	@RequestMapping("/test3")
 	public String InfluencerRel(Model model) {
 		
 		System.out.println("---------InfluencerRel()-----------");

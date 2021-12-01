@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html;
+charset=UTF-8" pageEncoding="UTF-8" %>
+<! DOCTYPE html>
 <html>
-
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -31,8 +30,6 @@
   <link href="/project/resources/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
-  
- 
 
 </head>
 
@@ -47,43 +44,47 @@
     <!-- end header section -->
   </div>
   
-  	<!-- profile section -->
-		<table align="center" width="1000">	
-			<tr>
-				<td>
-					
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-				<table border="0" style="border-collapse:collapse;" bordercolor="#481968" height="600" width="1100">
-					<tr>
-						<td align="center">
-							<img src="resources/img/rozy.jpg" width="300" height="300">
-						</td>			
-						<td>
-							김패피 @dddd<br>
-							패션<br>
-							안녕하세요 김패피입니다<br>
-							SNS :
-							<a href="">인스타그램</a>, <a href="">트위터</a>, <a href="">유튜브</a>
-						</td>
+    <!-- pet section -->
+
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Community
+        </h2>
+      </div>
+    </div>
+  </section>
+  
+  <!-- fashion category section -->
+	<table align="center" width="1000">	
+		<tr>
+			<td>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" bordercolor="#481968" height="100" width="800">
+					<a href="write.htm">
+						<input type="button" value="글쓰기" text-align="center" id="write">
+					</a>
+					<hr>
+					<tr align="center">
+						<td>1</td>
+						<td>content1</td>
+						<td><a href="profile">김패피</a></td>
+					</tr>	
+					<tr align="center">
+						<td>2</td>
+						<td>content2</td>
+						<td>헬로월드</td>
 					</tr>
 				</table>
-				<hr>
-				<table border="1" bordercolor="#481968" style="border-collapse:collapse;">
-						<tr>
-							<h3>추천 인플루언서</h3>
-						</tr>
-						<tr>
-							<td>
-												
-							</td>
-						</tr>
-				</table>
-			</tr>
-		</table>
-	<!-- end profile section -->
+			</td>
+		</tr>
+	</table>
   <!-- end fashion category section -->
   
   <!-- footer section -->

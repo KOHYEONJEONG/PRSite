@@ -50,18 +50,18 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
-              <!-- 메인화면으로 안가진 수정 -->
-                <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
-              </li>
+             
               <li class="nav-item">
-                <a class="nav-link" href="book">패션</a>
+                <a class="nav-link" href="category">패션&뷰티</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="menu">요리</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about">일상</a>
+                <a class="nav-link" href="daily">일상</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pet">반려동물</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="ranking">랭킹</a>
@@ -71,15 +71,10 @@
               </li>
             </ul>
             <div class="user_option">
-              <a href="/mypage" class="user_link">
+              <a href="mypage" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
+
               <a href="loginpage" class="order_online">
                 Login|Join
               </a>

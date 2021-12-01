@@ -41,7 +41,7 @@
       <img src="/project/resources/images/hero-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
-    	<jsp:include page="include/HeaderSection.jsp" flush="false" /> <!-- 상단바 header -->
+    	<jsp:include page="include/HeaderSection.jsp" flush="false" />
     <!-- end header section -->
   </div>
     
@@ -49,29 +49,26 @@
     <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
-		<h2 align="left">&nbsp;Join Us</h2>	
-		
-		<br/>
-		
+		<h2 align="left">&nbsp;Join Us</h2>	</br>
 	  </div>		
 	  <div class="row">
         <div class="col-md-6">
           <div class="form_container">			
-				<form method=post action="MemberJoin">
+				<form method=post action="" name=joinForm>
 				<fieldset><legend>기본정보</legend>
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15>
 					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20>  
 					닉네임  <input type="text" name="nickname" class="form-control" size=10>
 					일반 회원 <input type="radio" name="influyn" value="n" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y"> </br>
 				</fieldset>
-				<br/>
+				<br>
+				</br>
 				<fieldset><legend> 추가 인플루언서 정보 </legend>
 					카테고리  <select name="category" class="form-control nice-select wide">
-							<option value=> 패션 </option>
-							<option value=> 요리 </option>
-							<option value=> 스포츠 </option>
-							<option value=> 일상 </option>
-							<option value=> 게임 </option>
+							<option value="fashion_beauty"> 패션 </option>
+							<option value="food"> 요리 </option>
+							<option value=daily> 일상 </option>
+							<option value="pet"> 반려동물 </option>
 					    </select><br>
 					소개 </br><textarea rows="3" cols="50" name="info" class="form-control" placeholder="소개를 짧게 적어주세요~"> </textarea><br>
 					인스타그램 주소  <input type="text" class="form-control" name="instagram" size=30><br>
@@ -84,8 +81,12 @@
 					<br>
 
 					<div class="btn_box">
-						<button type="submit">가입하기	</button>
-						<button type="reset">초기화</button>
+						<button type="submit" form="joinForm">
+							가입하기
+						</button>
+						<button type="reset">
+							초기화
+						</button>
 					</div>
 				</form>
 			</div>

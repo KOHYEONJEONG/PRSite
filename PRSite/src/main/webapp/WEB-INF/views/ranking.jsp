@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html;
+charset=UTF-8" pageEncoding="UTF-8" %>
+<! DOCTYPE html>
 <html>
-
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -47,43 +46,77 @@
     <!-- end header section -->
   </div>
   
-  	<!-- profile section -->
-		<table align="center" width="1000">	
-			<tr>
-				<td>
-					
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-				<table border="0" style="border-collapse:collapse;" bordercolor="#481968" height="600" width="1100">
-					<tr>
-						<td align="center">
-							<img src="resources/img/rozy.jpg" width="300" height="300">
-						</td>			
-						<td>
-							김패피 @dddd<br>
-							패션<br>
-							안녕하세요 김패피입니다<br>
-							SNS :
-							<a href="">인스타그램</a>, <a href="">트위터</a>, <a href="">유튜브</a>
-						</td>
-					</tr>
-				</table>
-				<hr>
-				<table border="1" bordercolor="#481968" style="border-collapse:collapse;">
-						<tr>
-							<h3>추천 인플루언서</h3>
-						</tr>
-						<tr>
-							<td>
-												
-							</td>
-						</tr>
-				</table>
-			</tr>
-		</table>
-	<!-- end profile section -->
+  <!-- pet section -->
+
+
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Ranking
+        </h2>
+      </div>
+    </div>
+  </section>
+  
+  <!-- fashion category section -->
+	<table align="center" width="600">	
+		<tr>
+			<td>순위</td>
+			<td>인플루언서</td>
+			<td>카테고리</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>뫄뫄</td>
+			<td>패션</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>솨솨</td>
+			<td>패션</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>디디</td>
+			<td>반려동물</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>티티</td>
+			<td>반려동물</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>승우아빠</td>
+			<td>요리</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>김박사</td>
+			<td>일상</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>수리</td>
+			<td>반려동물</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>쿠킹트리</td>
+			<td>요리</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>뫄뫄</td>
+			<td>패션</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>뫄뫄</td>
+			<td>패션</td>
+		</tr>
+	</table>
   <!-- end fashion category section -->
   
   <!-- footer section -->

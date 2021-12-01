@@ -52,7 +52,8 @@
 			<h2>LOGIN</h2>
 		</div>
 	<div class="row">
-      <form method="post" action="login">
+	
+		<form action="login" method="get">
         <div class="col-md-6">
           <div class="form_container">
             
@@ -60,7 +61,7 @@
                		 <input type="text" class="form-control" placeholder="ID" name="id" />
              	</div>
               	<div>
-               		 <input type="text" class="form-control" placeholder="Password" name="pwd"/>
+               		 <input type="password" class="form-control" placeholder="Password" name="pwd"/>
               	</div>
               	
               	<div class="btn_box">
@@ -74,11 +75,11 @@
 				
 		  </div>
         </div>
+		  </form>
         <div class="col-md-6" align="center">
           		<img src="https://cdn-icons-png.flaticon.com/512/1599/1599933.png" width="200" height="200"/>
 				
         </div>
-        </form>
       </div>
     </div>
 </section>

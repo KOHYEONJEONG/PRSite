@@ -62,10 +62,10 @@
                 <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="category">패션</a>
+                <a class="nav-link" href="fashion_beauty">패션</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu">요리</a>
+                <a class="nav-link" href="cook">요리</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about">일상</a>

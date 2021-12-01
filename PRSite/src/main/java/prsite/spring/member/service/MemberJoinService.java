@@ -1,5 +1,7 @@
 package prsite.spring.member.service;
 
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,15 +21,22 @@ public class MemberJoinService implements IMemberService {
 
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		
+		
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		String influyn = request.getParameter("influyn");
 		String name = request.getParameter("nickname");
 		
-		MemberDto member =new  MemberDto(id ,pwd,influyn, name);
 		
-		MemberDao dao = new MemberDao();
-		dao.memberInsert(member);
+		if(id==null || pwd==null|| influyn==null || name==null) {
+			System.out.println("<script>alert('입력해주세요.');</script>");
+		}else {
+			MemberDto member =new  MemberDto(id ,pwd,influyn, name);
+			MemberDao dao = new MemberDao();
+			dao.memberInsert(member);
+		}
+				
+		
 
 	}
 

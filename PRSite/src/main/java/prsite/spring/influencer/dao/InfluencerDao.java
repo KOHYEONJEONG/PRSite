@@ -104,7 +104,7 @@ public class InfluencerDao implements IInfluencerDao {
 	@Override
 	public ArrayList<InfluencerDto> influencerSearch(String search) {
 		ArrayList<InfluencerDto>dtos = null;
-		String query = "select * from influencer where id like '%" + search + "%'";
+		String query = "select * from influencer where id like '" + search + "'";
 		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
 		return dtos;
 	}
@@ -134,7 +134,7 @@ public class InfluencerDao implements IInfluencerDao {
 
 	@Override
 	public InfluencerDto influencerProfile(String id) {
-		String query = "select * from influencer where id =" + id;
+		String query = "select * from influencer where id ='" + id + "'";
 		InfluencerDto influencerDto = this.template.queryForObject(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
 		return influencerDto;
 	}

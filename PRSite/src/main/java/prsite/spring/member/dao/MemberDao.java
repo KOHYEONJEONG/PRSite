@@ -63,7 +63,7 @@ public class MemberDao implements IMemberDao {
 
 	@Override
 	public MemberDto memberProfile(String id) {//회원정보 가져오기
-		String query = "select * from member where id =" + id;
+		String query = "select * from member where id ='" + id + "'";
 		MemberDto memberdto = this.template.queryForObject(query, new BeanPropertyRowMapper<MemberDto>(MemberDto.class));
 		
 		return memberdto;
@@ -71,7 +71,7 @@ public class MemberDao implements IMemberDao {
 
 	@Override
 	public boolean memberLogin(String id, String pwd) {
-		String query = "select pwd from member where id =" + id;
+		String query = "select pwd from member where id ='" + id + "'";
 		String password = this.template.queryForObject(query, String.class);
 		
 		if (password.equals(password) ) return true;

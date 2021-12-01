@@ -1,13 +1,17 @@
 package prsite.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import prsite.spring.influencer.service.IInfluencerService;
+import prsite.spring.influencer.service.InfluencerNewsService;
 import prsite.spring.influencer.service.InfluencerProfileService;
 import prsite.spring.influencer.service.InfluencerRankingService;
+import prsite.spring.influencer.service.InfluencerRcmmService;
 import prsite.spring.util.ConstantTemplate;
 
 @Controller
@@ -36,6 +40,7 @@ public class InfluencerController {
 		return "InfluencerProfile";
 	}
 	
+	//구독자수 랭킹
 	@RequestMapping("inRanking")
 	public String inRanking(Model model) {
 		
@@ -43,11 +48,44 @@ public class InfluencerController {
 		service = new InfluencerRankingService();
 		service.execute(model);
 		
+		
+		
 		return "InfluencerRanking";
 	}
 	
-	//구독자수 추천-InfluencerRcmmService
-	//인플루언서 신규-InfluencerNewsService
+	//인플루언서 검색
+	@RequestMapping("InfluencerSearch")
+	public String InfluencerSearch(Model model, HttpServletRequest Request) {
+		
+		System.out.println("---------SearchService()-----------");
+		service = new InfluencerProfileService();
+		service.execute(model);
+		
+		return "profile";
+	}
+	
+	//구독자수 추천
+	@RequestMapping("/")
+	public String InfluencerRcmm(Model model) {
+		
+		System.out.println("---------InfluencerRcmm()-----------");
+		service = new InfluencerRcmmService();
+		service.execute(model);
+		
+		return "redirect:index";//메인화면
+	}
+	
+	//인플루언서 신규
+	@RequestMapping("/")
+	public String InfluencerNews(Model model) {
+		
+		System.out.println("---------InfluencerNews()-----------");
+		service = new InfluencerNewsService();
+		service.execute(model);
+		
+		return "redirect:index";//메인화면
+	}
+	
 	//인플루언서 연관 카테고리 추천-InfluencerRelCatService
-	//인플루언서 검색-InfluencerSearchService
+	
 }

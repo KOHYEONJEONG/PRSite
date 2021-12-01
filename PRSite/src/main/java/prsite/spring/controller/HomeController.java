@@ -26,6 +26,8 @@ public class HomeController {
 	@Autowired
 	public  void setTemplate(JdbcTemplate template) {
 		this.template = template;
+		
+	
 		ConstantTemplate.template = this.template; // 모든 클래스에서 사용
 	}
 	

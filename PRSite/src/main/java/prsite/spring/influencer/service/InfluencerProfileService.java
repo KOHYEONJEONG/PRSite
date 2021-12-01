@@ -13,7 +13,7 @@ public class InfluencerProfileService implements IInfluencerService {
 //인플루언서 프로필 가져오기
 	
 	@Override
-	public void execute(Model model) {
+	public void execute(Model model) {// 
 		
 		Map<String, Object>map = model.asMap();
 
@@ -21,7 +21,7 @@ public class InfluencerProfileService implements IInfluencerService {
 		
 		InfluencerDao dao = new InfluencerDao();
 		
-		String ino = request.getParameter("in_no");
+		String ino = request.getParameter("in_no");//검색기능
 		
 		InfluencerDto dto = dao.influencerProfile(ino);
 

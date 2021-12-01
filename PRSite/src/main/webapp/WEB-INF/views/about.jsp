@@ -59,9 +59,6 @@
               <li class="nav-item ">
                 <a class="nav-link" href="index">Home </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu">Menu</a>
-              </li>
               <li class="nav-item active">
                 <a class="nav-link" href="about">About <span class="sr-only">(current)</span> </a>
               </li>

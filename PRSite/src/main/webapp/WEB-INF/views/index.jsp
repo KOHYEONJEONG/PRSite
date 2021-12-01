@@ -32,7 +32,12 @@
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
   
- 
+ <style>
+ 	#sbutton{ 	
+ 		background : white;
+ 		border : none;
+ 	}
+ </style>
 
 </head>
 
@@ -58,11 +63,11 @@
                       Hot Influencer 1
                     </h1>
                     <p>
-                      안녕 클레오 파트라 </br>
-                      세상에서 제일 가는 포테이토 칩!
+                      요즘 핫한 김패피가 궁금해? </br>
+                      유튜브, 인스타그램, 틱톡 모든 곳에서 활동중인 김패피. 그녀에게 패션정보를 얻고싶다면 지금 당장 구독하러가자
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="profile" class="btn1">
                         자세히 보기
                       </a>
                     </div>
@@ -126,7 +131,16 @@
     </section>
     <!-- end slider section -->
   </div>
-
+	
+	</br>
+	</br>
+	<!-- 검색창 -->
+	<div class="form_container" align="center">
+	<form>
+		<input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50"/>
+		<button type="submit" id="sbutton"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
+	</form>
+	</div>
   <!-- offer section -->
 
   <section class="offer_section layout_padding-bottom">
@@ -283,9 +297,9 @@
   <section class="client_section layout_padding-bottom">
     <div class="container">
       <div class="heading_container heading_center psudo_white_primary mb_45">
-        <h2>
+        <h1>
           오늘의 추천 인플루언서
-        </h2>
+        </h1>
       </div>
       <div class="carousel-wrap row ">
         <div class="owl-carousel client_owl-carousel">

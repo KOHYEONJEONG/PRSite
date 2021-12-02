@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -160,17 +161,18 @@
     <div class="offer_container">
       <div class="container ">
         <div class="row">
+        <c:forEach items="${rcmmlist}" var="rcmmlist">
           <div class="col-md-6  ">
             <div class="box ">
               <div class="img-box">
-                <img src="https://thumb.mt.co.kr/06/2021/04/2021040110268229622_1.jpg/dims/optimize/" alt="">
+                <img src="/project/resources/img/profimg.png" alt="">
               </div>
               <div class="detail-box">
                 <h8>
-                   배우 이제훈의 첫 브이로그가 궁금하다면?
+                   ${rcmmlist.id}
                 </h8>
                 <h3>
-                  <span>컴퍼니온</span> 
+                  <span> ${rcmmlist.info}</span> 
                 </h3>
                 <a href="https://youtu.be/RScBfvjyU_Y">
                   구독하기 
@@ -229,75 +231,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6  ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="https://image-notepet.akamaized.net/resize/620x-/seimage/20200320%2Fc69c31e9dde661c286a3c17201c79d35.jpg" alt="">
-              </div>
-              <div class="detail-box">
-                <h8>
-                   재롱이를 그냥 보고 지나친다고?
-                </h8>
-                <h3>
-                  <span>재롱잔치</span> 
-                </h3>
-                <a href="https://youtu.be/MquLFZK4YEc">
-                  구독하기 
-                    <g>
-                      <g>
-                        <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                     c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                      </g>
-                    </g>
-                    <g>
-                      <g>
-                        <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                     C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                     c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                     C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                      </g>
-                    </g>
-                    <g>
-                      <g>
-                        <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                     c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                      </g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                    <g>
-                    </g>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
+          
+          </c:forEach>
         </div>
       </div>
     </div>
@@ -316,15 +251,16 @@
       </div>
       <div class="carousel-wrap row ">
         <div class="owl-carousel client_owl-carousel">
+        
+        <c:forEach items="${newalllist}" var="newalllist">
           <div class="item">
             <div class="box">
               <div class="detail-box">
                 <p>
-                  귀여운 말티즈 오복이이는 항상 화나있어...</br>
-                  으르렁대는 오복이의 보러오세요~
+                  ${newalllist.get("info")}
                 </p>
                 <h6>
-                  갓오복
+                 ${newalllist.get("name")}
                 </h6>
                 <p>
                   
@@ -335,44 +271,7 @@
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  역시 유튜브에 감성이 빠질 수 없지</br>
-                  Cindy만의 감성있는 브이로그 보러오세요~
-                </p>
-                <h6>
-                  Cindy.유리
-                </h6>
-                <p>
-                  
-                </p>
-              </div>
-              <div class="img-box">
-                <img src="https://yt3.ggpht.com/ytc/AKedOLTRwiz7ocRWvvtTYbSy2Z9k-7Q9U4vvqp2aikT9QA=s176-c-k-c0x00ffffff-no-rj" alt="" class="box-img">
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="box">
-              <div class="detail-box">
-                <p>
-                  윤승아 배우가 유튜브도 하고있는거 다들 알고있나? </br>
-                  배우님 미모 감상하러 당장 가도록 하자
-                </p>
-                <h6>
-                  승아로운
-                </h6>
-                <p>
-                  
-                </p>
-              </div>
-              <div class="img-box">
-                <img src="https://yt3.ggpht.com/ytc/AKedOLRLmjWnqXw3bDwSjzKMLcY7n3sbLWiRAsqYsLEF=s176-c-k-c0x00ffffff-no-rj" alt="" class="box-img">
-              </div>
-            </div>
-          </div>
+         </c:forEach>
         </div>
       </div>
     </div>

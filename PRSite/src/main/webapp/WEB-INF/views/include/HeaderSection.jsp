@@ -71,7 +71,7 @@
               </li>
             </ul>
             <div class="user_option">
-              <a href="loginpage" class="user_link">
+              <a href="mypage" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
 

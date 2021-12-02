@@ -16,6 +16,40 @@ public class InfluencerDto {
 	public InfluencerDto() {
 		
 	}
+	
+	//∞°¿‘
+	public InfluencerDto(String id, String cat, String info, String instagram, String youtube, int instsubs,
+			int ytbsubs) {
+		super();
+		this.id = id;
+		this.cat = cat;
+		this.info = info;
+		this.instagram = instagram;
+		this.youtube = youtube;
+		this.instsubs = instsubs;
+		this.ytbsubs = ytbsubs;
+	}
+
+	public InfluencerDto(String id, String cat, String info, String instagram, String youtube, int subscnt,
+			int instsubs, int ytbsubs, Date memsince) {
+		super();
+		this.id = id;
+		this.cat = cat;
+		this.info = info;
+		this.instagram = instagram;
+		this.youtube = youtube;
+		this.subscnt = subscnt;
+		this.instsubs = instsubs;
+		this.ytbsubs = ytbsubs;
+		this.memsince = memsince;
+	}
+	
+	public InfluencerDto(String id, String info) {
+		super();
+		this.id = id;
+		this.info = info;
+	}
+	
 
 	public String getId() {
 		return id;

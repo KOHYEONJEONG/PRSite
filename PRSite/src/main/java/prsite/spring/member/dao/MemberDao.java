@@ -68,6 +68,13 @@ public class MemberDao implements IMemberDao {
 		
 		return memberdto;
 	}
+	
+	public String memberName(String id) {//회원정보 가져오기
+		String query = "select name from member where id ='" + id + "'";
+		String membername = this.template.queryForObject(query, String.class);
+		
+		return membername;
+	}
 
 	@Override
 	public boolean memberLogin(String id, String pwd) {

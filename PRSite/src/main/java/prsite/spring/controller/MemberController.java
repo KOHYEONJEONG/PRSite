@@ -88,7 +88,7 @@ public class MemberController {
 	
 	
 	//회원 정보 가져오기
-	@RequestMapping("/MemberProfile")
+	@RequestMapping("mypage")
 	public String MemberProfile(HttpServletRequest request, Model model) {
 		System.out.println("---------MemberProfile()-----------");
 		
@@ -96,7 +96,7 @@ public class MemberController {
 		service = new MemberProfileService();
 		service.execute(model);
 		
-		return  "MemberProfile";//일반사용자 '마이페이지' 화면.
+		return  "mypage";//일반사용자 '마이페이지' 화면.
 	}
 	
 	//회원 정보 수정

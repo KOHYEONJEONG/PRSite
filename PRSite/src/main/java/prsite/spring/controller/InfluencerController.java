@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import prsite.spring.influencer.service.IInfluencerService;
+import prsite.spring.influencer.service.InfluencerNewsAllService;
 import prsite.spring.influencer.service.InfluencerNewsService;
 import prsite.spring.influencer.service.InfluencerProfileService;
 import prsite.spring.influencer.service.InfluencerRankingService;
@@ -46,25 +47,20 @@ public class InfluencerController {
 	
 	//index.jsp(메인화면)-----------------------------------------------------------------------------
 	//구독자수 추천
-	@RequestMapping("/test1")
+	@RequestMapping("index")
 	public String InfluencerRcmm(Model model) {
 		
-		System.out.println("---------InfluencerRcmm()-----------");
+		System.out.println("---------InfluencerRcmm() : /index -----------");
 		service = new InfluencerRcmmService();//수정
 		service.execute(model);
 		
-		return "redirect:index";//메인화면
-	}
-	
-	//인플루언서 신규
-	@RequestMapping("/test2")
-	public String InfluencerNews(Model model) {
-		
-		System.out.println("---------InfluencerNews()-----------");
-		service = new InfluencerNewsService();//수정
+		System.out.println("---------InfluencerNews() : /index -----------");
+		service = new InfluencerNewsAllService();//수정
 		service.execute(model);
 		
-		return "redirect:index";//메인화면
+		System.out.println("----home----");
+		
+		return "index";//메인화면
 	}
 	
 	//인플루언서 검색

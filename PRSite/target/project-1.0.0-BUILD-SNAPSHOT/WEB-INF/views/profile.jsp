@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Login Page </title>
+  <title> Influencer Recommend Site </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -31,23 +31,8 @@
   <link href="/project/resources/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
-
-<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
-<script type="text/javascript">
-function check() {
-	if(document.loginform.id.value == ""){
-		alert("아이디를 입력하세요.");
-		document.loginform.id.focus();
-		return;
-	}
-	if(document.loginform.pwd.value == ""){
-		alert("비밀번호를 입력하세요.");
-		document.loginform.pwd.focus();
-		return;
-	}
-	document.loginform.submit();
-}
-</script>
+  
+ 
 
 </head>
 
@@ -55,63 +40,57 @@ function check() {
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="/project/resources/images/hero-bg.jpg" alt="">
+      <img src="/project/resources/images/Main.PNG" alt="">
     </div>
     <!-- header section strats -->
     	<jsp:include page="include/HeaderSection.jsp" flush="false" />
     <!-- end header section -->
   </div>
   
-  <!-- login section -->
-	<section class="book_section layout_padding" >
-    <div class="container">
-		<div class="heading_container">	
-			<h2>LOGIN</h2>
-		</div>
-	<div class="row">
-
-	<div class="col-md-6">
-	
-	
-	</div>
-	<form action="login" method="get"  name="loginform">
-        <div class="col-md-6">
-          <div class="form_container">
-            
-            	<div>
-               		 <input type="text" class="form-control" placeholder="ID" name="id" size="100"/>
-             	</div>
-              	<div>
-
-               		 <input type="password" class="form-control" placeholder="Password" name="pwd" size="100"/>
-              	</div>
-              	
-              	<div class="btn_box">
-                	<button type="submit"  onclick='check()'>
-                		  Login
-               		</button>
-               		<button  onclick="location.href='joinForm';">
-                		  Join
-               		</button>
-             	</div>           	
-				
-		   </div>
-         </div>
-
-		 </form>
-
-      </div>
-    </div>
-</section>
-<!-- end login section -->
-
-
-
-<!-- footer section -->
-   <jsp:include page="include/FooterSection.jsp" flush="false" />
-<!-- footer section -->
-
-  <!-- jQery -->
+  	<!-- profile section -->
+		<table align="center" width="1000">	
+			<tr>
+				<td>
+					
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+				<table border="0" style="border-collapse:collapse;" bordercolor="#481968" height="600" width="1100">
+					<tr>
+						<td align="center">
+							<img src="resources/img/rozy.jpg" width="300" height="300">
+						</td>			
+						<td>
+							김패피 @dddd<br>
+							패션<br>
+							안녕하세요 김패피입니다<br>
+							SNS :
+							<a href="">인스타그램</a>, <a href="">트위터</a>, <a href="">유튜브</a>
+						</td>
+					</tr>
+				</table>
+				<hr>
+				<table border="1" bordercolor="#481968" style="border-collapse:collapse;">
+						<tr>
+							<h3>추천 인플루언서</h3>
+						</tr>
+						<tr>
+							<td>
+												
+							</td>
+						</tr>
+				</table>
+			</tr>
+		</table>
+	<!-- end profile section -->
+  <!-- end fashion category section -->
+  
+  <!-- footer section -->
+  	<jsp:include page="include/FooterSection.jsp" flush="false" />
+  <!-- footer section -->
+  
+    <!-- jQery -->
   <script src="/project/resources/js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">

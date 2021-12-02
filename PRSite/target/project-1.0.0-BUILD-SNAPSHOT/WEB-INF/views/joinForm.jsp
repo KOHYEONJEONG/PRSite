@@ -57,8 +57,6 @@ function check_form(){
 	document.joinform.submit();
 }
 
-
-
 </script>
 
 </head>
@@ -88,11 +86,11 @@ function check_form(){
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15>
 					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20>  
 					닉네임  <input type="text" name="nickname" class="form-control" size=10>
-					일반 회원 <input type="radio" name="influyn" value="n" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y"></br>
+					일반 회원 <input type="radio" name="influyn" value="n" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y"> </br>
 				</fieldset>
 				<br>
 				</br>
-				<fieldset > <legend> 추가 인플루언서 정보 </legend>
+				<fieldset><legend> 추가 인플루언서 정보 </legend>
 					카테고리  <select name="category" class="form-control nice-select wide">
 							<option value="fashion_beauty"> 패션 </option>
 							<option value="food"> 요리 </option>

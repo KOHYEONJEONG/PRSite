@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html;
+charset=UTF-8" pageEncoding="UTF-8" %>
+<! DOCTYPE html>
 <html>
-
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -15,7 +14,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Login Page </title>
+  <title> Influencer Recommend Site </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -31,23 +30,8 @@
   <link href="/project/resources/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
-
-<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
-<script type="text/javascript">
-function check() {
-	if(document.loginform.id.value == ""){
-		alert("아이디를 입력하세요.");
-		document.loginform.id.focus();
-		return;
-	}
-	if(document.loginform.pwd.value == ""){
-		alert("비밀번호를 입력하세요.");
-		document.loginform.pwd.focus();
-		return;
-	}
-	document.loginform.submit();
-}
-</script>
+  
+ 
 
 </head>
 
@@ -55,63 +39,91 @@ function check() {
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="/project/resources/images/hero-bg.jpg" alt="">
+      <img src="/project/resources/images/Main.PNG" alt="">
     </div>
     <!-- header section strats -->
     	<jsp:include page="include/HeaderSection.jsp" flush="false" />
     <!-- end header section -->
   </div>
   
-  <!-- login section -->
-	<section class="book_section layout_padding" >
+  <!-- pet section -->
+
+
+  <section class="book_section layout_padding">
     <div class="container">
-		<div class="heading_container">	
-			<h2>LOGIN</h2>
-		</div>
-	<div class="row">
-
-	<div class="col-md-6">
-	
-	
-	</div>
-	<form action="login" method="get"  name="loginform">
-        <div class="col-md-6">
-          <div class="form_container">
-            
-            	<div>
-               		 <input type="text" class="form-control" placeholder="ID" name="id" size="100"/>
-             	</div>
-              	<div>
-
-               		 <input type="password" class="form-control" placeholder="Password" name="pwd" size="100"/>
-              	</div>
-              	
-              	<div class="btn_box">
-                	<button type="submit"  onclick='check()'>
-                		  Login
-               		</button>
-               		<button  onclick="location.href='joinForm';">
-                		  Join
-               		</button>
-             	</div>           	
-				
-		   </div>
-         </div>
-
-		 </form>
-
+      <div class="heading_container heading_center">
+        <h2>
+          Ranking
+        </h2>
       </div>
     </div>
-</section>
-<!-- end login section -->
-
-
-
-<!-- footer section -->
-   <jsp:include page="include/FooterSection.jsp" flush="false" />
-<!-- footer section -->
-
-  <!-- jQery -->
+  </section>
+  
+  <!-- fashion category section -->
+	<table align="center" width="600">	
+		<tr>
+			<td>순위</td>
+			<td>인플루언서</td>
+			<td>카테고리</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>뫄뫄</td>
+			<td>패션</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>솨솨</td>
+			<td>패션</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>디디</td>
+			<td>반려동물</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>티티</td>
+			<td>반려동물</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>승우아빠</td>
+			<td>요리</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>김박사</td>
+			<td>일상</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>수리</td>
+			<td>반려동물</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>쿠킹트리</td>
+			<td>요리</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>뫄뫄</td>
+			<td>패션</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>뫄뫄</td>
+			<td>패션</td>
+		</tr>
+	</table>
+  <!-- end fashion category section -->
+  
+  <!-- footer section -->
+  	<jsp:include page="include/FooterSection.jsp" flush="false" />
+  <!-- footer section -->
+  
+    <!-- jQery -->
   <script src="/project/resources/js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">

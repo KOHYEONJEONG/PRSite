@@ -109,4 +109,45 @@ public class HomeController {
 		return "mypage";
 	}
 	
+	@RequestMapping("/pet")
+	public String pet(Model model) {
+		System.out.println("----pet page----");
+		return "pet";
+	}
+	
+	@RequestMapping("/cook")
+	public String cook(Model model) {
+		System.out.println("----cook page----");
+		return "cook";
+	}
+	
+	@RequestMapping("/daily")
+	public String daily(Model model) {
+		System.out.println("----daily page----");
+		return "daily";
+	}
+	
+	@RequestMapping("/fashion")
+	public String fashion(Model model) {
+		System.out.println("----fashion page----");
+		return "fashion";
+	}
+	
+	@RequestMapping("/ranking")
+	public String ranking(Model model) {
+		System.out.println("----ranking page----");
+		return "ranking";
+	}
+	
+	@RequestMapping("/community")
+	public String community(Model model) {
+		System.out.println("----community page----");
+		return "community";
+	}
+	
+	@RequestMapping("/profile")
+	public String profile(Model model) {
+		System.out.println("----profile page----");
+		return "profile";
+	}
 }

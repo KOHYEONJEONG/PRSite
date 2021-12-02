@@ -74,8 +74,7 @@ function check() {
 	
 	
 	</div>
-	
-		<form action="login" method="get" name="loginform">
+	<form action="login" method="get"  name="loginform">
         <div class="col-md-6">
           <div class="form_container">
             
@@ -88,8 +87,7 @@ function check() {
               	</div>
               	
               	<div class="btn_box">
-                	<button type="submit" onclick='check()'>
-
+                	<button type="submit"  onclick='check()'>
                 		  Login
                		</button>
                		<button  onclick="location.href='joinForm';">
@@ -97,14 +95,10 @@ function check() {
                		</button>
              	</div>           	
 				
-		  </div>
-        </div>
+		   </div>
+         </div>
 
-		  </form>
-        <div class="col-md-6" align="center">
-          		<img src="https://cdn-icons-png.flaticon.com/512/1599/1599933.png" width="200" height="200"/>
-				
-        </div>
+		 </form>
 
       </div>
     </div>

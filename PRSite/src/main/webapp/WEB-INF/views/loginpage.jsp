@@ -38,14 +38,14 @@ function check() {
 	if(document.loginform.id.value == ""){
 		alert("아이디를 입력하세요.");
 		document.loginform.id.focus();
-		return;
+		return false;
 	}
-	if(document.loginform.pwd.value == ""){
+	else if(document.loginform.pwd.value == ""){
 		alert("비밀번호를 입력하세요.");
 		document.loginform.pwd.focus();
-		return;
+		return false;
 	}
-	document.loginform.submit();
+	else {return true;}
 }
 </script>
 
@@ -74,7 +74,7 @@ function check() {
 	
 	
 	</div>
-	<form action="login" method="get"  name="loginform">
+	<form action="./index" method="post"  name="loginform"  onSubmit="return check()">
         <div class="col-md-6">
           <div class="form_container">
             
@@ -90,15 +90,16 @@ function check() {
                 	<button type="submit"  onclick='check()'>
                 		  Login
                		</button>
-               		<button  onclick="location.href='joinForm';">
-                		  Join
-               		</button>
+               		
              	</div>           	
 				
 		   </div>
          </div>
 
 		 </form>
+		 <button  onclick="location.href='./joinForm'">
+                		  Join
+               		</button>
 
       </div>
     </div>

@@ -39,26 +39,36 @@ function check_form(){
 	if (document.joinform.id.value =="") {
  		alert("아이디를 입력하세요.");
   		document.joinform.id.focus();
-  		return;
+  		return false;
 	}
 
-	if (document.joinform.pwd.value =="") {
+	else if (document.joinform.pwd.value =="") {
  		alert("비밀번호를 입력하세요.");
   		document.joinform.pwd.focus();
-  		return;
+  		return false;
 	}
 	
-	if (document.joinform.nickname.value =="") {
+	else if (document.joinform.nickname.value =="") {
  		alert("닉네임을 입력하세요.");
   		document.joinform.nickname.focus();
-  		return;
+  		return false;
 	}
-	
-	document.joinform.submit();
+	else {return true;}
 }
 
 
-
+function check_id(){ //아이디 중복 체크 **추가 수정 필요**
+	var x = eval(document.joinform);
+	
+	if(!x.id.value){
+		str = x.id.value;
+		alert("ID를 입력하세요.");
+		return false;
+	}else{
+		//ref = "Join_CheckID_DB.jsp?id="+ x.id.value;
+		//window.open(ref,"checkID",'top=200px, left=500px,width=300,height=200,status=no');
+	}
+}
 </script>
 
 </head>
@@ -83,11 +93,11 @@ function check_form(){
 	  <div class="row">
         <div class="col-md-6">
           <div class="form_container">			
-				<form method=post action="" name=joinform>
+				<form method=post action="./MemberJoin" name="joinform" onSubmit="return check_form()">
 				<fieldset><legend>기본정보</legend>
-					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15>
-					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20>  
-					닉네임  <input type="text" name="nickname" class="form-control" size=10>
+					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15 placeholder="영숫자 최대 15글자" pattern="^[0-9a-zA-Z]{1,15}$">
+					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20 pattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{15,20}$"">  
+					닉네임  <input type="text" name="nickname" class="form-control" size=10 pattern="^.{1,10}">
 					일반 회원 <input type="radio" name="influyn" value="n" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y"></br>
 				</fieldset>
 				<br>
@@ -110,12 +120,8 @@ function check_form(){
 					<br>
 
 					<div class="btn_box">
-						<button type="submit" form="joinForm" onclick='check_form()'>
-							가입하기
-						</button>
-						<button type="reset">
-							초기화
-						</button>
+						<input type="submit" value="가입하기" class="btn">
+						<input type="reset" value="초기화" class="btn" >
 					</div>
 				</form>
 			</div>

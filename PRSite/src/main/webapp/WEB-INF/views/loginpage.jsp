@@ -69,6 +69,7 @@ function check() {
 			<h2>LOGIN</h2>
 		</div>
 	<div class="row">
+
 	<div class="col-md-6">
 	
 	
@@ -82,11 +83,13 @@ function check() {
                		 <input type="text" class="form-control" placeholder="ID" name="id" size="100"/>
              	</div>
               	<div>
+
                		 <input type="password" class="form-control" placeholder="Password" name="pwd" size="100"/>
               	</div>
               	
               	<div class="btn_box">
                 	<button type="submit" onclick='check()'>
+
                 		  Login
                		</button>
                		<button  onclick="location.href='joinForm';">
@@ -96,8 +99,13 @@ function check() {
 				
 		  </div>
         </div>
-	    </form>
-        
+
+		  </form>
+        <div class="col-md-6" align="center">
+          		<img src="https://cdn-icons-png.flaticon.com/512/1599/1599933.png" width="200" height="200"/>
+				
+        </div>
+
       </div>
     </div>
 </section>

@@ -12,6 +12,7 @@ import prsite.spring.influencer.service.InfluencerNewsService;
 import prsite.spring.influencer.service.InfluencerProfileService;
 import prsite.spring.influencer.service.InfluencerRankingService;
 import prsite.spring.influencer.service.InfluencerRcmmService;
+import prsite.spring.influencer.service.InfluencerRelCatService;
 import prsite.spring.util.ConstantTemplate;
 
 @Controller
@@ -29,17 +30,6 @@ public class InfluencerController {
 	}
 
 	
-	@RequestMapping("inProfile")
-	public String inProfile(Model model) {
-		
-		System.out.println("---------inProfile()-----------");
-		service = new InfluencerProfileService();
-		service.execute(model);
-		
-		
-		return "InfluencerProfile";
-	}
-	
 	//구독자수 랭킹
 	@RequestMapping("inRanking")
 	public String inRanking(Model model) {
@@ -53,6 +43,30 @@ public class InfluencerController {
 		return "InfluencerRanking";
 	}
 	
+	
+	//index.jsp(메인화면)-----------------------------------------------------------------------------
+	//구독자수 추천
+	@RequestMapping("/test1")
+	public String InfluencerRcmm(Model model) {
+		
+		System.out.println("---------InfluencerRcmm()-----------");
+		service = new InfluencerRcmmService();//수정
+		service.execute(model);
+		
+		return "redirect:index";//메인화면
+	}
+	
+	//인플루언서 신규
+	@RequestMapping("/test2")
+	public String InfluencerNews(Model model) {
+		
+		System.out.println("---------InfluencerNews()-----------");
+		service = new InfluencerNewsService();//수정
+		service.execute(model);
+		
+		return "redirect:index";//메인화면
+	}
+	
 	//인플루언서 검색
 	@RequestMapping("InfluencerSearch")
 	public String InfluencerSearch(Model model, HttpServletRequest Request) {
@@ -64,28 +78,26 @@ public class InfluencerController {
 		return "profile";
 	}
 	
-	//구독자수 추천
-	@RequestMapping("/test1")
-	public String InfluencerRcmm(Model model) {
-		
-		System.out.println("---------InfluencerRcmm()-----------");
-		service = new InfluencerRcmmService();
-		service.execute(model);
-		
-		return "redirect:index";//메인화면
-	}
+
+	//profile.jsp(프로필 하단(추천인플루언서))----------------------------------------------------------------
 	
-	//인플루언서 신규
-	@RequestMapping("/test2")
-	public String InfluencerNews(Model model) {
-		
-		System.out.println("---------InfluencerNews()-----------");
-		service = new InfluencerNewsService();
+	@RequestMapping("inProfile")
+	public String inProfile(Model model) {
+		service = new InfluencerProfileService();
 		service.execute(model);
 		
-		return "redirect:index";//메인화면
+		
+		return "profile";
 	}
 	
 	//인플루언서 연관 카테고리 추천-InfluencerRelCatService
-	
+	@RequestMapping("/test3")
+	public String InfluencerRel(Model model) {
+		
+		System.out.println("---------InfluencerRel()-----------");
+		service = new InfluencerRelCatService();//수정
+		service.execute(model);
+		
+		return "redirect:index";//메인화면
+	}
 }

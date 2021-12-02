@@ -19,7 +19,7 @@ public interface IInfluencerDao {
 	ArrayList<InfluencerDto> influencerYtbRanking();
 	
 	//인플루언서 검색
-	ArrayList<InfluencerDto> influencerSearch(String search);
+	InfluencerDto influencerSearch(String search);
 	
 	//인플루언서 사이트 내 구독자수 추천
 	ArrayList<InfluencerDto> influencerRcmm();

@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-<<<<<<< HEAD
     <wb-module deploy-name="project-1.0.0-BUILD-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
-=======
-    	
-    <wb-module deploy-name="sample">
-        		
->>>>>>> 12cd6937ea068ca2cff33a86ceabbf3be5ae03a0
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-<<<<<<< HEAD
         <property name="context-root" value="project"/>
         <property name="java-output-path" value="/PRSite/target/classes"/>
-=======
-        		
-        <property name="java-output-path" value="target/classes"/>
-        <property name="context-root" value="sample"/>
-        	
->>>>>>> 12cd6937ea068ca2cff33a86ceabbf3be5ae03a0
     </wb-module>
 </project-modules>

@@ -73,12 +73,6 @@ public class HomeController {
 		return "menu";
 	}
 	
-	@RequestMapping("/cook")
-	public String cook(Model model) {
-		System.out.println("----menu----");
-		return "cook";
-	}
-	
 	@RequestMapping("/about")
 	public String about(Model model) {
 		System.out.println("----about----");
@@ -95,6 +89,12 @@ public class HomeController {
 	public String loginpage(Model model) {
 		System.out.println("----login page----");
 		return "loginpage";
+	}
+	
+	@RequestMapping("/index")
+	public String index(Model model) {
+		System.out.println("----index page----");
+		return "index";
 	}
 	
 	@RequestMapping("/joinForm")

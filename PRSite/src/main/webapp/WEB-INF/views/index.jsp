@@ -47,9 +47,17 @@
     <div class="bg-box">
       <img src="/project/resources/images/Main.PNG" alt="">
     </div>
+    
+    
     <!-- header section strats -->
+    
     	<jsp:include page="include/HeaderSection.jsp" flush="false" />
+
+    
+    	
     <!-- end header section -->
+        
+    
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -63,8 +71,9 @@
                       Hot Influencer 1
                     </h1>
                     <p>
-                      요즘 핫한 김패피가 궁금해? </br>
-                      유튜브, 인스타그램, 틱톡 모든 곳에서 활동중인 김패피. 그녀에게 패션정보를 얻고싶다면 지금 당장 구독하러가자
+                      김메주와 고양이들 알아? </br>
+                      4마리의 다양한 고양이를 볼 수 있는 '김메주와 고양이들' 채널과 그 집사의 일상 브이로그를 담은 '김메주' 채널까지!!
+                      일상과 반려동물 영상 둘 다 즐기고 싶다면 당장 보자!
                     </p>
                     <div class="btn-box">
                       <a href="profile" class="btn1">
@@ -85,7 +94,9 @@
                       Hot Influencer 2
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      여기가 주먹맛집...? </br>
+                      홈카페 영상으로 유명한 yedy101 다양한 디저트 레시피와 음료 레시피를 볼 수 있어요.
+                      귀여운 고양이는 덤                     
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -106,7 +117,9 @@
                       Hot Influencer 3
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      쭈친 모여라!!!!</br>
+                      호주 사는 해쭈의 천방지축 어리둥절 빙글빙글 돌아가는 브이로그!
+                      귀여운 고양이 새삼이와 KO패밀리의 즐거운 일상이 궁금하다면 보러가자
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -298,7 +311,7 @@
     <div class="container">
       <div class="heading_container heading_center psudo_white_primary mb_45">
         <h1>
-          오늘의 추천 인플루언서
+          Today Influencer
         </h1>
       </div>
       <div class="carousel-wrap row ">
@@ -307,17 +320,18 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                  귀여운 말티즈 오복이이는 항상 화나있어...</br>
+                  으르렁대는 오복이의 보러오세요~
                 </p>
                 <h6>
-                  Moana Michell
+                  갓오복
                 </h6>
                 <p>
-                  magna aliqua
+                  
                 </p>
               </div>
               <div class="img-box">
-                <img src="/project/resources/images/client1.jpg" alt="" class="box-img">
+                <img src="https://yt3.ggpht.com/ytc/AKedOLSn6fUg07YNkDHwhn8ioE_7E6fM63TFwNFMDp0d=s900-c-k-c0x00ffffff-no-rj" alt="" class="box-img">
               </div>
             </div>
           </div>
@@ -325,17 +339,37 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+                  역시 유튜브에 감성이 빠질 수 없지</br>
+                  Cindy만의 감성있는 브이로그 보러오세요~
                 </p>
                 <h6>
-                  Mike Hamell
+                  Cindy.유리
                 </h6>
                 <p>
-                  magna aliqua
+                  
                 </p>
               </div>
               <div class="img-box">
-                <img src="/project/resources/images/client2.jpg" alt="" class="box-img">
+                <img src="https://yt3.ggpht.com/ytc/AKedOLTRwiz7ocRWvvtTYbSy2Z9k-7Q9U4vvqp2aikT9QA=s176-c-k-c0x00ffffff-no-rj" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  윤승아 배우가 유튜브도 하고있는거 다들 알고있나? </br>
+                  배우님 미모 감상하러 당장 가도록 하자
+                </p>
+                <h6>
+                  승아로운
+                </h6>
+                <p>
+                  
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="https://yt3.ggpht.com/ytc/AKedOLRLmjWnqXw3bDwSjzKMLcY7n3sbLWiRAsqYsLEF=s176-c-k-c0x00ffffff-no-rj" alt="" class="box-img">
               </div>
             </div>
           </div>

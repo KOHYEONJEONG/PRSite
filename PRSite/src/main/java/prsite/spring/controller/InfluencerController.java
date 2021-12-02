@@ -78,14 +78,11 @@ public class InfluencerController {
 		return "profile";
 	}
 	
-	
-	
+
 	//profile.jsp(프로필 하단(추천인플루언서))----------------------------------------------------------------
 	
 	@RequestMapping("inProfile")
 	public String inProfile(Model model) {
-		
-		System.out.println("---------inProfile()-----------");
 		service = new InfluencerProfileService();
 		service.execute(model);
 		

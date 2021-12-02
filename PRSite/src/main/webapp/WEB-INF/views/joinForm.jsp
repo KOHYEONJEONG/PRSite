@@ -32,6 +32,33 @@
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
 
+
+<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+<script type="text/javascript">
+function check_form(){
+	if (document.joinform.id.value =="") {
+ 		alert("아이디를 입력하세요.");
+  		document.joinform.id.focus();
+  		return;
+	}
+
+	if (document.joinform.pwd.value =="") {
+ 		alert("비밀번호를 입력하세요.");
+  		document.joinform.pwd.focus();
+  		return;
+	}
+	
+	if (document.joinform.nickname.value =="") {
+ 		alert("닉네임을 입력하세요.");
+  		document.joinform.nickname.focus();
+  		return;
+	}
+	
+	document.joinform.submit();
+}
+
+</script>
+
 </head>
 
 <body class="sub_page">
@@ -54,7 +81,7 @@
 	  <div class="row">
         <div class="col-md-6">
           <div class="form_container">			
-				<form method=post action="" name=joinForm>
+				<form method=post action="" name=joinform>
 				<fieldset><legend>기본정보</legend>
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15>
 					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20>  
@@ -81,7 +108,7 @@
 					<br>
 
 					<div class="btn_box">
-						<button type="submit" form="joinForm">
+						<button type="submit" form="joinForm" onclick='check_form()'>
 							가입하기
 						</button>
 						<button type="reset">

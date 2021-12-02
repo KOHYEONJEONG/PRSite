@@ -52,10 +52,10 @@
             <ul class="navbar-nav  mx-auto ">
              
               <li class="nav-item">
-                <a class="nav-link" href="category">패션&뷰티</a>
+                <a class="nav-link" href="fashion">패션&뷰티</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu">요리</a>
+                <a class="nav-link" href="cook">요리</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="daily">일상</a>
@@ -71,7 +71,7 @@
               </li>
             </ul>
             <div class="user_option">
-              <a href="mypage" class="user_link">
+              <a href="loginpage" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
 

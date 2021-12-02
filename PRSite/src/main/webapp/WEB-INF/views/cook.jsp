@@ -234,7 +234,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          ALL Daily Influencer 
+          All Cook Influencer 
         </h2>
       </div>
 

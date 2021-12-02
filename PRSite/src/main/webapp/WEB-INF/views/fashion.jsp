@@ -232,7 +232,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          ALL Daily Influencer 
+          All Fashion & Beauty Influencer 
         </h2>
       </div>
 

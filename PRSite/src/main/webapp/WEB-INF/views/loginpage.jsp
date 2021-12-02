@@ -32,6 +32,23 @@
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
 
+<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+<script type="text/javascript">
+function check() {
+	if(document.loginform.id.value == ""){
+		alert("아이디를 입력하세요.");
+		document.loginform.id.focus();
+		return;
+	}
+	if(document.loginform.pwd.value == ""){
+		alert("비밀번호를 입력하세요.");
+		document.loginform.pwd.focus();
+		return;
+	}
+	document.loginform.submit();
+}
+</script>
+
 </head>
 
 <body class="sub_page">
@@ -52,18 +69,24 @@
 			<h2>LOGIN</h2>
 		</div>
 	<div class="row">
+	<div class="col-md-6">
+	
+	
+	</div>
+	
+		<form action="login" method="get" name="loginform">
         <div class="col-md-6">
           <div class="form_container">
             
             	<div>
-               		 <input type="text" class="form-control" placeholder="ID" name="id" />
+               		 <input type="text" class="form-control" placeholder="ID" name="id" size="100"/>
              	</div>
               	<div>
-               		 <input type="text" class="form-control" placeholder="Password" name="pwd"/>
+               		 <input type="password" class="form-control" placeholder="Password" name="pwd" size="100"/>
               	</div>
               	
               	<div class="btn_box">
-                	<button>
+                	<button type="submit" onclick='check()'>
                 		  Login
                		</button>
                		<button  onclick="location.href='joinForm';">
@@ -73,10 +96,8 @@
 				
 		  </div>
         </div>
-        <div class="col-md-6" align="center">
-          		<img src="https://cdn-icons-png.flaticon.com/512/1599/1599933.png" width="200" height="200"/>
-				
-        </div>
+	    </form>
+        
       </div>
     </div>
 </section>

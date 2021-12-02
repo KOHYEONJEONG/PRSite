@@ -65,7 +65,7 @@ public class InfluencerController {
 	}
 	
 	//구독자수 추천
-	@RequestMapping("/")
+	@RequestMapping("/test1")
 	public String InfluencerRcmm(Model model) {
 		
 		System.out.println("---------InfluencerRcmm()-----------");
@@ -76,7 +76,7 @@ public class InfluencerController {
 	}
 	
 	//인플루언서 신규
-	@RequestMapping("/")
+	@RequestMapping("/test2")
 	public String InfluencerNews(Model model) {
 		
 		System.out.println("---------InfluencerNews()-----------");

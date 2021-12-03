@@ -120,10 +120,6 @@ public class HomeController {
 		System.out.println("----ranking page----");
 		return "loginpage";
 	}
-	
-	@RequestMapping("/ModiInfo")
-	public String ModiInfo(Model model) {
-		System.out.println("----ModiInfo page----");
-		return "ModiInfo";
-	}
+
+
 }

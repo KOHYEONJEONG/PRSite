@@ -36,6 +36,7 @@ public class MemberProfileService implements IMemberService {
 		System.out.println("MemberDao addAttribute");
 		
 		
+		//인플루언서는 'y'라디오 선택해야지만 내용을불러옴
 		if(dto.getInfluyn().equals("y")) {
 			System.out.println("dto.getInfluyn().equals(\"y\") " + dto.getInfluyn());
 			InfluencerDao influencerdao = new InfluencerDao();

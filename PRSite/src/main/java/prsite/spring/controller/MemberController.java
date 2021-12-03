@@ -54,19 +54,12 @@ public class MemberController {
 			return "loginpage";
 		}
 	}
-	
-	
-	
-	
-	
-	@RequestMapping("/join_view") // 회원가입 버튼 누를때 화면 변경
-	public String join_view(Model model) { 
-		//회원가입 화면으로 이동
-		
-		System.out.println("---------join_view()-----------");
 
-
-		return "joinForm";//jsp 만들기.
+	
+	@RequestMapping("/joinForm")
+	public String joinForm(Model model) {
+		System.out.println("----joinForm page----");
+		return "loginpage";
 	}
 
 	
@@ -96,7 +89,18 @@ public class MemberController {
 		return  "mypage";//일반사용자 '마이페이지' 화면.
 	}
 	
-	//회원 정보 수정
+	//ModiInfo.jsp 눌렀을때 내용 뿌려지게
+	@RequestMapping("/ModiInfo")
+	public String ModiInfo(HttpServletRequest request,Model model) {
+		System.out.println("----ModiInfo page----");
+		model.addAttribute("request",request);
+		service = new MemberProfileService();
+		service.execute(model);
+		
+		return "ModiInfo";
+	}
+	
+	//회원 정보, 인플루언서 정보 수정
 	@RequestMapping("/MemberModify")
 	public String MemberModify(HttpServletRequest request, Model model) {
 		System.out.println("---------MemberModify()-----------");
@@ -105,7 +109,7 @@ public class MemberController {
 		service = new MemberModifyService();
 		service.execute(model);
 		
-		return  "redirect:MemberProfile";//수정되면 '마이페이지'로 다시 돌아감.
+		return  "redirect:mypage";//수정되면 '마이페이지'로 다시 돌아감.
 	}
 	
 	//구독자 불러오기(list)

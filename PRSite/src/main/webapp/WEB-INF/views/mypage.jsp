@@ -51,30 +51,6 @@ function display(){
 	document.getElementById("influencerInfo").style.display = "block";
 }
 
-<%
-	String isLogin = request.getParameter("isLogin");
-	String LoginID = request.getParameter("LoginID");
-	String Menu = "include/HeaderSection.jsp";
-	
-	if(isLogin!=null && LoginID!=null){
-		System.out.println("isLogin=="+isLogin);
-		System.out.println("LoginID=="+LoginID);
-		
-		if(isLogin.equals("true")){
-			System.out.println("isLogin==true");
-		 // 로그인 성공 : id 세션 저장 - header변경
-		session.setAttribute("LoginID", LoginID);
-		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-		Menu = "include/HeaderSection2.jsp";
-	}
-	else{
-		Menu = "include/HeaderSection.jsp";
-	}
-	}
-	
-%>
-
-
 </script>
 </head>
 
@@ -157,7 +133,7 @@ function display(){
           		</tr>
           		<tr>
           			<td width="300" height="70" bgcolor="whitesmoke">
-          				 정보
+          				 자기소개
           			</td>
           			<td width="500">
           				  ${influencerProfile.info}

@@ -188,6 +188,7 @@ function check() {
 	<!-- 검색창 -->
 	<div class="form_container" align="center">
 	<form method=get action="./InfluencerSearch" name="searchbar"  onSubmit="return check()">
+
 		<input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50" id="search"/>
 		<button type="submit" id="sbutton"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
 	</form>

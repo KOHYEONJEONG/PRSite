@@ -142,11 +142,13 @@ function display(){
           		</tr>
           	</table>
           	
-          	</br>
-          	<button onclick="display()">인플루언서 정보 보기</button>
-          	</br></br></br></br>
+          	<br/>
+          		<br/>
+          	<hr/>
+          		<br/>
+          			<br/>
           	
-          	<div id="influencerInfo"  style="display:none">
+          	<div>
           	<table cellpadding="30px">
           		<tr>
           			<td width="300" height="70" bgcolor="whitesmoke">
@@ -209,7 +211,7 @@ function display(){
           	</div>
             </br> 	
 			<div class="btn_box">
-					<button type="submit" form="updateForm">
+					<button type="submit" onClick="updateForm">
 						수정하기
 					</button>
 			</div>

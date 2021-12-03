@@ -180,7 +180,7 @@
 	</form>
 	</div>
   <!-- offer section -->
-
+        
   <section class="offer_section layout_padding-bottom">
     <div class="offer_container">
       <div class="container ">

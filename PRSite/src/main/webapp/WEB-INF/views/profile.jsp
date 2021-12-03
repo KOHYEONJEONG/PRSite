@@ -63,18 +63,15 @@
 						<td align="center">
 							<img src="resources/img/rozy.jpg" width="300" height="300">
 						</td>
-									
-					<c:forEach items="${dto}" var="dto">	
 						
 						<td>
 							${dto.id}<br>
 							${dto.cat}<br>
 							${dto.info}<br>
-							YoutubeSNS : ${dto.youtube}
-							<a href="">인스타그램</a>, <a href="">트위터</a>, <a href="">유튜브</a>
+							SNS : 
+							<a href="${dto.instagram}">인스타그램</a>, <a href="">트위터</a>, <a href="${dto.youtube}">유튜브</a>
 						</td>
-						
-						</c:forEach>
+					
 					</tr>
 				</table>
 				<hr>

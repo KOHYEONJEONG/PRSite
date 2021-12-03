@@ -33,4 +33,10 @@ public class MemberModifyService implements IMemberService {
 		
 	}
 
+	@Override
+	public boolean getResult() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

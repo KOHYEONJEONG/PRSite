@@ -40,6 +40,30 @@
  	}
  </style>
 
+<c:set var="isLogin" value="${isLogin}"/>
+<c:set var="LoginID" value="${LoginID}"/>
+ <%
+	String isLogin = request.getParameter("isLogin");
+ 	String LoginID = request.getParameter("LoginID");
+ 	String Menu = "include/HeaderSection.jsp";
+ 	
+ 	if(isLogin!=null && LoginID!=null){
+ 		System.out.println("isLogin=="+isLogin);
+ 		System.out.println("LoginID=="+LoginID);
+ 		
+ 		if(isLogin.equals("true")){
+ 			System.out.println("isLogin==true");
+			 // 로그인 성공 : id 세션 저장 - header변경
+			session.setAttribute("LoginID", LoginID);
+			System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
+			Menu = "include/HeaderSection2.jsp";
+		}
+		else{
+			Menu = "include/HeaderSection.jsp";
+		}
+ 	}
+ 	
+ %>
 </head>
 
 <body>
@@ -50,9 +74,9 @@
     </div>
     
     
-    <!-- header section strats -->
+    <!-- header section starts -->
     
-    	<jsp:include page="include/HeaderSection.jsp" flush="false" />
+    	<jsp:include page="<%= Menu %>" flush="false" />
 
     
     	

@@ -68,15 +68,15 @@ function check() {
 		<div class="heading_container">	
 			<h2>LOGIN</h2>
 		</div>
+		
 	<div class="row">
 
 	<div class="col-md-6">
-	
-	
 	</div>
-	<form action="./index" method="post"  name="loginform"  onSubmit="return check()">
-        <div class="col-md-6">
-          <div class="form_container">
+	
+	<form action="./login" method="post"  name="loginform"  onSubmit="return check()">
+        	<div class="col-md-6">
+          		<div class="form_container">
             
             	<div>
                		 <input type="text" class="form-control" placeholder="ID" name="id" size="100"/>
@@ -95,14 +95,23 @@ function check() {
 				
 		   </div>
          </div>
-
-		 </form>
-		 <button  onclick="location.href='./joinForm'">
+	</form>	
+	</div>
+</section>
+<section class="book_section layout_padding" >
+    <div class="container">
+		<div class="heading_container">	
+			<h2>JOIN</h2>
+		</div>
+	<div class="row">
+	<div class="col-md-6">
+		<div class="form_container">
+			<button  onclick="location.href='./joinForm'">
                 		  Join
-               		</button>
-
-      </div>
-    </div>
+            </button>
+		 </div>
+    </div>   		
+   	</div>	 
 </section>
 <!-- end login section -->
 

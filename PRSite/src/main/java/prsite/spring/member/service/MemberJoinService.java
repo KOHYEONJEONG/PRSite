@@ -53,4 +53,10 @@ public class MemberJoinService implements IMemberService {
 				
 	}
 
+	@Override
+	public boolean getResult() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

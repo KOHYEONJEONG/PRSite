@@ -69,6 +69,15 @@ function check_id(){ //아이디 중복 체크 **추가 수정 필요**
 		//window.open(ref,"checkID",'top=200px, left=500px,width=300,height=200,status=no');
 	}
 }
+
+function display(){
+	document.getElementById("influencerInfo").style.display = "block";
+}
+
+function display2(){
+	document.getElementById("influencerInfo").style.display = "none";
+}
+
 </script>
 
 </head>
@@ -98,25 +107,26 @@ function check_id(){ //아이디 중복 체크 **추가 수정 필요**
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15 placeholder="영숫자 최대 15글자" pattern="^[0-9a-zA-Z]{1,15}$">
 					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20 pattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_-+=[]{}~?:;`|/]).{15,20}$"">  
 					닉네임  <input type="text" name="nickname" class="form-control" size=10 pattern="^.{1,10}">
-					일반 회원 <input type="radio" name="influyn" value="n" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y"></br>
+					일반 회원 <input type="radio" name="influyn" value="n" onclick="display2()" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y" onclick="display()"></br>
 				</fieldset>
 				<br>
 				</br>
-				<fieldset > <legend> 추가 인플루언서 정보 </legend>
-					카테고리  <select name="category" class="form-control nice-select wide">
-							<option value="fashion_beauty"> 패션 </option>
-							<option value="food"> 요리 </option>
-							<option value=daily> 일상 </option>
-							<option value="pet"> 반려동물 </option>
-					    </select><br>
-					소개 </br><textarea rows="3" cols="50" name="info" class="form-control" placeholder="소개를 짧게 적어주세요~"> </textarea><br>
-					인스타그램 주소  <input type="text" class="form-control" name="instagram" size=30><br>
-					유튜브 주소  <input type="text" class="form-control" name="youtube" size=30><br>
-					인스타그램 구독자 수  <input type="text" class="form-control" name="instsubs" size=30><br>
-					유튜브 구독자 수  <input type="text" class="form-control" name="ytsubs" size=30><br>
-						
-				</fieldset>	
-				
+				<div id="influencerInfo" style="display:none">
+					<fieldset > <legend> 추가 인플루언서 정보 </legend>
+						카테고리  <select name="category" class="form-control nice-select wide">
+								<option value="fashion_beauty"> 패션 </option>
+								<option value="food"> 요리 </option>
+								<option value=daily> 일상 </option>
+								<option value="pet"> 반려동물 </option>
+						    </select><br>
+						소개 </br><textarea rows="3" cols="50" name="info" class="form-control" placeholder="소개를 짧게 적어주세요~"> </textarea><br>
+						인스타그램 주소  <input type="text" class="form-control" name="instagram" size=30><br>
+						유튜브 주소  <input type="text" class="form-control" name="youtube" size=30><br>
+						인스타그램 구독자 수  <input type="text" class="form-control" name="instsubs" size=30><br>
+						유튜브 구독자 수  <input type="text" class="form-control" name="ytsubs" size=30><br>
+							
+					</fieldset>	
+				</div>
 					<br>
 
 					<div class="btn_box">

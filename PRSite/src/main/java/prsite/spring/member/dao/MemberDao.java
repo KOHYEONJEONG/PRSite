@@ -81,7 +81,10 @@ public class MemberDao implements IMemberDao {
 		String query = "select pwd from member where id ='" + id + "'";
 		String password = this.template.queryForObject(query, String.class);
 		
-		if (password.equals(password) ) return true;
+		System.out.println("============DB:memberLogin=========");
+		System.out.println("password="+password);
+		System.out.println("password="+password.equals(password));
+		if (pwd.equals(password) ) return true;
 		else return false;
 	}
 	

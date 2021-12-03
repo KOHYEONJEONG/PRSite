@@ -75,7 +75,7 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
               
-              <a href="" class="order_online">
+              <a href="Logout" class="order_online">
                 로그아웃
               </a>
             </div>

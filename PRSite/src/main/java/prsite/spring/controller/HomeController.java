@@ -73,6 +73,12 @@ public class HomeController {
 	 * System.out.println("----index----"); return "index"; }
 	 */
 	
+	@RequestMapping("/Logout")
+	public String Logout(Model model) {
+		System.out.println("----Logout----");
+		return "Logout";
+	}
+	
 	@RequestMapping("/menu")
 	public String menu(Model model) {
 		System.out.println("----menu----");
@@ -91,6 +97,7 @@ public class HomeController {
 		return "book";
 	}
 	
+	/**/
 	@RequestMapping("/loginpage")
 	public String loginpage(Model model) {
 		System.out.println("----login page----");

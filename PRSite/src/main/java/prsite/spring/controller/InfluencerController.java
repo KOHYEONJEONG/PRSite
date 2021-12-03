@@ -58,8 +58,6 @@ public class InfluencerController {
 		service = new InfluencerNewsAllService();//수정
 		service.execute(model);
 		
-		System.out.println("----home----");
-		
 		return "index";//메인화면
 	}
 	

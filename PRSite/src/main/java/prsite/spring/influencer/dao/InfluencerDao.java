@@ -82,6 +82,7 @@ public class InfluencerDao implements IInfluencerDao {
 		});
 	}
 
+	//랭킹-------------------------------------------
 	@Override
 	public ArrayList<InfluencerDto> influencerInstaRanking() {
 		// 인스타그램 구독자수 기준
@@ -99,7 +100,7 @@ public class InfluencerDao implements IInfluencerDao {
 		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
 		return dtos;
 	}
-
+	//---------------------------------------------
 	@Override
 	public InfluencerDto influencerSearch(String search) {
 		String query = "select * from influencer where id like '" + search + "'";

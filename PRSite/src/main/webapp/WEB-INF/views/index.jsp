@@ -41,42 +41,42 @@
  </style>
 
 
-<c:set var="isLogin" value="${isLogin}"/>
-<c:set var="LoginID" value="${LoginID}"/>
  <%
-	String isLogin = request.getParameter("isLogin");
- 	String LoginID = request.getParameter("LoginID");
+	boolean isLogin = false;
  	String Menu = "include/HeaderSection.jsp";
+ 	String LoginID = (String) session.getAttribute("LoginID");
+ 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
  	
- 	if(isLogin!=null && LoginID!=null){
- 		System.out.println("isLogin=="+isLogin);
- 		System.out.println("LoginID=="+LoginID);
- 		
- 		if(isLogin.equals("true")){
- 			System.out.println("isLogin==true");
-			 // 로그인 성공 : id 세션 저장 - header변경
-			session.setAttribute("LoginID", LoginID);
-			System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-			Menu = "include/HeaderSection2.jsp";
-		}
-		else{
-			Menu = "include/HeaderSection.jsp";
-		}
+ 	if( LoginID!=null){
+ 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
+		isLogin=true;
+	}
+ 	else
+ 	{
+ 		isLogin=false;
  	}
- 	
+ 		
+ 	if(isLogin){
+			System.out.println("isLogin==true");
+		Menu = "include/HeaderSection2.jsp";
+	}
+	else{
+		Menu = "include/HeaderSection.jsp";
+	}
+	
  %>
 
-	<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
-	<script type="text/javascript">
-	function check() {
-		   if(document.searchbar.search.value==""){
-		      alert("검색어를 입력하세요.");
-		      document.searchbar.search.focus();
-		      return false;
-		   }
-		   else {return true;}
-		}
-	</script>
+<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+<script type="text/javascript">
+function check() {
+	if(document.searchbar.search.value==""){
+		alert("검색어를 입력하세요.");
+		document.searchbar.search.focus();
+		return false;
+	}
+	else {return true;}
+}
+</script>
 
 </head>
 
@@ -188,9 +188,10 @@
 	<!-- 검색창 -->
 	<div class="form_container" align="center">
 	<form method=get action="./InfluencerSearch" name="searchbar"  onSubmit="return check()">
-      <input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50" id="search"/>
-      <button type="submit" id="sbutton"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
-   </form>
+
+		<input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50" id="search"/>
+		<button type="submit" id="sbutton"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
+	</form>
 	</div>
 	<div>
 	</div>

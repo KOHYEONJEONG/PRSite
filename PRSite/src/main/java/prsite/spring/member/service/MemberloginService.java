@@ -3,6 +3,7 @@ package prsite.spring.member.service;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
@@ -35,6 +36,9 @@ public class MemberloginService implements IMemberService {
 			model.addAttribute("LoginID",id);
 			System.out.println("isLogin==" + result);
 			//out.println("<script>alert(로그인성공);</script>");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("LoginID", id);
 		}else {
 			model.addAttribute("isLogin",result);
 			System.out.println("isLogin==" +result);

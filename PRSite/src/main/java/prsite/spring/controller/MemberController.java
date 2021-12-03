@@ -54,10 +54,8 @@ public class MemberController {
 		model.addAttribute("request",request);
 		service = new MemberloginService();
 		service.execute(model);
-		
 		boolean result = service.getResult();
 		System.out.println("-result = " + result);
-		
 		if(result) {
 			System.out.println("---------redirect:index-----------");
 			return "redirect:index";//로그인되면 메인페이지로 이동
@@ -145,12 +143,12 @@ public class MemberController {
 	//구독 취소
 	@RequestMapping("/SubCancel")
 	public void SubCancel(HttpServletRequest request, Model model) {
-		System.out.println("-----------subscribeCancel()-----------");
+		System.out.println("-----------subscribeInsert()-----------");
 		SubService = new SubscribeCancelService();
 		SubService.execute(model);
 	}
 	
-	 
+
 	
 	
 	

@@ -68,7 +68,7 @@
 						
 						<td>
 							${dto.id}<br>
-							${dto.cat }<br>
+							${dto.cat}<br>
 							${dto.info}<br>
 							YoutubeSNS : ${dto.youtube}
 							<a href="">인스타그램</a>, <a href="">트위터</a>, <a href="">유튜브</a>

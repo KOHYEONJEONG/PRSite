@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import prsite.spring.influencer.service.IInfluencerService;
 import prsite.spring.influencer.service.InfluencerFashion_BeautyService;
 import prsite.spring.influencer.service.InfluencerNewsAllService;
@@ -86,11 +88,11 @@ public class InfluencerController {
 	}
 	
 	//카테고리별 IN버튼 누르면 해당 ID인플루언서 정보 보여지기
-	@RequestMapping("/profile")
+	@RequestMapping(value="/profile", method=RequestMethod.GET)
 	public String profile(Model model, HttpServletRequest request) {
-		//ID 가져오기
-		service = new InfluencerProfileService();
 		System.out.println("----profile page----");
+		service = new InfluencerProfileService();
+		service.execute(model);
 		return "profile";
 	}
 	

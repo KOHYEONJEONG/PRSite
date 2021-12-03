@@ -53,7 +53,8 @@ public class InfluencerDao implements IInfluencerDao {
 
 	@Override
 	public void InfluencerUpdate(final InfluencerDto influencer) {
-		String query = "update influencer set id=?, cat=?, info=?, instagram=? youtube=?, subscnt=?, instsubs=?, ytbsubs=? where id=?";
+		//이슈 : 기존에 id랑 홍보사이트 구독자 수도 변경할 수 있게 되어서 지웠음!
+		String query = "update influencer set cat=?, info=?, instagram=? youtube=?, instsubs=?, ytbsubs=? where id=?";
 		this.template.update(query,new PreparedStatementSetter(){
 			@Override
 			public void setValues(PreparedStatement preparedStatement) throws SQLException {

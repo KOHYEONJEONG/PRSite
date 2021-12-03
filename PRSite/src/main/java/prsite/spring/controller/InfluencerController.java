@@ -47,6 +47,7 @@ public class InfluencerController {
 	}
 	
 	
+	
 	//index.jsp(메인화면)-----------------------------------------------------------------------------
 	//구독자수 추천
 	@RequestMapping("index")

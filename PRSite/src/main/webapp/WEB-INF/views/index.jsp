@@ -66,17 +66,17 @@
  	
  %>
 
-<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
-<script type="text/javascript">
-function check() {
-	if(document.getElementById("search").value == ""){
-		alert("검색어를 입력하세요.");
-		document.getElementById("search").focus();
-		return false;
-	}
-	else {return true;}
-}
-</script>
+	<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+	<script type="text/javascript">
+	function check() {
+		   if(document.searchbar.search.value==""){
+		      alert("검색어를 입력하세요.");
+		      document.searchbar.search.focus();
+		      return false;
+		   }
+		   else {return true;}
+		}
+	</script>
 
 </head>
 
@@ -187,10 +187,10 @@ function check() {
 	</br>
 	<!-- 검색창 -->
 	<div class="form_container" align="center">
-	<form action="InfluencerSearch">
-		<input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50" id="search"/>
-		<button type="submit" id="sbutton" onclick="check()"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
-	</form>
+	<form method=get action="./InfluencerSearch" name="searchbar"  onSubmit="return check()">
+      <input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50" id="search"/>
+      <button type="submit" id="sbutton"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
+   </form>
 	</div>
 	<div>
 	</div>

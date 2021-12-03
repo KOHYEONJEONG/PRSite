@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Modify </title>
+  <title> Modify Info </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -36,11 +36,6 @@
 <script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
 <script type="text/javascript">
 function check_form(){
-	if (document.ModiInfo.id.value =="") {
- 		alert("아이디를 입력하세요.");
-  		document.ModiInfo.id.focus();
-  		return;
-	}
 
 	if (document.ModiInfo.pwd.value =="") {
  		alert("비밀번호를 입력하세요.");
@@ -84,41 +79,46 @@ function display2(){
     <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
-		<h2 align="left">&nbsp;Modify</h2>	</br>
+		<h2 align="left">&nbsp;Modify Info</h2>	</br>
 	  </div>		
 	  <div class="row">
         <div class="col-md-6">
           <div class="form_container">			
-				<form method=post action="ModiInfo" name=ModiInfo>
+				
+				<!-- FORM -->
+				<form method=post action="MemberModify" name="ModiInfo">
 				<fieldset><legend>기본정보</legend>
-					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15 placeholder="abc123">
-					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20 placeholder="102030">  
-					닉네임  <input type="text" name="nickname" class="form-control" size=10 placeholder="수영장갈매기">
+					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" value="${userProfile.id}" name="id" size=15 readonly>
+					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" value=" ${userProfile.pwd}" name="pwd" class="form-control" size=20>  
+					닉네임  <input type="text" name="nickname" value=" ${userProfile.name}" class="form-control" size=10 placeholder="수영장갈매기">
 					일반 회원 <input type="radio" name="influyn" value="n" onclick="display2()" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y" onclick="display()"></br>
 				</fieldset>
 				<br>
 				</br>
 				
 				<div id="influencerInfo" style="display:none">
-				<fieldset > <legend> 추가 인플루언서 정보 </legend>
+				<fieldset > 
+				기존 카테고리 <input class="form-control" value="${influencerProfile.cat}" name="after_cat" size=15  readonly >
+				<legend>인플루언서 카테고리 수정 </legend>
 					카테고리  <select name="category" class="form-control nice-select wide">
-							<option value="fashion_beauty"> 패션 </option>
+							<option value="fashion_beauty"> 패션&뷰티 </option>
 							<option value="food"> 요리 </option>
 							<option value=daily> 일상 </option>
 							<option value="pet"> 반려동물 </option>
 					    </select><br>
-					소개 </br><textarea rows="3" cols="50" name="info" class="form-control" placeholder="소개를 짧게 적어주세요~"> </textarea><br>
-					인스타그램 주소  <input type="text" class="form-control" name="instagram" size=30><br>
-					유튜브 주소  <input type="text" class="form-control" name="youtube" size=30><br>
-					인스타그램 구독자 수  <input type="text" class="form-control" name="instsubs" size=30><br>
-					유튜브 구독자 수  <input type="text" class="form-control" name="ytsubs" size=30><br>
+					    
+					자기소개 </br><textarea rows="3" cols="50" name="info" class="form-control" > ${influencerProfile.info}</textarea><br>
+					인스타그램 주소  <input type="text" value="${influencerProfile.instagram}"  class="form-control" name="instagram" size=30><br>
+					유튜브 주소  <input type="text" value=" ${influencerProfile.youtube}" class="form-control" name="youtube" size=30><br>
+					인스타그램 구독자 수  <input type="text" class="form-control" value="${influencerProfile.instsubs}" name="instsubs" size=30><br>
+					유튜브 구독자 수  <input type="text" class="form-control" value="${influencerProfile.ytbsubs}" name="ytsubs" size=30><br>
 						
 				</fieldset>	
 				</div>
 					<br>
 
 					<div class="btn_box">
-						<button type="submit" form="ModiInfo" onclick='check_form()'>
+						<button type="submit" onclick='check_form()'>
 							수정하기
 						</button>
 						<button type="reset">
@@ -126,6 +126,9 @@ function display2(){
 						</button>
 					</div>
 				</form>
+				
+				
+				
 			</div>
 		  </div>
 		</div>

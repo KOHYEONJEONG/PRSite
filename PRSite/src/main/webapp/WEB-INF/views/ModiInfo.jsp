@@ -48,8 +48,6 @@ function check_form(){
   		document.ModiInfo.nickname.focus();
   		return;
 	}
-	
-	document.ModiInfo.submit();
 }
 
 function display(){
@@ -61,7 +59,30 @@ function display2(){
 }
 
 </script>
-
+<%
+	boolean isLogin = false;
+ 	String Menu = "include/HeaderSection.jsp";
+ 	String LoginID = (String) session.getAttribute("LoginID");
+ 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
+ 	
+ 	if( LoginID!=null){
+ 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
+		isLogin=true;
+	}
+ 	else
+ 	{
+ 		isLogin=false;
+ 	}
+ 		
+ 	if(isLogin){
+			System.out.println("isLogin==true");
+		Menu = "include/HeaderSection2.jsp";
+	}
+	else{
+		Menu = "include/HeaderSection.jsp";
+	}
+	
+ %>
 </head>
 
 <body class="sub_page">
@@ -70,8 +91,8 @@ function display2(){
     <div class="bg-box">
       <img src="/project/resources/images/hero-bg.jpg" alt="">
     </div>
-    <!-- header section strats -->
-    	<jsp:include page="include/HeaderSection.jsp" flush="false" />
+    <!-- header section starts -->
+    	<jsp:include page="<%= Menu %>" flush="false" />
     <!-- end header section -->
   </div>
     
@@ -86,7 +107,7 @@ function display2(){
           <div class="form_container">			
 				
 				<!-- FORM -->
-				<form method=post action="MemberModify" name="ModiInfo">
+				<form method=post action="MemberModify" name="ModiInfo" onSubmit="return check_form()">
 				<fieldset><legend>기본정보</legend>
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" value="${userProfile.id}" name="id" size=15 readonly>
 					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" value=" ${userProfile.pwd}" name="pwd" class="form-control" size=20>  
@@ -118,7 +139,7 @@ function display2(){
 					<br>
 
 					<div class="btn_box">
-						<button type="submit" onclick='check_form()'>
+						<button type="submit">
 							수정하기
 						</button>
 						<button type="reset">

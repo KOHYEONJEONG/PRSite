@@ -102,6 +102,8 @@ function display2(){
 	  <div class="row">
         <div class="col-md-6">
           <div class="form_container">			
+				
+				
 				<form method=post action="MemberJoin" name="joinform" onSubmit="return check_form()">
 				<fieldset><legend>기본정보</legend>
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15 placeholder="영숫자 최대 15글자" pattern="^[0-9a-zA-Z]{6,15}$">
@@ -134,6 +136,8 @@ function display2(){
 						<input type="reset" value="초기화" class="btn" >
 					</div>
 				</form>
+				
+				
 			</div>
 		  </div>
 		</div>

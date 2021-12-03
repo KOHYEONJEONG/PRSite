@@ -1,6 +1,7 @@
 package prsite.spring.influencer.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,8 @@ public class InfluencerRelCatService implements IInfluencerService {
 	
 	@Override
 	public void execute(Model model) {
+		ArrayList<HashMap<String, String>> hashlist = new ArrayList<HashMap<String, String>>();
+		
 		Map<String, Object>map = model.asMap(); //model°´Ã¼¸¦ mapÇüÅÂ·Î ¹Ù²Þ
 
 		HttpServletRequest request = (HttpServletRequest)map.get("request");

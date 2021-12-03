@@ -17,7 +17,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Influencer Recommend Site </title>
+  <title> My Profile </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -79,7 +79,7 @@ function display(){
         <div class="col-md-6">
         <div class="form_container">
         
-        <form action="ModiInfo">
+        <form action="ModiInfo" name="Info">
           	<table cellpadding="30px">
           		<tr>
           			<td width="300" height="70" bgcolor="whitesmoke">
@@ -117,9 +117,7 @@ function display(){
           		</tr>
           	</table>
           	
-          	</br>
-          	<button onclick="display()">인플루언서 정보 보기</button>
-          	</br></br></br></br>
+     		<br/>
           	
           	<div id="influencerInfo"  style="display:none">
           	<table cellpadding="30px">
@@ -182,13 +180,18 @@ function display(){
           		
           	</table>
           	</div>
-            </br> 	
+            </br> 
+            	
 			<div class="btn_box">
 					<button type="submit">
 						수정하기
 					</button>
+			
 			</div>
-		  	 </form>	
+		  </form>
+		  	
+				<button onclick="display()">인플루언서 정보 보기</button>
+					
         <div class="col-md-6">
           
         </div>

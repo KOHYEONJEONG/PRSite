@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -48,7 +50,7 @@
   </div>
   
   	<!-- profile section -->
-		<table align="center" width="1000">	
+		<table align="center" width="1000">
 			<tr>
 				<td>
 					
@@ -60,14 +62,19 @@
 					<tr>
 						<td align="center">
 							<img src="resources/img/rozy.jpg" width="300" height="300">
-						</td>			
+						</td>
+									
+					<c:forEach items="${dto}" var="dto">	
+						
 						<td>
-							김패피 @dddd<br>
-							패션<br>
-							안녕하세요 김패피입니다<br>
-							SNS :
+							${dto.id}<br>
+							${dto.cat }<br>
+							${dto.info}<br>
+							YoutubeSNS : ${dto.youtube}
 							<a href="">인스타그램</a>, <a href="">트위터</a>, <a href="">유튜브</a>
 						</td>
+						
+						</c:forEach>
 					</tr>
 				</table>
 				<hr>

@@ -32,4 +32,6 @@ public interface IInfluencerDao {
 	
 	//인플루언서 프로필 가져오기
 	InfluencerDto influencerProfile(String id);
+
+	ArrayList<InfluencerDto> influencerCat(String cat);
 }

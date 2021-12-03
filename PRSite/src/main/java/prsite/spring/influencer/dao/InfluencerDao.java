@@ -122,6 +122,8 @@ public class InfluencerDao implements IInfluencerDao {
 		ArrayList<InfluencerDto>dtos = null;
 		String query = "select * from ( select * from influencer where cat like '" + cat +"' order by memsince desc) where rownum<=5"; //상위 10
 		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
+		System.out.println("influencerNews() : "+dtos.size());
+		System.out.println("influencerNews() : "+dtos.get(0).getId());
 		return dtos;
 	}
 	
@@ -135,6 +137,14 @@ public class InfluencerDao implements IInfluencerDao {
 	}
 
 	@Override
+	public ArrayList<InfluencerDto> influencerCat(String cat) {//현정 만듬. 카테고리별로 해당하는 인플루언서만 전체
+		ArrayList<InfluencerDto> dtos = null;
+		String query = "select * from influencer where cat = '"+ cat +"'"; // 랜덤 정렬
+		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
+		return dtos;
+	}
+	
+	@Override
 	public ArrayList<InfluencerDto> influencerRelCat(String cat) {
 		ArrayList<InfluencerDto> dtos = null;
 		String query = "select * from ( select * from influencer where cat like '" + cat + "' order by DBMS_RANDOM.RANDOM) where rownum<=10"; // 랜덤 정렬
@@ -142,7 +152,7 @@ public class InfluencerDao implements IInfluencerDao {
 	}
 
 	@Override
-	public InfluencerDto influencerProfile(String id) {
+	public InfluencerDto influencerProfile(String id) {//마이페이지 + profile.jsp에 들어감.
 		String query = "select * from influencer where id ='" + id + "'";
 		InfluencerDto influencerDto = this.template.queryForObject(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
 		return influencerDto;

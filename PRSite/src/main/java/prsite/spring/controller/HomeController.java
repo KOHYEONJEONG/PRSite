@@ -129,12 +129,6 @@ public class HomeController {
 		return "daily";
 	}
 	
-	@RequestMapping("/fashion")
-	public String fashion(Model model) {
-		System.out.println("----fashion page----");
-		return "fashion";
-	}
-	
 	@RequestMapping("/ranking")
 	public String ranking(Model model) {
 		System.out.println("----ranking page----");
@@ -147,9 +141,5 @@ public class HomeController {
 		return "community";
 	}
 	
-	@RequestMapping("/profile")
-	public String profile(Model model) {
-		System.out.println("----profile page----");
-		return "profile";
-	}
+	
 }

@@ -52,7 +52,7 @@
             <ul class="navbar-nav  mx-auto ">
              
               <li class="nav-item">
-                <a class="nav-link" href="fashion">패션&뷰티</a>
+                <a class="nav-link" href="fashion" >패션&뷰티</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="cook">요리</a>

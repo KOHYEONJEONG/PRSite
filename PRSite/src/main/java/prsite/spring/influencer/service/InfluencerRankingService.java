@@ -15,10 +15,7 @@ public class InfluencerRankingService implements IInfluencerService {
 	
 	@Override
 	public void execute(Model model) {
-		Map<String, Object>map = model.asMap();
-
-		HttpServletRequest request = (HttpServletRequest)map.get("request");
-		
+				
 		InfluencerDao dao = new InfluencerDao();
 
 		ArrayList<InfluencerDto> dtos = dao.influencerInstaRanking();

@@ -40,14 +40,15 @@ public class BoardController {
 
 	
 	
-	@RequestMapping("/list") //게시판 리스트 불러오기
-	public void community(Model model) {
+	@RequestMapping("/community") //게시판 리스트 불러오기
+	public String communityList(Model model) {
 
 		//데이터만 가져와서 뿌려줌.
-		System.out.println("---------list()-----------");
+		System.out.println("---------community()-----------");
 		service = new CommunityListService();
 		service.execute(model);
-
+		
+		return "community";
 	}
 
 	
@@ -76,12 +77,12 @@ public class BoardController {
 		// Model객체를 이용해서 뷰로 값을 넘긴다.
 		model.addAttribute("request", request);//model객체(정보)는 addAttribute()를 통해 전달
 
-		service = new CommunityWriteService();//
+		service = new CommunityWriteService();
 		service.execute(model);
 
 
 		//redirect: 리다이렉트 , forward: 포워딩(생략시 얘가 기본)
-		return "redirect:list";//등록과 동시에 리스트화면으로 간다("redirect:list");.
+		return "redirect:community";//등록과 동시에 리스트화면으로 간다("redirect:list");.
 
 	}
 
@@ -119,7 +120,7 @@ public class BoardController {
 		service.execute(model);
 
 
-		return "redirect:list";//수정과 동시에 list.jsp화면으로 간다.
+		return "redirect:community";//수정과 동시에 list.jsp화면으로 간다.
 	}
 
 	
@@ -133,12 +134,12 @@ public class BoardController {
 		service = new CommunityDeleteService();
 		service.execute(model);
 
-		return "redirect:list";// event가 끝나면 list화면으로 간다.
+		return "redirect:community";// event가 끝나면 list화면으로 간다.
 	}
 
 	
 	
-	
+	/*
 	//@RequestMapping을 통해 url이 정의됨.
 	@RequestMapping("/search")
 	public String search(HttpServletRequest request, Model model) {
@@ -152,7 +153,7 @@ public class BoardController {
 
 		return "content_view";
 	}
-	
+	*/
 	
 	
 	

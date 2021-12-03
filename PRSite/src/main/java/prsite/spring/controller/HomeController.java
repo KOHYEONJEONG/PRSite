@@ -97,20 +97,6 @@ public class HomeController {
 		return "book";
 	}
 	
-	/**/
-	@RequestMapping("/loginpage")
-	public String loginpage(Model model) {
-		System.out.println("----login page----");
-		return "loginpage";
-	}
-	
-	
-	@RequestMapping("/joinForm")
-	public String joinForm(Model model) {
-		System.out.println("----join Form page----");
-		return "joinForm";
-	}
-	
 	@RequestMapping("/pet")
 	public String pet(Model model) {
 		System.out.println("----pet page----");
@@ -134,12 +120,6 @@ public class HomeController {
 		System.out.println("----ranking page----");
 		return "ranking";
 	}
-	
-	@RequestMapping("/community")
-	public String community(Model model) {
-		System.out.println("----community page----");
-		return "community";
-	}
-	
+
 	
 }

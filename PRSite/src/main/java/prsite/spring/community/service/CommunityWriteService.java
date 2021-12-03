@@ -23,18 +23,10 @@ public class CommunityWriteService implements ICommunityService {
 		String b_title = request.getParameter("b_title");
 		String b_content = request.getParameter("b_content");
 
-		
-		if(b_title.equals("") ||b_content.equals("")||b_content.equals("") ) 
-		{
-			//3개 중 하나라도 입력 안되면 저장 안됨.
-			
-			
-		}else {
-			
+	
 			CommunityDao dao = new CommunityDao();
 			dao.communityInsert(b_WriterID,b_title,b_content);
-			
-		}
+	
 	}
 
 }

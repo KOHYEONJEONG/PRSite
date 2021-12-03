@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html;
 charset=UTF-8" pageEncoding="UTF-8" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <! DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@ charset=UTF-8" pageEncoding="UTF-8" %>
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Influencer Recommend Site </title>
+  <title> Influencer Ranking </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -60,62 +62,22 @@ charset=UTF-8" pageEncoding="UTF-8" %>
   </section>
   
   <!-- fashion category section -->
-	<table align="center" width="600">	
-		<tr>
+	<table align="center" width="600">
+		
+		<tr align="center">
 			<td>순위</td>
 			<td>인플루언서</td>
 			<td>카테고리</td>
 		</tr>
-		<tr>
+		
+		<c:forEach items="${ranking}" var="ranking">
+		<tr align="center">
 			<td>1</td>
-			<td>뫄뫄</td>
-			<td>패션</td>
+			<td>${ranking.id}</td>
+			<td>${ranking.cat}</td>
 		</tr>
-		<tr>
-			<td>2</td>
-			<td>솨솨</td>
-			<td>패션</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>디디</td>
-			<td>반려동물</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>티티</td>
-			<td>반려동물</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>승우아빠</td>
-			<td>요리</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>김박사</td>
-			<td>일상</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>수리</td>
-			<td>반려동물</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>쿠킹트리</td>
-			<td>요리</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>뫄뫄</td>
-			<td>패션</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>뫄뫄</td>
-			<td>패션</td>
-		</tr>
+		</c:forEach>
+		
 	</table>
   <!-- end fashion category section -->
   

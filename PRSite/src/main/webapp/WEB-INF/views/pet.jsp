@@ -42,6 +42,30 @@
 	    border-bottom: 1px solid #DCDCDC;   
 	  }
   </style>
+ <%
+	boolean isLogin = false;
+ 	String Menu = "include/HeaderSection.jsp";
+ 	String LoginID = (String) session.getAttribute("LoginID");
+ 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
+ 	
+ 	if( LoginID!=null){
+ 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
+		isLogin=true;
+	}
+ 	else
+ 	{
+ 		isLogin=false;
+ 	}
+ 		
+ 	if(isLogin){
+			System.out.println("isLogin==true");
+		Menu = "include/HeaderSection2.jsp";
+	}
+	else{
+		Menu = "include/HeaderSection.jsp";
+	}
+	
+ %>
  
 
 </head>
@@ -52,8 +76,8 @@
     <div class="bg-box">
       <img src="/project/resources/images/Main.PNG" alt="">
     </div>
-    <!-- header section strats -->
-    	<jsp:include page="include/HeaderSection.jsp" flush="false" />
+    <!-- header section starts -->
+    	<jsp:include page="<%= Menu %>" flush="false" />
     <!-- end header section -->
   </div>
 

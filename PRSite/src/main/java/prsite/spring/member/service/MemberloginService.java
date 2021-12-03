@@ -10,6 +10,11 @@ import prsite.spring.member.dao.MemberDao;
 
 public class MemberloginService implements IMemberService {
 //로그인
+	private boolean result = false;
+	
+	public boolean getResult() {
+		return result;
+	}
 	
 	@Override
 	public void execute(Model model) {
@@ -24,10 +29,15 @@ public class MemberloginService implements IMemberService {
 		MemberDao dao = new MemberDao();
 		
 		//로그인되면 true, false 반환됨
-		boolean result = dao.memberLogin(id, pwd);
+		result = dao.memberLogin(id, pwd);
 		if(result==true) {
+			model.addAttribute("isLogin",true);
+			model.addAttribute("LoginID",id);
+			System.out.println("isLogin==" + result);
 			//out.println("<script>alert(로그인성공);</script>");
 		}else {
+			model.addAttribute("isLogin",result);
+			System.out.println("isLogin==" +result);
 			//out.println("<script>alert(로그인실패);</script>");
 		}
 		

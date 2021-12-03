@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -235,7 +236,7 @@
           All Fashion & Beauty Influencer 
         </h2>
       </div>
-
+		
       <ul class="filters_menu">
         <li class="active" data-filter="*">All</li>
         <li data-filter=".burger">인기</li>
@@ -244,254 +245,30 @@
 
       <div class="filters-content">
         <div class="row grid">
+	
+	<c:forEach items="${catAlllist}" var="catAlllist">
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">
+              
               <div>
-                <div class="img-box">
-                  <img src="https://yt3.ggpht.com/ytc/AKedOLT8Vj60HTumVYdBbtjvhqmnvBNsBc8h6Bvr6RVIPA=s176-c-k-c0x00ffffff-no-rj" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    꽁지
-                  </h5>
-                  <p>
-                    이너뷰티 엔터테이너 꽁지                  </p>
-                  <div class="options">
-                    <h6>
-                      
-                    </h6>
-                    <a href="https://www.youtube.com/c/%EA%BD%81%EC%A7%80TVkkongji">
-                      구독
-                        <g>
-                          <g>
-                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                          </g>
-                        </g>
-                        <g>
-                          <g>
-                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                          </g>
-                        </g>
-                        <g>
-                          <g>
-                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                          </g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all burger">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="https://yt3.ggpht.com/_-y5lZnmYuKwy86gheyO3fqsJP31eAOuLy-Vc08VRY4KF8wAMr27yzBAPdMWggbgkipwZPXlm-Q=s176-c-k-c0x00ffffff-no-rj" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    패션유튜버 오후니
-                  </h5>
-                  <p>
-                    그냥 옷이 좋은 패션유튜버 오후니 입니다
-                  </p>
-                  <div class="options">
-                    <h6>
-                    
-                    </h6>
-                    <a href="https://www.youtube.com/c/%ED%8C%A8%EC%85%98%EC%9C%A0%ED%8A%9C%EB%B2%84%EC%98%A4%ED%9B%84%EB%8B%88Ohuny"> 
-                      구독
-                        <g>
-                          <g>
-                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                          </g>
-                        </g>
-                        <g>
-                          <g>
-                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                          </g>
-                        </g>
-                        <g>
-                          <g>
-                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                          </g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="https://yt3.ggpht.com/ytc/AKedOLRj7JaReat7ptf4zcxiv8BMmXOk_9Zg06cA43Wq=s176-c-k-c0x00ffffff-no-rj" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    깡스타일리스트
-                  </h5>
-                  <p>
-                    관리하는 남자 스타일리스트 '깡' 입니다.
-                    #패션 #그루밍 #헤어 #브이로그         
-                  </p>
-                  <div class="options">
-                    <h6>
-                      
-                    </h6>
-                    <a href="https://www.youtube.com/channel/UC8a6z7i9qypp9PqJ_0HhBrw">
-                      구독
-                        <g>
-                          <g>
-                            <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                         c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                          </g>
-                        </g>
-                        <g>
-                          <g>
-                            <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                         C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                         c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                         C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                          </g>
-                        </g>
-                        <g>
-                          <g>
-                            <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                         c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                          </g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                        <g>
-                        </g>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-sm-6 col-lg-4 all pizza">
-            <div class="box">
-              <div>
+               
                 <div class="img-box">
                   <img src="https://yt3.ggpht.com/ytc/AKedOLRLmjWnqXw3bDwSjzKMLcY7n3sbLWiRAsqYsLEF=s176-c-k-c0x00ffffff-no-rj" alt="">
                 </div>
                 <div class="detail-box">
+                
                   <h5>
-                    승아로운               
+                    ${catAlllist.get("name")}            
                   </h5>
                   <p>
-                    배우 윤승아의 패션/뷰티/일상 이야기. 오늘도 감사하고, 사랑합니다.
+                    ${catAlllist.get("info")}  
                   </p>
                   <div class="options">
                     <h6>
                     
                     </h6>
-                    <a href="https://www.youtube.com/c/doflwl%EC%9C%A4%EC%8A%B9%EC%95%84/videos">
-                      구독
+                    <a href='./profile?Iid="+ ${catAlllist.get("id")}+"'>
+                     		 IN
                         <g>
                           <g>
                             <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
@@ -549,12 +326,15 @@
               </div>
             </div>
           </div>
+   </c:forEach>
       </div>
       <div class="btn-box">
         <a href="">
           View More
         </a>
       </div>
+      
+   
     </div>
   </section>
 

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import prsite.spring.influencer.service.IInfluencerService;
+import prsite.spring.influencer.service.InfluencerFashion_BeautyService;
+import prsite.spring.influencer.service.InfluencerNewsAllService;
 import prsite.spring.influencer.service.InfluencerNewsService;
 import prsite.spring.influencer.service.InfluencerProfileService;
 import prsite.spring.influencer.service.InfluencerRankingService;
@@ -46,25 +48,18 @@ public class InfluencerController {
 	
 	//index.jsp(메인화면)-----------------------------------------------------------------------------
 	//구독자수 추천
-	@RequestMapping("/test1")
+	@RequestMapping("index")
 	public String InfluencerRcmm(Model model) {
 		
-		System.out.println("---------InfluencerRcmm()-----------");
+		System.out.println("---------InfluencerRcmm() : /index -----------");
 		service = new InfluencerRcmmService();//수정
 		service.execute(model);
 		
-		return "redirect:index";//메인화면
-	}
-	
-	//인플루언서 신규
-	@RequestMapping("/test2")
-	public String InfluencerNews(Model model) {
-		
-		System.out.println("---------InfluencerNews()-----------");
-		service = new InfluencerNewsService();//수정
+		System.out.println("---------InfluencerNews() : /index -----------");
+		service = new InfluencerNewsAllService();//수정
 		service.execute(model);
 		
-		return "redirect:index";//메인화면
+		return "index";//메인화면
 	}
 	
 	//인플루언서 검색
@@ -78,18 +73,7 @@ public class InfluencerController {
 		return "profile";
 	}
 	
-
-	//profile.jsp(프로필 하단(추천인플루언서))----------------------------------------------------------------
-	
-	@RequestMapping("inProfile")
-	public String inProfile(Model model) {
-		service = new InfluencerProfileService();
-		service.execute(model);
-		
-		
-		return "profile";
-	}
-	
+	//--------------------------------------------------------
 	//인플루언서 연관 카테고리 추천-InfluencerRelCatService
 	@RequestMapping("/test3")
 	public String InfluencerRel(Model model) {
@@ -100,4 +84,26 @@ public class InfluencerController {
 		
 		return "redirect:index";//메인화면
 	}
+	
+	//카테고리별 IN버튼 누르면 해당 ID인플루언서 정보 보여지기
+	@RequestMapping("/profile")
+	public String profile(Model model, HttpServletRequest request) {
+		//ID 가져오기
+		service = new InfluencerProfileService();
+		System.out.println("----profile page----");
+		return "profile";
+	}
+	
+	//인플루언서 카테고리별 불러오기
+	@RequestMapping("/fashion")
+	public String fashion(Model model) {
+		
+		System.out.println("---------fashion()-----------");
+		service = new InfluencerFashion_BeautyService();//수정
+		service.execute(model);
+		
+		return "fashion";//메인화면
+	}
+	
+	
 }

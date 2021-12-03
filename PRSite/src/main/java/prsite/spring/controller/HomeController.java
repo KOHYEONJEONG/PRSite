@@ -13,6 +13,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import prsite.spring.influencer.service.IInfluencerService;
+import prsite.spring.influencer.service.InfluencerNewsAllService;
+import prsite.spring.influencer.service.InfluencerNewsService;
+import prsite.spring.influencer.service.InfluencerRcmmService;
 import prsite.spring.util.ConstantTemplate;
 
 /**
@@ -20,6 +24,8 @@ import prsite.spring.util.ConstantTemplate;
  */
 @Controller
 public class HomeController {
+	
+	IInfluencerService service;//인플루언서
 	
 	/* JdbcTemplate */
 	public JdbcTemplate template;
@@ -38,14 +44,14 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		System.out.println("---------InfluencerRcmm()-----------");
+		service = new InfluencerRcmmService();//수정
+		service.execute(model);
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+		System.out.println("---------InfluencerNews()-----------");
+		service = new InfluencerNewsAllService();//수정
+		service.execute(model);
 		
 		System.out.println("----home----");
 		return "index";
@@ -67,6 +73,12 @@ public class HomeController {
 	 * System.out.println("----index----"); return "index"; }
 	 */
 	
+	@RequestMapping("/Logout")
+	public String Logout(Model model) {
+		System.out.println("----Logout----");
+		return "Logout";
+	}
+	
 	@RequestMapping("/menu")
 	public String menu(Model model) {
 		System.out.println("----menu----");
@@ -85,28 +97,18 @@ public class HomeController {
 		return "book";
 	}
 	
+	/**/
 	@RequestMapping("/loginpage")
 	public String loginpage(Model model) {
 		System.out.println("----login page----");
 		return "loginpage";
 	}
 	
-	@RequestMapping("/index")
-	public String index(Model model) {
-		System.out.println("----index page----");
-		return "index";
-	}
 	
 	@RequestMapping("/joinForm")
 	public String joinForm(Model model) {
 		System.out.println("----join Form page----");
 		return "joinForm";
-	}
-	
-	@RequestMapping("/mypage")
-	public String mypage(Model model) {
-		System.out.println("----my page----");
-		return "mypage";
 	}
 	
 	@RequestMapping("/pet")
@@ -127,12 +129,6 @@ public class HomeController {
 		return "daily";
 	}
 	
-	@RequestMapping("/fashion")
-	public String fashion(Model model) {
-		System.out.println("----fashion page----");
-		return "fashion";
-	}
-	
 	@RequestMapping("/ranking")
 	public String ranking(Model model) {
 		System.out.println("----ranking page----");
@@ -145,9 +141,5 @@ public class HomeController {
 		return "community";
 	}
 	
-	@RequestMapping("/profile")
-	public String profile(Model model) {
-		System.out.println("----profile page----");
-		return "profile";
-	}
+	
 }

@@ -19,12 +19,15 @@ public class InfluencerProfileService implements IInfluencerService {
 
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		
+		
+		String Iid = request.getParameter("Iid");//선택한 인플루언서 ID
+		
+		System.out.println("Select InfluencerID = "+Iid);
+		
 		InfluencerDao dao = new InfluencerDao();
-		
-		String ino = request.getParameter("in_no");//검색기능
-		
-		InfluencerDto dto = dao.influencerProfile(ino);
-
+		InfluencerDto dto = dao.influencerProfile(Iid);//IN버튼을 누르면 해당 인플루언서 ID가 넘어감.
+	
+		model.addAttribute("dto", dto);
 		
 	}
 

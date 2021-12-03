@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html>
 
@@ -59,7 +61,6 @@
 
 	<!-- my page section -->
 
-
   <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
@@ -77,7 +78,7 @@
           				 아이디
           			</td>
           			<td width="500">
-          				 abc123
+          				 ${userProfile.id}
           			</td>          			
           		</tr>
           		<tr>
@@ -85,7 +86,7 @@
           				 비밀번호
           			</td>
           			<td width="500">
-          				 102030
+          				 ${userProfile.pwd}
           			</td>          			
           		</tr>
           		<tr>
@@ -93,7 +94,7 @@
           				 이름
           			</td>
           			<td width="500">
-          				 수영장갈매기
+          				 ${userProfile.name}
           			</td>          			
           		</tr>
           		<tr>
@@ -118,7 +119,7 @@
           				 카테고리
           			</td>
           			<td width="500">
-          				 요리
+          				  ${influencerProfile.cat}
           			</td>          			
           		</tr>
           		<tr>
@@ -126,7 +127,7 @@
           				 정보
           			</td>
           			<td width="500">
-          				 안녕하세요 수영장갈매기 입니다.
+          				  ${influencerProfile.info}
           			</td>          			
           		</tr>
           		<tr>
@@ -134,7 +135,7 @@
           				 인스타그램 주소
           			</td>
           			<td width="500">
-          				 https://
+          				 ${influencerProfile.instagram}
           			</td>          			
           		</tr>
           		<tr>
@@ -142,7 +143,7 @@
           				 유튜브 주소
           			</td>
           			<td width="500">
-          				 https://
+          				 ${influencerProfile.youtube}
           			</td>          			
           		</tr>
           		<tr>
@@ -150,7 +151,7 @@
           				 사이트 내 구독자
           			</td>
           			<td width="500">
-          				 2,159,415 명
+          				${influencerProfile.subscnt} 명
           			</td>          			
           		</tr>
           		<tr>
@@ -158,7 +159,7 @@
           				 인스타그램 팔로워
           			</td>
           			<td width="500">
-          				 1,846,455 명
+          				 ${influencerProfile.instsubs} 명
           			</td>          			
           		</tr>
           		<tr>
@@ -166,7 +167,7 @@
           				 유튜브 구독자
           			</td>
           			<td width="500">
-          				 1,547,832 명
+          				${influencerProfile.ytbsubs} 명
           			</td>          			
           		</tr>
           		

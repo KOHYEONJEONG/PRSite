@@ -54,8 +54,18 @@ public class MemberController {
 		model.addAttribute("request",request);
 		service = new MemberloginService();
 		service.execute(model);
-
-		return "redirect:index";//로그인되면 메인페이지로 이동
+		
+		boolean result = service.getResult();
+		System.out.println("-result = " + result);
+		
+		if(result) {
+			System.out.println("---------redirect:index-----------");
+			return "redirect:index";//로그인되면 메인페이지로 이동
+		}
+		else {
+			System.out.println("---------redirect:index-----------");
+			return "loginpage";
+		}
 	}
 	
 	
@@ -88,7 +98,7 @@ public class MemberController {
 	
 	
 	//회원 정보 가져오기
-	@RequestMapping("/MemberProfile")
+	@RequestMapping("mypage")
 	public String MemberProfile(HttpServletRequest request, Model model) {
 		System.out.println("---------MemberProfile()-----------");
 		
@@ -96,7 +106,7 @@ public class MemberController {
 		service = new MemberProfileService();
 		service.execute(model);
 		
-		return  "MemberProfile";//일반사용자 '마이페이지' 화면.
+		return  "mypage";//일반사용자 '마이페이지' 화면.
 	}
 	
 	//회원 정보 수정
@@ -135,12 +145,12 @@ public class MemberController {
 	//구독 취소
 	@RequestMapping("/SubCancel")
 	public void SubCancel(HttpServletRequest request, Model model) {
-		System.out.println("-----------subscribeInsert()-----------");
+		System.out.println("-----------subscribeCancel()-----------");
 		SubService = new SubscribeCancelService();
 		SubService.execute(model);
 	}
 	
-
+	 
 	
 	
 	

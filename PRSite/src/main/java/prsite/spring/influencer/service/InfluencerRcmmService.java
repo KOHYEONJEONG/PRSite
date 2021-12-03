@@ -16,6 +16,7 @@ public class InfluencerRcmmService implements IInfluencerService {
 		ArrayList<InfluencerDto> dtos = influencerDao.influencerRcmm();
 		model.addAttribute("rcmmlist", dtos);
 
+		
 	}
 
 }

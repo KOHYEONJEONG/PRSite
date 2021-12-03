@@ -184,7 +184,7 @@ function display(){
           	</div>
             </br> 	
 			<div class="btn_box">
-					<button type="submit" form="updateForm">
+					<button type="submit">
 						수정하기
 					</button>
 			</div>

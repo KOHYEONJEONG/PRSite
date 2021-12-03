@@ -74,21 +74,52 @@
 					
 					</tr>
 				</table>
-				<hr>
-				<table border="1" bordercolor="#481968" style="border-collapse:collapse;">
-						<tr>
-							<h3>추천 인플루언서</h3>
-						</tr>
-						<tr>
-							<td>
-												
-							</td>
-						</tr>
-				</table>
+				
 			</tr>
 		</table>
+
 	<!-- end profile section -->
   <!-- end fashion category section -->
+  
+  <hr>
+  
+   <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h1>
+          	연관 인플루언서
+        </h1>
+      </div>
+      <div class="carousel-wrap row ">
+        <div class="owl-carousel client_owl-carousel">
+        
+        <c:forEach items="${relcatlist}" var="relcatlist">
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  ${relcatlist.get("info")}
+                </p>
+                <h6>
+                 ${relcatlist.get("name")}
+                </h6>
+                <p>
+                  
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="https://yt3.ggpht.com/ytc/AKedOLSn6fUg07YNkDHwhn8ioE_7E6fM63TFwNFMDp0d=s900-c-k-c0x00ffffff-no-rj" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+         </c:forEach>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+  
   
   <!-- footer section -->
   	<jsp:include page="include/FooterSection.jsp" flush="false" />

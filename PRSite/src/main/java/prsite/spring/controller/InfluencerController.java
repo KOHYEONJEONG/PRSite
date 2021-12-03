@@ -105,11 +105,22 @@ public class InfluencerController {
 	public String fashion(Model model) {
 		
 		System.out.println("---------fashion()-----------");
-		service = new InfluencerFashion_BeautyService();//수정
+		service = new InfluencerFashion_BeautyService();
 		service.execute(model);
 		
 		return "fashion";//메인화면
 	}
 	
+	//인플루언서 누르면 profile에 연관 인플루언서 뜨기
+	@RequestMapping("/relationInf")
+	public String relationInf(HttpServletRequest request, Model model) {
+		
+		System.out.println("---------relationInf()-----------");
+		model.addAttribute("request",request);
+		service = new InfluencerRelCatService();//수정
+		service.execute(model);
+		
+		return "profile";//메인화면
+	}
 	
 }

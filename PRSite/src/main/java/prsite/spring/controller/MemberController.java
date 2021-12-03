@@ -59,7 +59,7 @@ public class MemberController {
 	@RequestMapping("/joinForm")
 	public String joinForm(Model model) {
 		System.out.println("----joinForm page----");
-		return "loginpage";
+		return "joinForm";
 	}
 
 	

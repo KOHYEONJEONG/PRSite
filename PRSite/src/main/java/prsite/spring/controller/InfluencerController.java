@@ -88,10 +88,12 @@ public class InfluencerController {
 	}
 	
 	//카테고리별 IN버튼 누르면 해당 ID인플루언서 정보 보여지기
-	@RequestMapping(value="/profile", method=RequestMethod.GET)
-	public String profile(Model model, HttpServletRequest request) {
+	@RequestMapping("/profile")
+	public String profile(HttpServletRequest request, Model model) {
 		System.out.println("----profile page----");
 		service = new InfluencerProfileService();
+		
+		model.addAttribute("request",request);
 		service.execute(model);
 		return "profile";
 	}

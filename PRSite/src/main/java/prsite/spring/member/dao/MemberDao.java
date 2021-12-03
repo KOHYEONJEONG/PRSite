@@ -52,11 +52,10 @@ public class MemberDao implements IMemberDao {
 		this.template.update(query,new PreparedStatementSetter(){
 			@Override
 			public void setValues(PreparedStatement preparedStatement) throws SQLException {
-				preparedStatement.setString(1, member.getId());
-				preparedStatement.setString(2, member.getPwd());
-				preparedStatement.setString(3, member.getInfluyn());
-				preparedStatement.setString(4, member.getName());
-				preparedStatement.setString(5, member.getId());
+				preparedStatement.setString(1, member.getPwd());
+				preparedStatement.setString(2, member.getInfluyn());
+				preparedStatement.setString(3, member.getName());
+				preparedStatement.setString(4, member.getId());
 			}
 		});
 	}

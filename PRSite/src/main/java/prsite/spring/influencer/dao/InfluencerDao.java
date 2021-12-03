@@ -139,7 +139,7 @@ public class InfluencerDao implements IInfluencerDao {
 	@Override
 	public ArrayList<InfluencerDto> influencerCat(String cat) {//현정 만듬. 카테고리별로 해당하는 인플루언서만 전체
 		ArrayList<InfluencerDto> dtos = null;
-		String query = "select * from influencer where cat = '"+ cat +"'"; // 랜덤 정렬
+		String query = "select * from influencer where cat = '"+ cat +"'";
 		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
 		return dtos;
 	}

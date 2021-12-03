@@ -64,7 +64,7 @@
                 <a class="nav-link" href="pet">반려동물</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="inRanking">랭킹</a>
+                <a class="nav-link" href="ranking">랭킹</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="community">커뮤니티</a>

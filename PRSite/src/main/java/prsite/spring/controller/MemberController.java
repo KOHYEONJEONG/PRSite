@@ -33,17 +33,6 @@ public class MemberController {
 		//모든 클래스에서 사용.
 		ConstantTemplate.template = this.template;// static
 	}
-
-	
-	@RequestMapping("/login_view") // 로그인 버튼 누를 때 화면 변경
-	public String login_view(Model model) { 
-		//로그인 화면으로 이동
-		
-		System.out.println("---------login_view()-----------");
-
-
-		return "login_view";//jsp 만들기.
-	}
 	
 	@RequestMapping("/login") // 로그인 버튼 누를 때 화면 변경
 	public String login(HttpServletRequest request, Model model) { 

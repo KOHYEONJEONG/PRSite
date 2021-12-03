@@ -114,12 +114,16 @@ public class HomeController {
 		System.out.println("----daily page----");
 		return "daily";
 	}
-	
-	@RequestMapping("/ranking")
-	public String ranking(Model model) {
-		System.out.println("----ranking page----");
-		return "ranking";
-	}
 
+	@RequestMapping("/loginpage")
+	public String loginpage(Model model) {
+		System.out.println("----ranking page----");
+		return "loginpage";
+	}
 	
+	@RequestMapping("/ModiInfo")
+	public String ModiInfo(Model model) {
+		System.out.println("----ModiInfo page----");
+		return "ModiInfo";
+	}
 }

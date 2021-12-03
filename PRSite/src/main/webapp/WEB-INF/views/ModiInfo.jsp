@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Join </title>
+  <title> Modify </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -84,12 +84,12 @@ function display2(){
     <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
-		<h2 align="left">&nbsp;Join Us</h2>	</br>
+		<h2 align="left">&nbsp;Modify</h2>	</br>
 	  </div>		
 	  <div class="row">
         <div class="col-md-6">
           <div class="form_container">			
-				<form method=post action="" name=ModiInfo>
+				<form method=post action="ModiInfo" name=ModiInfo>
 				<fieldset><legend>기본정보</legend>
 					아이디   (영문 대소문자/숫자, 6~15자) <input type="text" class="form-control" name="id" size=15 placeholder="abc123">
 					비밀번호 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 15자~20자)<input type="password" name="pwd" class="form-control" size=20 placeholder="102030">  

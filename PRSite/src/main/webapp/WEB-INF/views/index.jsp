@@ -40,6 +40,7 @@
  	}
  </style>
 
+
 <c:set var="isLogin" value="${isLogin}"/>
 <c:set var="LoginID" value="${LoginID}"/>
  <%
@@ -64,6 +65,19 @@
  	}
  	
  %>
+
+<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+<script type="text/javascript">
+function check() {
+	if(document.getElementById("search").value == ""){
+		alert("검색어를 입력하세요.");
+		document.getElementById("search").focus();
+		return false;
+	}
+	else {return true;}
+}
+</script>
+
 </head>
 
 <body>
@@ -78,8 +92,7 @@
     
     	<jsp:include page="<%= Menu %>" flush="false" />
 
-    
-    	
+  	
     <!-- end header section -->
         
     
@@ -174,13 +187,23 @@
 	</br>
 	<!-- 검색창 -->
 	<div class="form_container" align="center">
-	<form>
-		<input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50"/>
-		<button type="submit" id="sbutton"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
+	<form action="InfluencerSearch">
+		<input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50" id="search"/>
+		<button type="submit" id="sbutton" onclick="check()"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
 	</form>
 	</div>
+	<div>
+	</div>
+	</br></br></br>
+	
   <!-- offer section -->
-        
+<div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Hot Influencer
+        </h2>
+      </div>
+    </div>
   <section class="offer_section layout_padding-bottom">
     <div class="offer_container">
       <div class="container ">

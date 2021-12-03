@@ -1,8 +1,10 @@
 package prsite.spring.influencer.service;
 
+import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.ui.Model;
 
@@ -15,16 +17,22 @@ public class InfluencerSearchService implements IInfluencerService {
 	@Override
 	public void execute(Model model) {
 		Map<String, Object>map = model.asMap(); //model객체를 map형태로 바꿈
-
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
-		
-		String search =  request.getParameter("search");
+		String search =  request.getParameter("search");//인플루언서 ID
+
+		System.out.println("-----------검색-------------");
 		
 		InfluencerDao influencerDao =  new InfluencerDao();
 		
 		InfluencerDto influencerDto = influencerDao.influencerSearch(search);
 		
-		model.addAttribute("newlist", influencerDto);
+		if(influencerDto.equals("")) {
+			System.out.println("찾는 인플루언서가 없습니다.");
+			return;
+		}else {
+			model.addAttribute("dto", influencerDto);
+		}
+		
 		
 	}
 

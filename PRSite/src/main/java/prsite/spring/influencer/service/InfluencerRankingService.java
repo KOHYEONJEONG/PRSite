@@ -17,10 +17,15 @@ public class InfluencerRankingService implements IInfluencerService {
 	public void execute(Model model) {
 				
 		InfluencerDao dao = new InfluencerDao();
-
 		ArrayList<InfluencerDto> dtos = dao.influencerInstaRanking();
+		System.out.println("------------¿ŒΩ∫≈∏∑©≈∑----------------");
+		model.addAttribute("Instar", dtos);
 		
-		model.addAttribute("ranking", dtos);
+		
+		
+		ArrayList<InfluencerDto> dtos2 = dao.influencerYtbRanking();
+		System.out.println("-----------¿Ø∫‰∆Æ∑©≈∑---------------");
+		model.addAttribute("Youtube", dtos2);
 	}
 
 }

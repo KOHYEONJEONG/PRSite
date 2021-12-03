@@ -45,7 +45,37 @@
 	  }
   </style>
  
+ <script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+<script type="text/javascript">
+function display(){
+	document.getElementById("influencerInfo").style.display = "block";
+}
 
+<%
+	String isLogin = request.getParameter("isLogin");
+	String LoginID = request.getParameter("LoginID");
+	String Menu = "include/HeaderSection.jsp";
+	
+	if(isLogin!=null && LoginID!=null){
+		System.out.println("isLogin=="+isLogin);
+		System.out.println("LoginID=="+LoginID);
+		
+		if(isLogin.equals("true")){
+			System.out.println("isLogin==true");
+		 // 로그인 성공 : id 세션 저장 - header변경
+		session.setAttribute("LoginID", LoginID);
+		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
+		Menu = "include/HeaderSection2.jsp";
+	}
+	else{
+		Menu = "include/HeaderSection.jsp";
+	}
+	}
+	
+%>
+
+
+</script>
 </head>
 
 <body class="sub_page">
@@ -71,7 +101,9 @@
       </br>
       <div class="row">
         <div class="col-md-6">
-        <div class="form_container">	
+        <div class="form_container">
+        
+        <form action="ModiInfo">
           	<table cellpadding="30px">
           		<tr>
           			<td width="300" height="70" bgcolor="whitesmoke">
@@ -110,9 +142,10 @@
           	</table>
           	
           	</br>
-          	<button>인플루언서 정보 보기</button>
+          	<button onclick="display()">인플루언서 정보 보기</button>
           	</br></br></br></br>
           	
+          	<div id="influencerInfo"  style="display:none">
           	<table cellpadding="30px">
           		<tr>
           			<td width="300" height="70" bgcolor="whitesmoke">
@@ -172,13 +205,14 @@
           		</tr>
           		
           	</table>
+          	</div>
             </br> 	
 			<div class="btn_box">
 					<button type="submit" form="updateForm">
 						수정하기
 					</button>
 			</div>
-		  	 
+		  	 </form>	
         <div class="col-md-6">
           
         </div>

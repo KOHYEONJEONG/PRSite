@@ -1,6 +1,7 @@
 package prsite.spring.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,6 +18,7 @@ import prsite.spring.influencer.service.InfluencerProfileService;
 import prsite.spring.influencer.service.InfluencerRankingService;
 import prsite.spring.influencer.service.InfluencerRcmmService;
 import prsite.spring.influencer.service.InfluencerRelCatService;
+import prsite.spring.influencer.service.InfluencerSearchService;
 import prsite.spring.util.ConstantTemplate;
 
 @Controller
@@ -35,16 +37,13 @@ public class InfluencerController {
 
 	
 	//구독자수 랭킹
-	@RequestMapping("inRanking")
+	@RequestMapping("ranking")
 	public String inRanking(Model model) {
 		
-		System.out.println("---------inRanking()-----------");
-		service = new InfluencerRankingService();
+		System.out.println("---------ranking()-----------");
+		service = new InfluencerRankingService();//인스타, 유뷰브 랭킹
 		service.execute(model);
-		
-		
-		
-		return "InfluencerRanking";
+		return "ranking";
 	}
 	
 	
@@ -66,10 +65,12 @@ public class InfluencerController {
 	
 	//인플루언서 검색
 	@RequestMapping("InfluencerSearch")
-	public String InfluencerSearch(Model model, HttpServletRequest Request) {
+	public String InfluencerSearch(Model model, HttpServletRequest request,HttpServletResponse response) {
 		
 		System.out.println("---------SearchService()-----------");
-		service = new InfluencerProfileService();
+		model.addAttribute("request",request);
+		model.addAttribute("response",response);
+		service = new InfluencerSearchService();
 		service.execute(model);
 		
 		return "profile";

@@ -42,7 +42,8 @@ charset=UTF-8"
 <!-- responsive style -->
 <link href="/project/resources/css/responsive.css" rel="stylesheet" />
 
- <%
+
+<%
 	boolean isLogin = false;
  	String Menu = "include/HeaderSection.jsp";
  	String LoginID = (String) session.getAttribute("LoginID");
@@ -66,6 +67,7 @@ charset=UTF-8"
 	}
 	
  %>
+
 </head>
 
 <body class="sub_page">
@@ -75,8 +77,13 @@ charset=UTF-8"
 			<img src="/project/resources/images/Main.PNG" alt="">
 		</div>
 		<!-- header section starts -->
+<<<<<<< HEAD
 		<jsp:include page="<%= Menu %>" flush="false" />
 		<!-- end header section -->
+=======
+    	<jsp:include page="<%= Menu %>" flush="false" />
+    <!-- end header section -->
+>>>>>>> lmy
 	</div>
 
 	<!-- pet section -->

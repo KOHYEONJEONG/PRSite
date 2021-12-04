@@ -132,15 +132,10 @@
           			<td width="500">
           			
           			<!-- 인플루언서 id누르면 인플루언서 화면뜨게 -->
-          			<c:if test="${not empty SubInsfluenser.influid}">
-          				<c:forEach items="SubInsfluenser" value="SubInsfluenser">
-          					<a href="#">${SubInsfluenser.influid}</a><br/>
+          				<c:forEach items="${SubInsfluenser}" var="SubInsfluenser">
+          					<a href="./profilepage?Iid=${SubInsfluenser.influid}">${SubInsfluenser.influid}</a>
+          					<br/>
           				</c:forEach>
-          			</c:if>	
-          			
-          			<c:if test="${not empty SubInsfluenser.influid}">
-          				 구독한 인플루언서 볼 수 있어여(얼른 구독하세용!)
-          			</c:if>
           			
           			</td>          			
           		</tr>

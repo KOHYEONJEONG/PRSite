@@ -44,7 +44,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		/*
+		
 		System.out.println("---------InfluencerRcmm()-----------");
 		service = new InfluencerRcmmService();//수정
 		service.execute(model);
@@ -52,7 +52,7 @@ public class HomeController {
 		System.out.println("---------InfluencerNews()-----------");
 		service = new InfluencerNewsAllService();//수정
 		service.execute(model);
-		*/
+		
 		System.out.println("----home----");
 		return "index";
 		

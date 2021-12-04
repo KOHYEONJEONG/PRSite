@@ -127,11 +127,13 @@ public class MemberController {
 	
 	//인플루언서 구독 추가
 	@RequestMapping("/SubInsert")
-	public void SubInsert(HttpServletRequest request, Model model) {
+	public String SubInsert(HttpServletRequest request, Model model) {
 		System.out.println("-----------subscribeInsert()-----------");
 		SubService = new SubscribeAddService();
+		model.addAttribute("request",request);
 		SubService.execute(model);
-		
+		String Iid = request.getParameter("Iid");
+		return "redirect:profilepage?Iid="+Iid;
 	}
 	
 	//구독 취소

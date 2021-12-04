@@ -131,16 +131,6 @@
           			</td>
           			<td width="500">
           			
-          			<!-- 인플루언서 id누르면 인플루언서 화면뜨게 -->
-          			<c:if test="${not empty SubInsfluenser.influid}">
-          				<c:forEach items="SubInsfluenser" value="SubInsfluenser">
-          					<a href="#">${SubInsfluenser.influid}</a><br/>
-          				</c:forEach>
-          			</c:if>	
-          			
-          			<c:if test="${empty SubInsfluenser.influid}">
-          				구독하면 바로바로 보기편해요!! 어서어서!!
-          			</c:if>
           			</td>          			
           		</tr>
           	</table>

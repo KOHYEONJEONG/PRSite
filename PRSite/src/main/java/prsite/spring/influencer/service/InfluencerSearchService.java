@@ -30,7 +30,7 @@ public class InfluencerSearchService implements IInfluencerService {
 			System.out.println("찾는 인플루언서가 없습니다.");
 			return;
 		}else {
-			model.addAttribute("dto", influencerDto);
+			model.addAttribute("Iid", influencerDto.getId());
 		}
 		
 		

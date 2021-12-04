@@ -40,11 +40,14 @@ public class BoardController {
 
 	
 	
-	@RequestMapping("/community") //게시판 리스트 불러오기
-	public String communityList(Model model) {
+	
+	
+	@RequestMapping("/community") //게시판 리스트 불러오기, 페이징처리(수정해야함.)
+	public String communityList(HttpServletRequest request, Model model) {
 
 		//데이터만 가져와서 뿌려줌.
 		System.out.println("---------community()-----------");
+		model.addAttribute("request", request);
 		service = new CommunityListService();
 		service.execute(model);
 		
@@ -55,10 +58,7 @@ public class BoardController {
 	
 	@RequestMapping("/write_view") // 커뮤니티에서 글쓰기 버튼 클릭.
 	public String write_view(Model model) { 
-
 		System.out.println("---------write_view()-----------");
-
-
 		return "write_view";//url에 입력 아니고 jsp를 찾아감.
 	}
 

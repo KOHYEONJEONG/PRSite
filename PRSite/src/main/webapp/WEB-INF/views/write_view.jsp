@@ -48,6 +48,13 @@ charset=UTF-8" pageEncoding="UTF-8" %>
 		}
 		
 	</script>
+	<style type="text/css">
+	
+	
+	table textarea {
+		resize: none;
+	}
+	</style>
 
 </head>
 
@@ -76,32 +83,36 @@ charset=UTF-8" pageEncoding="UTF-8" %>
   </section>
   
   <!-- write_view section -->
-  	<div align="center" style="border:1px solid lightgray; margin:10px 430px 10px 430px; padding:10px" >
-  		<form method=post action="./content_view" name="write_view"  onSubmit="return check_write()">	
-			<table cellpadding="5px">
-				<tr>
-					<td>
-						<select>
-							<option>패션&뷰티</option>
-							<option>요리</option>
-							<option>일상</option>
-							<option>반려동물</option>
-						</select>
-					</td>
-					<td>&nbsp;&nbsp;<input type="text" placeholder="제목을 입력하세요" name="title" size="100"></td>
-				</tr>
-			</table>
 			<fieldset>
-				<div id="contents">
-					<textarea rows="22" cols="120" placeholder="글을 작성하세요." name="content"></textarea>
-				</div>
+  	<div align="center" style="border:1px solid lightgray; margin:10px 470px 10px 470px; padding:10px" >
+        <form action="./write" name="write_view"  onSubmit="return check_write()">   
+         <table cellpadding="5px">
+            <tr width="20">
+               <td>
+                  <div id="title">
+                     <input type="text" placeholder="제목을 입력하세요" name="title" size="99">
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div id="contents">
+                  <textarea rows="22" cols="100" placeholder="글을 작성하세요." name="content"></textarea>
+                  </div>
+               </td>
+            </tr>
+            <tr align="right">
+               <td colspan="2">
+                  <div style="margin:10px 5px 0px 0px" align="center">
+                     <button type="submit">올리기</button>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </form>
+   </div>
+   <br><br><br><br>
 			</fieldset>
-			<div style="margin:10px 5px 0px 0px" align="right">
-					<input type="file" name="FileName">
-					<button type="submit">올리기</button>
-				</div>
-		</form>
-	</div>
 	<br><br><br><br>
   <!-- end write_view section -->
   

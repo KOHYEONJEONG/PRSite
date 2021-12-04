@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <! DOCTYPE html>
 <html>
@@ -96,12 +97,24 @@ a:visited {
 				</tr>
 			</c:forEach>
 
+			<!-- 데이터가 한개도 없는 경우 -->
+			<c:if test="${ empty list }">
+				<tr>
+					<td align="center" colspan="9" width="100%" height="50">
+					현재 등록된 게시글이 없습니다.</td>
+				</tr>
+			</c:if>
+			
 		</table>
+		<hr>
+		<div align="center">
+			${pageMenu}
+		</div>
 		<hr>
 		<!-- 글쓰기 버튼 -->
 		<div align="right">
-			<a href="write_view">
-				<input type="button" value="글쓰기" text-align="center" id="write">
+			<a href="write_view"> <input type="button" value="글쓰기"
+				text-align="center" id="write">
 			</a>
 		</div>
 	</div>

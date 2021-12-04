@@ -114,7 +114,7 @@ function check() {
                       일상과 반려동물 영상 둘 다 즐기고 싶다면 당장 보자!
                     </p>
                     <div class="btn-box">
-                      <a href="./profilepage?Iid=influencer1" class="btn1">
+                      <a href="#" class="btn1">
                         자세히 보기
                       </a>
                     </div>
@@ -137,7 +137,7 @@ function check() {
                       귀여운 고양이는 덤                     
                     </p>
                     <div class="btn-box">
-                      <a href="./profilepage?Iid=influencer2" class="btn1">
+                      <a href="#" class="btn1">
                         자세히 보기
                       </a>
                     </div>
@@ -160,7 +160,7 @@ function check() {
                       귀여운 고양이 새삼이와 KO패밀리의 즐거운 일상이 궁금하다면 보러가자
                     </p>
                     <div class="btn-box">
-                      <a href="./profilepage?Iid=influencer3" class="btn1">
+                      <a href="#" class="btn1">
                         자세히 보기
                       </a>
                     </div>
@@ -222,8 +222,8 @@ function check() {
                 <h3>
                   <span> ${rcmmlist.info}</span> 
                 </h3>
-                <a href="https://youtu.be/RScBfvjyU_Y">
-                  구경하기 
+                
+                  <a href="./profilepage?Iid=${rcmmlist.id}">구경하기
                     <g>
                       <g>
                         <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248

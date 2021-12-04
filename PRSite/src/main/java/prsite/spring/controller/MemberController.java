@@ -127,7 +127,7 @@ public class MemberController {
 	}
 	*/
 	
-	//인플루언서 구독 추가
+	//인플루언서 구독 추가, 클릭한 인플루언서 구독자 수 증가
 	@RequestMapping("/SubInsert")
 	public String SubInsert(HttpServletRequest request, Model model) {
 		System.out.println("-----------subscribeInsert()-----------");
@@ -138,12 +138,15 @@ public class MemberController {
 		return "redirect:profilepage?Iid="+Iid;
 	}
 	
-	//구독 취소
+	//구독 취소, 클릭한 인플루언서 구독자 수 감소
 	@RequestMapping("/SubCancel")
-	public void SubCancel(HttpServletRequest request, Model model) {
-		System.out.println("-----------subscribeInsert()-----------");
+	public String SubCancel(HttpServletRequest request, Model model) {
+		System.out.println("-----------subscribeCancel()-----------");
+		model.addAttribute("request",request);
 		SubService = new SubscribeCancelService();
 		SubService.execute(model);
+		String Iid = request.getParameter("Iid");
+		return "redirect:profilepage?Iid="+Iid;
 	}
 	
 

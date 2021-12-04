@@ -28,7 +28,7 @@ public class CommentsDao implements ICommentsDao {
 
 	@Override
 	public void commentsInsert(final int bno, final String id, final String content) {		
-		String query = "Insert into comments (cno, bno, id, writedate, content) values (comments_cno_seq.nextval,?,?,sysdate,?)";
+		String query = "Insert into comments (cno, bno, id, content) values (comments_cno_seq.nextval,?,?,?)";
 		this.template.update(query, new PreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement preparedStatement) throws SQLException {

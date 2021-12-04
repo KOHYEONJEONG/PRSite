@@ -33,5 +33,9 @@ public interface IInfluencerDao {
 	//인플루언서 프로필 가져오기
 	InfluencerDto influencerProfile(String id);
 
+	//카데고리 가져오기
 	ArrayList<InfluencerDto> influencerCat(String cat);
+
+	//인플루언서 PRSite 구독자수 증가
+	void InfluencerSubUpdate(String Iid);
 }

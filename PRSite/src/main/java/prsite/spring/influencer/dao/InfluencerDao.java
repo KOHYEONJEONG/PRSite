@@ -68,10 +68,25 @@ public class InfluencerDao implements IInfluencerDao {
 			}
 		});
 	}
+	
+	@Override
+	public void InfluencerSubUpdate(final String Iid) {
+		//인플루언서 PRSite 구독자 수 증가.
+		
+		String query = "update influencer set SUBSCNT = SUBSCNT+1 where id=?";
+		this.template.update(query,new PreparedStatementSetter(){
+			@Override
+			public void setValues(PreparedStatement preparedStatement) throws SQLException {
+				preparedStatement.setString(1, Iid);
+			}
+		});
+	}
+	
 
 	@Override
 	public void InfluencerDelete(final String id) {
-		String query="delete from influencer where id=? and influid=?";
+		//인플루언서 구독자 수 감소( 구독 취소 해서 )
+		String query="delete from influencer set SUBSCNT = SUBSCNT-1 where id=?";
 		this.template.update(query, new PreparedStatementSetter(){
 		@Override
 			public void setValues(PreparedStatement preparedStatement) throws

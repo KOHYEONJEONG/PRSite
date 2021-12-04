@@ -63,25 +63,15 @@ public class BoardController {
 	}
 
 	
-	
-	//write_view.jsp에서 글쓰기 버튼 누르면 from action이 실행됨.
-	//form action="write"
 	@RequestMapping("/write")
 	public String write(HttpServletRequest request, Model model ) {// 글씨기 버튼 누르면 실행
-		//HttpServletRequest를 사용하면, 값을 받아올 수 있다.
-		//HttpServletRequest 객체안에 모든 데이터들이 들어가게 된다.
-		//string 타입이다.
-
 		System.out.println("---------write( )-----------");
 
-		// Model객체를 이용해서 뷰로 값을 넘긴다.
 		model.addAttribute("request", request);//model객체(정보)는 addAttribute()를 통해 전달
 
 		service = new CommunityWriteService();
 		service.execute(model);
 
-
-		//redirect: 리다이렉트 , forward: 포워딩(생략시 얘가 기본)
 		return "redirect:community";//등록과 동시에 리스트화면으로 간다("redirect:list");.
 
 	}

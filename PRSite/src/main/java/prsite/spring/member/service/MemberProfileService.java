@@ -42,11 +42,18 @@ public class MemberProfileService implements IMemberService {
 		
 		
 		//내가 구독한 인플루언서 뜨게
+		String isEmpty="false";
 		SubscribeDao Sdao = new SubscribeDao();
 		ArrayList<SubscribeDto> dtos =Sdao.subscribeList(id);
 		model.addAttribute("SubInsfluenser", dtos);
 		System.out.println("SubscribeDao addAttribute");
-		
+		if(dtos.isEmpty()) {
+			isEmpty = "true";
+		}
+		else {
+			isEmpty = "false";
+		}
+		System.out.println("SubscribeDao isEmpty=" + isEmpty);
 		
 		//인플루언서는 'y'라디오 선택해야지만 내용을불러옴
 		if(dto.getInfluyn().equals("y")) {

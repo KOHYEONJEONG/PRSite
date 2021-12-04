@@ -18,10 +18,6 @@ public class CommentsInsertService implements ICommentsService {
 
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 
-		
-		//클릭한 게시판 글
-		String b_no = request.getParameter("b_no");
-		int bno = Integer.parseInt(b_no);
 
 		//작성자id, 제목, 내용을 HttpServletRequest객체를 통해 받아오고
 		String b_WriterID = request.getParameter("b_WriterID");
@@ -37,7 +33,7 @@ public class CommentsInsertService implements ICommentsService {
 		}else {
 
 			CommentsDao dao = new CommentsDao();
-			dao.commentsInsert(bno, b_WriterID,b_content);
+			//dao.commentsInsert(bno, b_WriterID,b_content);
 
 		}
 

@@ -67,7 +67,13 @@ charset=UTF-8"
 	}
 	
  %>
-
+ <style type="text/css">
+ 	
+ 	#tds{
+ 		text-align: center;
+ 	}
+ 
+ </style>
 </head>
 
 <body class="sub_page">
@@ -98,18 +104,18 @@ charset=UTF-8"
 
 	<table align="center" width="900">
 		<tr align="center">
-			<td colspan="4"><h5>Youtube</h5> <br></td>
+			<td colspan="4"><h4 style="color:red;">Youtube</h4> <br></td>
 			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-			<td colspan="4"><h5>Instagram</h5> <br></td>
+			<td colspan="4"><h4 style="color:#5F00FF;">Instagram</h4> <br></td>
 		</tr>
 		<tr>
 			<td colspan="4">
 				<table align="center" width="400" cellpadding="2px">
 					<tr align="center">
-						<td>Ranking</td>
-						<td>Influencer</td>
-						<td>Category</td>
-						<td>Number</td>
+						<th>Ranking</th>
+						<th>Influencer</th>
+						<th>Category</th>
+						<th>Number</th>
 					</tr>
 					<tr>
 						<td colspan="4"><hr></td>
@@ -130,10 +136,10 @@ charset=UTF-8"
 			<td colspan="4">
 				<table align="center" width="400" cellpadding="2px">
 					<tr align="center">
-						<td>Ranking</td>
-						<td>Influencer</td>
-						<td>Category</td>
-						<td>Number</td>
+						<th>Ranking</th>
+						<th>Influencer</th>
+						<th>Category</th>
+						<th>Number</th>
 					</tr>
 
 					<tr>

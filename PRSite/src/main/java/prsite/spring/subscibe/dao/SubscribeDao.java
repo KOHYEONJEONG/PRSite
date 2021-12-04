@@ -60,9 +60,9 @@ public class SubscribeDao implements ISubscribeDao {
 	}
 
 	@Override
-	public ArrayList<SubscribeDto> subscribeList(String id) {//구독자 리스트 가져오기
+	public ArrayList<SubscribeDto> subscribeList(String Userid) {//구독자 리스트 가져오기
 		ArrayList<SubscribeDto>dtos = null;
-		String query = "select * from subscribe order by subsdate";
+		String query = "select * from subscribe where id = '"+Userid+"' order by subsdate";
 		dtos= (ArrayList<SubscribeDto>)template.query(query, new BeanPropertyRowMapper<SubscribeDto>(SubscribeDto.class));
 		return dtos;
 	}

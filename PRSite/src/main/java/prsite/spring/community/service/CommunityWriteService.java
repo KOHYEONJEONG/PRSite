@@ -26,10 +26,11 @@ public class CommunityWriteService implements ICommunityService {
 		
 		String b_title = request.getParameter("title");
 		String b_content = request.getParameter("content");
-
+		
 	
 		CommunityDao dao = new CommunityDao();
 		dao.communityInsert(b_WriterID,b_title,b_content);
+		System.out.println("-----communityInsert dao-----");
 	
 	}
 

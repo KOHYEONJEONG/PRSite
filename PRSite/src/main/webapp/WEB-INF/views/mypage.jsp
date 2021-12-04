@@ -69,11 +69,19 @@
 	else{
 		Menu = "include/HeaderSection.jsp";
 	}
+ 	
+ 	
 	
  %>
  
  <script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
-
+ <style type="text/css">
+ 	
+ 	#tds{
+ 		text-align: center;
+ 	}
+ 
+ </style>
 </head>
 
 <body class="sub_page">
@@ -93,7 +101,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          My Profile
+          My Info
         </h2>
       </div>
       </br>
@@ -104,7 +112,7 @@
         <form action="ModiInfo" name="Info">
           	<table cellpadding="30px">
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
           				 아이디
           			</td>
           			<td width="500">
@@ -112,7 +120,7 @@
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
           				 비밀번호
           			</td>
           			<td width="500">
@@ -120,7 +128,7 @@
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
           				 이름
           			</td>
           			<td width="500">
@@ -128,24 +136,18 @@
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
-          				 구독한 인플루언서
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
+          				 구독
           			</td>
+      			
+      				<td>
+          			<!-- 인플루언서 id누르면 인플루언서 화면뜨게 -->
+          				<c:forEach items="${SubInsfluenser}" var="SubInsfluenser">
+          					<a href="./profilepage?Iid=${SubInsfluenser.influid}">${SubInsfluenser.influid}</a>
+          					<br/>
+          				</c:forEach>
           			
-          			<!-- 데이터가 한개도 없는 경우 -->
-					<c:if test="${empty SubInsfluenser }">
-						
-							<td  width="500">
-								현재 구독한 인플루언서가 없습니다.
-							</td>
-						
-					</c:if>
-          			
-          			<c:forEach items="${SubInsfluenser}" var="SubInsfluenser">
-          				<td>
-          					<a href ='logcation.href="/profilepage?Iid=${SubInsfluenser.influid}"' >${SubInsfluenser.influid}</a>
-          				</td>
-          			</c:forEach>          			
+          			</td>          			
           		</tr>
           	</table>
           	
@@ -156,27 +158,30 @@
           			<br/>
           	<div class="heading_container">
 		        <h2>
-		         influencer Profile
+		        	Influencer Profile
 		        </h2>
 		     </div>		
           				
           	<div>
           	<table cellpadding="30px">
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
           				 카테고리
           			</td>
           			<td width="500">
+          				<c:if test="${empty influencerProfile.info}">
+							-
+          				</c:if> 
           				  ${influencerProfile.cat}
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
           				 자기소개
           			</td>
           			<td width="500">
           				<c:if test="${empty influencerProfile.info}">
-							자기소개 작성해주세요 ^^
+							-
           				</c:if> 
           				<c:if test="${not empty influencerProfile.info}">
 							${influencerProfile.info}
@@ -184,43 +189,58 @@
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
           				 인스타그램 주소
           			</td>
           			<td width="500">
+          					<c:if test="${empty influencerProfile.instagram}">
+          						<a href="#">https://</a>
+          					</c:if>
           					<a href="${influencerProfile.instagram}">${influencerProfile.instagram}</a>
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
           				 유튜브 주소
           			</td>
           			<td width="500">
+          					<c:if test="${empty influencerProfile.youtube}">
+          						<a href="#">https://</a>
+          					</c:if>
           					<a href="${influencerProfile.youtube}">${influencerProfile.youtube}</a>
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
-          				 사이트 내 구독자
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
+          				 사이트 내 구독자 수
           			</td>
           			<td width="500">
-          				${influencerProfile.subscnt} 명
+          				<c:if test="${empty influencerProfile.subscnt}">
+          					-
+          				</c:if>
+          				${influencerProfile.subscnt}
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
-          				 인스타그램 팔로워
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
+          				 인스타그램 팔로워 수
           			</td>
           			<td width="500">
-          				 ${influencerProfile.instsubs} 명
+          				<c:if test="${empty influencerProfile.instsubs}">
+          					-
+          				</c:if>
+          				 ${influencerProfile.instsubs}
           			</td>          			
           		</tr>
           		<tr>
-          			<td width="300" height="70" bgcolor="whitesmoke">
-          				 유튜브 구독자
+          			<td width="300" height="70" bgcolor="whitesmoke" id="tds">
+          				 유튜브 구독자 수
           			</td>
           			<td width="500">
-          				${influencerProfile.ytbsubs} 명
+          				<c:if test="${empty influencerProfile.ytbsubs}">
+          					-
+          				</c:if>
+          				${influencerProfile.ytbsubs}
           			</td>          			
           		</tr>
           		

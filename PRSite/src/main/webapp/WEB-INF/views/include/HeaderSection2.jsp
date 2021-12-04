@@ -55,13 +55,13 @@
                 <a class="nav-link" href="fashion" >패션&뷰티</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cook">요리</a>
+                <a class="nav-link" href="#">요리</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="daily">일상</a>
+                <a class="nav-link" href="#">일상</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pet">반려동물</a>
+                <a class="nav-link" href="#">반려동물</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="ranking">랭킹</a>

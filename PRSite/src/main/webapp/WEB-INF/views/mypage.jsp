@@ -138,9 +138,10 @@
           				</c:forEach>
           			</c:if>	
           			
-          			<c:if test="${empty SubInsfluenser.influid}">
-          				구독하면 바로바로 보기편해요!! 어서어서!!
+          			<c:if test="${not empty SubInsfluenser.influid}">
+          				 구독한 인플루언서 볼 수 있어여(얼른 구독하세용!)
           			</c:if>
+          			
           			</td>          			
           		</tr>
           	</table>

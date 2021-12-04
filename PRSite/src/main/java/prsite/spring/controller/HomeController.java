@@ -120,6 +120,20 @@ public class HomeController {
 		System.out.println("----ranking page----");
 		return "loginpage";
 	}
+	
+	// 에러페이지-------------------------------------
+	@RequestMapping("/error404")
+	public String error404(Model model) {
+		System.out.println("----ranking page----");
+		return "error/404";
+	}
+	
+	@RequestMapping("/error500")
+	public String error500(Model model) {
+		System.out.println("----ranking page----");
+		return "error/500";
+	}
+	//--------------------------------------------
 
 
 }

@@ -43,14 +43,16 @@ public class MemberController {
 		model.addAttribute("request",request);
 		service = new MemberloginService();
 		service.execute(model);
+		
+		
 		boolean result = service.getResult();
 		System.out.println("-result = " + result);
+		
+		
 		if(result) {
-			System.out.println("---------redirect:index-----------");
 			return "redirect:index";//로그인되면 메인페이지로 이동
 		}
 		else {
-			System.out.println("---------redirect:index-----------");
 			return "loginpage";
 		}
 	}

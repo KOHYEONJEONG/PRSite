@@ -54,11 +54,11 @@ public class InfluencerController {
 	public String InfluencerRcmm(Model model) {
 		
 		System.out.println("---------InfluencerRcmm() : /index -----------");
-		service = new InfluencerRcmmService();//수정
+		service = new InfluencerRcmmService();
 		service.execute(model);
 		
 		System.out.println("---------InfluencerNews() : /index -----------");
-		service = new InfluencerNewsAllService();//수정
+		service = new InfluencerNewsAllService();
 		service.execute(model);
 		
 		return "index";//메인화면

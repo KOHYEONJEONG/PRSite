@@ -47,7 +47,7 @@ public class CommunityDao implements ICommunityDao {
 	 */
 
 	@Override
-	public ArrayList<CommunityDto> communitylist( Map<String, Object> map ) {
+	public ArrayList<CommunityDto> communitylist( Map<String, Integer> map ) {
 		ArrayList<CommunityDto> dtos = null;
 		//String query = "select * from community order by bno desc";
 		String query = "select * from ( select ROWNUM RN, A.* from( select * from community order by bno desc)A"

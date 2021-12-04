@@ -290,7 +290,7 @@
                     <h6>
                     
                     </h6>
-                    <a href='./profile?Iid=${catAlllist.get("id")}'>
+                    <a href='./profilepage?Iid=${catAlllist.get("id")}'>
                      		 IN
                         <g>
                           <g>

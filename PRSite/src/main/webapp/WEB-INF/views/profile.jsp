@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 
@@ -43,22 +43,21 @@
 <link href="/project/resources/css/responsive.css" rel="stylesheet" />
 
 <%
+	//현재 로그인한 사람에 id에 구독한 인플루언서 넣어주려고(SubScribe테이블)
 	boolean isLogin = false;
  	String Menu = "include/HeaderSection.jsp";
  	String LoginID = (String) session.getAttribute("LoginID");
- 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
- 	
  	if( LoginID!=null){
- 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-		isLogin=true;
+ 		isLogin=true;
 	}
  	else
  	{
  		isLogin=false;
  	}
  		
+ 	
+ 	//상단바 로그인 하고 안하고 차이
  	if(isLogin){
-			System.out.println("isLogin==true");
 		Menu = "include/HeaderSection2.jsp";
 	}
 	else{
@@ -93,32 +92,41 @@
 						<td align="center"><img src="resources/img/rozy.jpg"
 							width="300" height="300"></td>
 
-						<td>${dto.id}<br> ${dto.cat}<br> ${dto.info}<br>
-							SNS : <a href="${dto.instagram}">인스타그램</a>,<a
+						<td>이름 :${dto.id} <br> 카테고리 : ${dto.cat} <br> 소개 :
+							${dto.info} <br> SNS : <a href="${dto.instagram}">인스타그램</a>,<a
 							href="${dto.youtube}">유튜브</a>
 						</td>
-
-
-
-
 					</tr>
 				</table>
 		</tr>
 	</table>
 
+	<!-- MemberController에서 SubInsert메소드 인플루언서id도 받아와서 구독중인지 아닌지 확인한다. -->
 	<div class="btn_box" align="center">
-		<button type="submit" onclick='location.href="./SubInsert?Iid=${dto.id}"'>구독</button>
+		<% String Iid = request.getParameter("Iid"); %>
+		<c:set var="isSub" value="${isSub}" />
+		<c:choose>
+			<c:when test="${isSub eq 'true'}">
+				<button onclick='location.href="./SubInsert?Iid=<%= Iid %>"'>
+					구독하기</button>
+			</c:when>
+			<c:when test="${isSub eq 'false'}">
+				<button onclick='location.href="#"'>구독중</button>
+			</c:when>
+		</c:choose>
 	</div>
-
 	<!-- end profile section -->
 	<!-- end fashion category section -->
 
 	<hr>
 
+	<!-- client section -->
+
 	<section class="client_section layout_padding-bottom">
 		<div class="container">
-			<div class="heading_container heading_center">
-				<h2>Other Influencer</h2>
+			<div
+				class="heading_container heading_center psudo_white_primary mb_45">
+				<h1>Related Influencer</h1>
 			</div>
 			<div class="carousel-wrap row ">
 				<div class="owl-carousel client_owl-carousel">
@@ -145,6 +153,7 @@
 	</section>
 
 	<!-- end client section -->
+
 
 
 	<!-- footer section -->

@@ -92,7 +92,7 @@ a:visited {
 				<tr align="center">
 					<td>${dto.bno}</td>
 					<td>${dto.title}</td>
-					<td><a href="content_view?bno=${dto.bno }">${dto.content}</a></td>
+					<td><a href="content_view?bno=${dto.bno}">${dto.content}</a></td>
 					<td>${dto.writedate}</td>
 				</tr>
 			</c:forEach>
@@ -101,15 +101,14 @@ a:visited {
 			<c:if test="${ empty list }">
 				<tr>
 					<td align="center" colspan="9" width="100%" height="50">
-					현재 등록된 게시글이 없습니다.</td>
+						현재 등록된 게시글이 없습니다.
+					</td>
 				</tr>
 			</c:if>
-			
+
 		</table>
 		<hr>
-		<div align="center">
-			${pageMenu}
-		</div>
+		<div align="center">${pageMenu}</div>
 		<hr>
 		<!-- 글쓰기 버튼 -->
 		<div align="right">
@@ -136,13 +135,15 @@ a:visited {
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous">
-  </script>
+		
+	</script>
 	<!-- bootstrap js -->
 	<script src="/project/resources/js/bootstrap.js"></script>
 	<!-- owl slider -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
+		
+	</script>
 	<!-- isotope js -->
 	<script
 		src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
@@ -154,7 +155,8 @@ a:visited {
 	<!-- Google Map -->
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
+		
+	</script>
 	<!-- End Google Map -->
 
 </body>

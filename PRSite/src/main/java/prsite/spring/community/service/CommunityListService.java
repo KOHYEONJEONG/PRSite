@@ -28,9 +28,7 @@ public class CommunityListService implements ICommunityService {
 		String page = request.getParameter("page"); 
 		if( page != null &&
 		 !page.isEmpty()) { nowPage = Integer.parseInt( page ); }
-		else {
-			nowPage = 1;
-		}
+		
 		System.out.println("nowPage= "+nowPage+"/ page = "+page); 
 		
 
@@ -53,13 +51,13 @@ public class CommunityListService implements ICommunityService {
 
 
 		//현재 페이지 메뉴 생성
-		String pageMenu = Paging.getPaging("community", 1, row_total,Common.Board.BLOCKLIST,Common.Board.BLOCKPAGE);
+		String pageMenu = Paging.getPaging("community",nowPage, row_total,Common.Board.BLOCKLIST,Common.Board.BLOCKPAGE);
 		model.addAttribute("pageMenu", pageMenu);
 
 		//기존---------------------------------------------		
 		//CommunityDao comunityDao = new CommunityDao();
 
-		ArrayList<CommunityDto> dtos = comunityDao.communitylist(map);
+		ArrayList<CommunityDto> dtos = comunityDao.communitylist(map2);
 
 		model.addAttribute("list", dtos);
 

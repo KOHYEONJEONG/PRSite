@@ -46,6 +46,7 @@
   </style>
  
  <%
+ //로그인한 사람에 구독한 인플루언서 보여지게 하려고 + 정보
 	boolean isLogin = false;
  	String Menu = "include/HeaderSection.jsp";
  	String LoginID = (String) session.getAttribute("LoginID");
@@ -59,7 +60,8 @@
  	{
  		isLogin=false;
  	}
- 		
+ 	
+ 	//상단바 로그인 전/후
  	if(isLogin){
 			System.out.println("isLogin==true");
 		Menu = "include/HeaderSection2.jsp";
@@ -129,20 +131,21 @@
           			<td width="300" height="70" bgcolor="whitesmoke">
           				 구독한 인플루언서
           			</td>
-          			<td width="500">
           			
-          			<!-- 인플루언서 id누르면 인플루언서 화면뜨게 -->
-          			<c:if test="${not empty SubInsfluenser.influid}">
-          				<c:forEach items="SubInsfluenser" value="SubInsfluenser">
-          					<a href="#">${SubInsfluenser.influid}</a><br/>
-          				</c:forEach>
-          			</c:if>	
+          			<!-- 데이터가 한개도 없는 경우 -->
+					<c:if test="${empty SubInsfluenser }">
+						
+							<td  width="500">
+								현재 구독한 인플루언서가 없습니다.
+							</td>
+						
+					</c:if>
           			
-          			<c:if test="${not empty SubInsfluenser.influid}">
-          				 구독한 인플루언서 볼 수 있어여(얼른 구독하세용!)
-          			</c:if>
-          			
-          			</td>          			
+          			<c:forEach items="${SubInsfluenser}" var="SubInsfluenser">
+          				<td>
+          					<a href ='logcation.href="/profilepage?Iid=${SubInsfluenser.influid}"' >${SubInsfluenser.influid}</a>
+          				</td>
+          			</c:forEach>          			
           		</tr>
           	</table>
           	

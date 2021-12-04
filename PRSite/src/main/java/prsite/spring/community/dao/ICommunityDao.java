@@ -25,7 +25,8 @@ public interface ICommunityDao {
 	//게시글 제목 검색
 	ArrayList<CommunityDto> communitySearch(String search);
 
-	ArrayList<CommunityDto> communitylist(Map<String, Object> map);
+
+	ArrayList<CommunityDto> communitylist(Map<String, Integer> map);
 	
 	
 	

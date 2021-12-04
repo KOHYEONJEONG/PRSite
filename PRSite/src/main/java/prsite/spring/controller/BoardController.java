@@ -157,7 +157,7 @@ public class BoardController {
 	
 	
 	
-	// =============================( 댓글 컨트롤러 )===============================
+	// =============================( 댓글 컨트롤러 ㅣ 지우기 )===============================
 	
 	@RequestMapping("/commentslist")
 	public String commentslist(HttpServletRequest request, Model model) {

@@ -77,11 +77,6 @@
     <div class="bg-box">
       <img src="/project/resources/images/Main.PNG" alt="">
     </div>
-<<<<<<< HEAD
-    <!-- header section strats -->
-=======
-    <!-- header section starts -->
->>>>>>> lmy
     	<jsp:include page="<%= Menu %>" flush="false" />
     <!-- end header section -->
   </div>

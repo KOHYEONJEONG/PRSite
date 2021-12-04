@@ -71,12 +71,7 @@
  %>
  
  <script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
-<script type="text/javascript">
-function display(){
-	document.getElementById("influencerInfo").style.display = "block";
-}
 
-</script>
 </head>
 
 <body class="sub_page">
@@ -135,16 +130,33 @@ function display(){
           				 구독한 인플루언서
           			</td>
           			<td width="500">
-          				 재롱잔치 </br>
-          				 BBC</br>
-          				 CNN</br>
+          			
+          			<!-- 인플루언서 id누르면 인플루언서 화면뜨게 -->
+          			<c:if test="${not empty SubInsfluenser.influid}">
+          				<c:forEach items="SubInsfluenser" value="SubInsfluenser">
+          					<a href="#">${SubInsfluenser.influid}</a><br/>
+          				</c:forEach>
+          			</c:if>	
+          			
+          			<c:if test="${empty SubInsfluenser.influid}">
+          				구독하면 바로바로 보기편해요!! 어서어서!!
+          			</c:if>
           			</td>          			
           		</tr>
           	</table>
           	
-     		<br/>
-          	
-          	<div id="influencerInfo"  style="display:none">
+          	<br/>
+          		<br/>
+          	<hr/>
+          		<br/>
+          			<br/>
+          	<div class="heading_container">
+		        <h2>
+		         influencer Profile
+		        </h2>
+		     </div>		
+          				
+          	<div>
           	<table cellpadding="30px">
           		<tr>
           			<td width="300" height="70" bgcolor="whitesmoke">
@@ -159,7 +171,12 @@ function display(){
           				 자기소개
           			</td>
           			<td width="500">
-          				  ${influencerProfile.info}
+          				<c:if test="${empty influencerProfile.info}">
+							자기소개 작성해주세요 ^^
+          				</c:if> 
+          				<c:if test="${not empty influencerProfile.info}">
+							${influencerProfile.info}
+          				</c:if> 
           			</td>          			
           		</tr>
           		<tr>
@@ -167,7 +184,7 @@ function display(){
           				 인스타그램 주소
           			</td>
           			<td width="500">
-          				 ${influencerProfile.instagram}
+          					<a href="${influencerProfile.instagram}">${influencerProfile.instagram}</a>
           			</td>          			
           		</tr>
           		<tr>
@@ -175,7 +192,7 @@ function display(){
           				 유튜브 주소
           			</td>
           			<td width="500">
-          				 ${influencerProfile.youtube}
+          					<a href="${influencerProfile.youtube}">${influencerProfile.youtube}</a>
           			</td>          			
           		</tr>
           		<tr>
@@ -208,14 +225,14 @@ function display(){
             </br> 
             	
 			<div class="btn_box">
-					<button type="submit">
+
+					<button type="submit" onClick="updateForm">
 						수정하기
 					</button>
 			
 			</div>
 		  </form>
 		  	
-				<button onclick="display()">인플루언서 정보 보기</button>
 					
         <div class="col-md-6">
           

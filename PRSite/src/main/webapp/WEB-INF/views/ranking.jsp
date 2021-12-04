@@ -77,13 +77,10 @@ charset=UTF-8"
 			<img src="/project/resources/images/Main.PNG" alt="">
 		</div>
 		<!-- header section starts -->
-<<<<<<< HEAD
-		<jsp:include page="<%= Menu %>" flush="false" />
-		<!-- end header section -->
-=======
+
     	<jsp:include page="<%= Menu %>" flush="false" />
     <!-- end header section -->
->>>>>>> lmy
+
 	</div>
 
 	<!-- pet section -->

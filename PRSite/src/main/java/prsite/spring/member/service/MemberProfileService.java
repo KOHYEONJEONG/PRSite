@@ -1,5 +1,6 @@
 package prsite.spring.member.service;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,11 +12,15 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import prsite.spring.dto.InfluencerDto;
 import prsite.spring.dto.MemberDto;
+import prsite.spring.dto.SubscribeDto;
 import prsite.spring.influencer.dao.InfluencerDao;
 import prsite.spring.member.dao.MemberDao;
+import prsite.spring.subscibe.dao.SubscribeDao;
 
 public class MemberProfileService implements IMemberService {
-//회원 정보 가져오기
+	
+//회원 정보 가져오기, 구독한 인플루언서 가져오기(수정해야함)
+	
 	@Override
 	public void execute(Model model) {
 	
@@ -34,6 +39,13 @@ public class MemberProfileService implements IMemberService {
 		
 		model.addAttribute("userProfile",dto);
 		System.out.println("MemberDao addAttribute");
+		
+		
+		//내가 구독한 인플루언서 뜨게
+		SubscribeDao Sdao = new SubscribeDao();
+		ArrayList<SubscribeDto> dtos =Sdao.subscribeList(id);
+		model.addAttribute("SubInsfluenser", dtos);
+		System.out.println("SubscribeDao addAttribute");
 		
 		
 		//인플루언서는 'y'라디오 선택해야지만 내용을불러옴

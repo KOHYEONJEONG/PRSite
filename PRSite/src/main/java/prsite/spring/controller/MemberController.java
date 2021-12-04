@@ -77,7 +77,7 @@ public class MemberController {
 	}
 	
 	
-	//회원 정보 가져오기
+	//회원 정보 가져오기, 구독한 인플루언서 가져오기(수정해야함)
 	@RequestMapping("mypage")
 	public String MemberProfile(HttpServletRequest request, Model model) {
 		System.out.println("---------MemberProfile()-----------");
@@ -112,7 +112,8 @@ public class MemberController {
 		return  "redirect:mypage";//수정되면 '마이페이지'로 다시 돌아감.
 	}
 	
-	//구독자 불러오기(list)
+	/*
+	////내가 구독한 인플루언서 리스트 ( 
 	@RequestMapping("/SubList")
 	public String SubList(Model model) {
 		
@@ -120,9 +121,9 @@ public class MemberController {
 		SubService = new SubscribeListService();
 		SubService.execute(model);
 		
-		return "MemberProfile";//마이페이지
+		return "mypage";//마이페이지
 	}
-	
+	*/
 	
 	//인플루언서 구독 추가
 	@RequestMapping("/SubInsert")

@@ -54,19 +54,17 @@ public class InfluencerDao implements IInfluencerDao {
 	@Override
 	public void InfluencerUpdate(final InfluencerDto influencer) {
 		//이슈 : 기존에 id랑 홍보사이트 구독자 수도 변경할 수 있게 되어서 지웠음!
-		String query = "update influencer set cat=?, info=?, instagram=? youtube=?, instsubs=?, ytbsubs=? where id=?";
+		String query = "update influencer set cat=?, info=?, instagram=?, youtube=?, instsubs=?, ytbsubs=? where id=?";
 		this.template.update(query,new PreparedStatementSetter(){
 			@Override
 			public void setValues(PreparedStatement preparedStatement) throws SQLException {
-				preparedStatement.setString(1, influencer.getId());
-				preparedStatement.setString(2, influencer.getCat());
-				preparedStatement.setString(3, influencer.getInfo());
-				preparedStatement.setString(4, influencer.getInstagram());
-				preparedStatement.setString(5, influencer.getYoutube());
-				preparedStatement.setInt(6, influencer.getSubscnt());
-				preparedStatement.setInt(7, influencer.getInstsubs());
-				preparedStatement.setInt(8, influencer.getYtbsubs());
-				preparedStatement.setString(9, influencer.getId());
+				preparedStatement.setString(1, influencer.getCat());
+				preparedStatement.setString(2, influencer.getInfo());
+				preparedStatement.setString(3, influencer.getInstagram());
+				preparedStatement.setString(4, influencer.getYoutube());
+				preparedStatement.setInt(5, influencer.getInstsubs());
+				preparedStatement.setInt(6, influencer.getYtbsubs());
+				preparedStatement.setString(7, influencer.getId());
 			}
 		});
 	}

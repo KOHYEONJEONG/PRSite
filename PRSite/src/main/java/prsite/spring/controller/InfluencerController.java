@@ -89,7 +89,7 @@ public class InfluencerController {
 		return "redirect:index";//메인화면
 	}
 	
-	//카테고리별 IN버튼 누르면 해당 ID인플루언서 정보 보여지기
+	//카테고리별 IN버튼 누르면 해당 ID인플루언서 정보 보여지기  + 연관 인플루언서 가져오기(수정해야함)
 	@RequestMapping("/profile")
 	public String profile(HttpServletRequest request, Model model) {
 		System.out.println("----profile page----");
@@ -111,6 +111,7 @@ public class InfluencerController {
 		return "fashion";//메인화면
 	}
 	
+	/*
 	//인플루언서 누르면 profile에 연관 인플루언서 뜨기
 	@RequestMapping("/relationInf")
 	public String relationInf(HttpServletRequest request, Model model) {
@@ -122,5 +123,6 @@ public class InfluencerController {
 		
 		return "profile";//메인화면
 	}
+	*/
 	
 }

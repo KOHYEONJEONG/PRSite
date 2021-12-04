@@ -10,7 +10,7 @@ import prsite.spring.dto.InfluencerDto;
 import prsite.spring.influencer.dao.InfluencerDao;
 
 public class InfluencerProfileService implements IInfluencerService {
-//인플루언서 프로필 가져오기
+//Iid 인플루언서 프로필 가져오기 + cat도 가져오기 연관 인플루언서 가져오기
 	
 	@Override
 	public void execute(Model model) {

@@ -110,8 +110,8 @@ function display2(){
 				<form method=post action="MemberModify" name="ModiInfo" onSubmit="return check_form()">
 				<fieldset><legend>기본정보</legend>
 					아이디   <input type="text" class="form-control" value="${userProfile.id}" name="id" size=15 readonly>
-					비밀번호 <input type="password" value=" ${userProfile.pwd}" name="pwd" class="form-control" size=20>  
-					닉네임  <input type="text" name="nickname" value=" ${userProfile.name}" class="form-control" size=10 placeholder="수영장갈매기">
+					비밀번호 <input type="password" value="${userProfile.pwd}" name="pwd" class="form-control" size=20>  
+					닉네임  <input type="text" name="nickname" value="${userProfile.name}" class="form-control" size=10 placeholder="입력해주세요">
 					일반 회원 <input type="radio" name="influyn" value="n" onclick="display2()" checked>&nbsp; 인플루언서 <input type="radio" name="influyn" value="y" onclick="display()"></br>
 				</fieldset>
 				<br>
@@ -128,9 +128,9 @@ function display2(){
 							<option value="pet"> 반려동물 </option>
 					    </select><br>
 					    
-					자기소개 </br><textarea rows="3" cols="50" name="info" class="form-control" > ${influencerProfile.info}</textarea><br>
+					자기소개 </br><textarea rows="3" cols="50" name="info" class="form-control" >${influencerProfile.info}</textarea><br>
 					인스타그램 주소  <input type="text" value="${influencerProfile.instagram}"  class="form-control" name="instagram" size=30><br>
-					유튜브 주소  <input type="text" value=" ${influencerProfile.youtube}" class="form-control" name="youtube" size=30><br>
+					유튜브 주소  <input type="text" value="${influencerProfile.youtube}" class="form-control" name="youtube" size=30><br>
 					인스타그램 구독자 수  <input type="text" class="form-control" value="${influencerProfile.instsubs}" name="instsubs" size=30><br>
 					유튜브 구독자 수  <input type="text" class="form-control" value="${influencerProfile.ytbsubs}" name="ytsubs" size=30><br>
 						

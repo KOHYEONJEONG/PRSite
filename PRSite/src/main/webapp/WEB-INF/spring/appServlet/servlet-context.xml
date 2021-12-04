@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="prsite.spring.controller" />
+	<context:component-scan base-package="prsite.spring.*" />
 	
 	<!-- Jdbc Template ~ DataSource : 2021/11/20 KHJ -->
 	<!-- DataSource: DB를 읽어오는 일 -->

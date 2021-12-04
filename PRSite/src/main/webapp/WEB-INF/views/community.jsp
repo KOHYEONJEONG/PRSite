@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html;
-charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <! DOCTYPE html>
 <html>
@@ -40,30 +38,16 @@ charset=UTF-8"
 <link href="/project/resources/css/style.css" rel="stylesheet" />
 <!-- responsive style -->
 <link href="/project/resources/css/responsive.css" rel="stylesheet" />
-<%
-	boolean isLogin = false;
- 	String Menu = "include/HeaderSection.jsp";
- 	String LoginID = (String) session.getAttribute("LoginID");
- 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
- 	
- 	if( LoginID!=null){
- 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-		isLogin=true;
-	}
- 	else
- 	{
- 		isLogin=false;
- 	}
- 		
- 	if(isLogin){
-			System.out.println("isLogin==true");
-		Menu = "include/HeaderSection2.jsp";
-	}
-	else{
-		Menu = "include/HeaderSection.jsp";
-	}
-	
- %>
+
+<style>
+a:link {
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+</style>
 
 </head>
 
@@ -73,10 +57,9 @@ charset=UTF-8"
 		<div class="bg-box">
 			<img src="/project/resources/images/Main.PNG" alt="">
 		</div>
-		
-<!-- header section starts -->
-    	<jsp:include page="<%= Menu %>" flush="false" />
-    <!-- end header section -->
+		<!-- header section strats -->
+		<jsp:include page="include/HeaderSection.jsp" flush="false" />
+		<!-- end header section -->
 	</div>
 
 	<!-- pet section -->
@@ -90,43 +73,44 @@ charset=UTF-8"
 		</div>
 	</section>
 
-	<!-- fashion category section -->
-	<table align="center" width="1000">
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td>
-				<table border="0" bordercolor="#481968" height="100" width="800">
-					<a href="write_view"> 
-							<input type="button" value="글쓰기" text-align="center">
-					</a>
-					<!-- <hr> -->
+	<!-- community section -->
 
-					<tr align="center">
-						<th>번호</th>
-						<th>이름</th>
-						<th>제목</th>
-						<th>날짜</th>
-					</tr>
+	<div align="center"
+		style="margin: 10px 430px 10px 430px; padding: 10px">
+		<hr>
+		<table width="900" cellpadding="10px">
 
+			<tr align="center">
+				<th>번호</th>
+				<th>이름</th>
+				<th>제목</th>
+				<th>날짜</th>
+			</tr>
 
-					<c:forEach items="${list}" var="dto">
-						<tr align="center">
-							<td>${dto.bno}</td>
-							<td>${dto.title}</td>
-							<td>
-								<a href="content_view?bno=${dto.bno }">${dto.content}</a>
-							</td>
-							<td>${dto.writedate}</td>
-						</tr>
-					</c:forEach>
+			<c:forEach items="${list}" var="dto">
+				<tr align="center">
+					<td>${dto.bno}</td>
+					<td>${dto.title}</td>
+					<td><a href="content_view?bno=${dto.bno }">${dto.content}</a></td>
+					<td>${dto.writedate}</td>
+				</tr>
+			</c:forEach>
 
-				</table>
-			</td>
-		</tr>
-	</table>
-	<!-- end fashion category section -->
+		</table>
+		<hr>
+		<!-- 글쓰기 버튼 -->
+		<div align="right">
+			<a href="write_view">
+				<input type="button" value="글쓰기" text-align="center" id="write">
+			</a>
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<!-- end community section -->
 
 	<!-- footer section -->
 	<jsp:include page="include/FooterSection.jsp" flush="false" />

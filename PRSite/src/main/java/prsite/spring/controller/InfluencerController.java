@@ -38,7 +38,7 @@ public class InfluencerController {
 	}
 
 	
-	//구독자수 랭킹(DAO에서 설정)
+	//구독자수 랭킹(DAO에서 설정 내림차순)
 	@RequestMapping("ranking")
 	public String inRanking(Model model) {
 		
@@ -78,16 +78,16 @@ public class InfluencerController {
 	}
 	
 	//--------------------------------------------------------
-	//인플루언서 연관 카테고리 추천-InfluencerRelCatService
-	@RequestMapping("/test3")
-	public String InfluencerRel(Model model) {
-		
-		System.out.println("---------InfluencerRel()-----------");
-		service = new InfluencerRelCatService();//수정
-		service.execute(model);
-		
-		return "redirect:index";//메인화면
-	}
+	/*
+	 * //인플루언서 연관 카테고리 추천-InfluencerRelCatService
+	 * 
+	 * @RequestMapping("/test3") public String InfluencerRel(Model model) {
+	 * 
+	 * System.out.println("---------InfluencerRel()-----------"); service = new
+	 * InfluencerRelCatService();//수정 service.execute(model);
+	 * 
+	 * return "redirect:index";//메인화면 }
+	 */
 	
 	//카테고리별 IN버튼 누르면 해당 ID인플루언서 정보 보여지기  + 연관 인플루언서 가져오기(수정해야함)
 	@RequestMapping("/profilepage")

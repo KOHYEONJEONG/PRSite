@@ -15,19 +15,19 @@ import prsite.spring.dto.MemberDto;
 import prsite.spring.util.ConstantTemplate;
 
 public class MemberDao implements IMemberDao {
-	
+
 	JdbcTemplate template;
 	DataSource dataSource;
-	
+
 	public MemberDao() {
 		try {
 			Context context = new InitialContext();//was와 연결된 context
 			dataSource =(DataSource)context.lookup("java:comp/env/jdbc/Oracle");//oracle드라이버를 찾음.
-			
+
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		this.template=ConstantTemplate.template; //공유된 Jdbc Template 사용
 	}
 
@@ -64,14 +64,14 @@ public class MemberDao implements IMemberDao {
 	public MemberDto memberProfile(String id) {//회원정보 가져오기
 		String query = "select * from member where id ='" + id + "'";
 		MemberDto memberdto = this.template.queryForObject(query, new BeanPropertyRowMapper<MemberDto>(MemberDto.class));
-		
+
 		return memberdto;
 	}
-	
+
 	public String memberName(String id) {//회원정보 가져오기
 		String query = "select name from member where id ='" + id + "'";
 		String membername = this.template.queryForObject(query, String.class);
-		
+
 		return membername;
 	}
 
@@ -79,14 +79,14 @@ public class MemberDao implements IMemberDao {
 	public boolean memberLogin(String id, String pwd) {
 		String query = "select pwd from member where id ='" + id + "'";
 		String password = this.template.queryForObject(query, String.class);
-		
+
 		System.out.println("============DB:memberLogin=========");
 		System.out.println("password="+password);
 		System.out.println("password="+password.equals(password));
 		if (pwd.equals(password) ) return true;
 		else return false;
 	}
-	
-	
+
+
 
 }

@@ -26,7 +26,8 @@ public class MemberController {
 	IMemberService service;
 	ISubscribeService SubService;
 	
-	@Autowired //객체를 자동으로 이용
+	
+	@Autowired //객체를 자동으로 이용( JDBC Template 사용하기 위해 )
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
 		
@@ -34,7 +35,8 @@ public class MemberController {
 		ConstantTemplate.template = this.template;// static
 	}
 	
-	@RequestMapping("/login") // 로그인 버튼 누를 때 화면 변경
+	// 로그인 성공하면 화면 변경 start----------------------------------------
+	@RequestMapping("/login")
 	public String login(HttpServletRequest request, Model model) { 
 		//id,pwd 입력후 로그인 버튼 클릭
 		
@@ -53,11 +55,13 @@ public class MemberController {
 			return "redirect:index";//로그인되면 메인페이지로 이동
 		}
 		else {
-			return "loginpage";
+			return "loginpage"; //로그인 실패되면 다시 로그인 페이지로
 		}
 	}
+	// end---------------------------------------
 
-	
+	// 회원가입 start 1)2)-----------------------------------------------
+	// 1) 회원가입 화면으로 넘어가기.
 	@RequestMapping("/joinForm")
 	public String joinForm(Model model) {
 		System.out.println("----joinForm page----");
@@ -65,6 +69,7 @@ public class MemberController {
 	}
 
 	
+	// 2) 가입하기 버튼 누르면 로그인페이지로 이동됨
 	@RequestMapping("/MemberJoin")
 	public String MemberJoin(HttpServletRequest request, Model model) {
 		//회원 가입 버튼 클릭(가입하기)
@@ -75,12 +80,14 @@ public class MemberController {
 		service = new MemberJoinService();
 		service.execute(model);
 		
-		return  "redirect:loginpage";//회원가입되면 login화면으로 이동.
+		return "redirect:loginpage";//회원가입되면 login화면으로 이동.
 	}
+	// end-----------------------------------------------
 	
 	
-	//회원 정보 가져오기, 구독한 인플루언서 가져오기(수정해야함)
-	@RequestMapping("mypage")
+	// 마이페이지  start 1) 2) 3)--------------------------------------------
+	// 1) 회원 정보 가져오기, 구독한 인플루언서 가져오기
+	@RequestMapping("/mypage")
 	public String MemberProfile(HttpServletRequest request, Model model) {
 		System.out.println("---------MemberProfile()-----------");
 		
@@ -88,10 +95,10 @@ public class MemberController {
 		service = new MemberProfileService();
 		service.execute(model);
 		
-		return  "mypage";//일반사용자 '마이페이지' 화면.
+		return "mypage";
 	}
 	
-	//ModiInfo.jsp 눌렀을때 내용 뿌려지게
+	// 2) 수정하기 버튼 누르면 ModiInfo.jsp로 이동.(수정할 내용보여지게) 
 	@RequestMapping("/ModiInfo")
 	public String ModiInfo(HttpServletRequest request,Model model) {
 		System.out.println("----ModiInfo page----");
@@ -102,7 +109,9 @@ public class MemberController {
 		return "ModiInfo";
 	}
 	
-	//회원 정보, 인플루언서 정보 수정
+	
+	
+	// 3) 회원 정보, 인플루언서 정보 수정
 	@RequestMapping("/MemberModify")
 	public String MemberModify(HttpServletRequest request, Model model) {
 		System.out.println("---------MemberModify()-----------");
@@ -113,21 +122,11 @@ public class MemberController {
 		
 		return  "redirect:mypage";//수정되면 '마이페이지'로 다시 돌아감.
 	}
+	//end---------------------------------------------------------
 	
-	/*
-	////내가 구독한 인플루언서 리스트 ( 
-	@RequestMapping("/SubList")
-	public String SubList(Model model) {
-		
-		System.out.println("-----------SubscribeList()-----------");
-		SubService = new SubscribeListService();
-		SubService.execute(model);
-		
-		return "mypage";//마이페이지
-	}
-	*/
 	
-	//인플루언서 구독 추가, 클릭한 인플루언서 구독자 수 증가
+	//profile.jsp 구독 start 1)2)----------------------------------------
+	// 1) 인플루언서 구독 추가, 클릭한 인플루언서 구독자 수 증가
 	@RequestMapping("/SubInsert")
 	public String SubInsert(HttpServletRequest request, Model model) {
 		System.out.println("-----------subscribeInsert()-----------");
@@ -138,7 +137,7 @@ public class MemberController {
 		return "redirect:profilepage?Iid="+Iid;
 	}
 	
-	//구독 취소, 클릭한 인플루언서 구독자 수 감소
+	// 2) 구독 취소, 클릭한 인플루언서 구독자 수 감소
 	@RequestMapping("/SubCancel")
 	public String SubCancel(HttpServletRequest request, Model model) {
 		System.out.println("-----------subscribeCancel()-----------");
@@ -148,7 +147,7 @@ public class MemberController {
 		String Iid = request.getParameter("Iid");
 		return "redirect:profilepage?Iid="+Iid;
 	}
-	
+	//end---------------------------------------------------------
 
 	
 	

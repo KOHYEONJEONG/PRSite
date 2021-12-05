@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
 <! DOCTYPE html>
 <html>
 <head>
@@ -122,7 +125,8 @@ a:visited {
 				<tr align="center">
 					<td>${dto.bno}</td>
 					<td>${dto.title}</td>
-					<td><a href="content_view?bno=${dto.bno}">${dto.content}</a></td>
+					<!-- CommunityContentService에 게시글 번호와 작성자ID 보냄 -->
+					<td><a href="content_view?b_no=${dto.bno}&id=${dto.id}">${dto.content}</a></td>
 					<td>${dto.writedate}</td>
 				</tr>
 			</c:forEach>
@@ -138,12 +142,13 @@ a:visited {
 
 		</table>
 		<hr>
+		<!-- 페이징 처리(5개씩 한페이지) -->
 		<div align="center">${pageMenu}</div>
 		<hr>
-		<!-- 글쓰기 버튼 -->
+		<!-- 글쓰기 버튼(페이지이동)-->
 		<div align="right">
-			<a href="write_view"> <input type="button" value="글쓰기"
-				text-align="center" id="write">
+			<a href="./write_view"> 
+				<img alt="글쓰기" src="/project/resources/button/write_b.gif">
 			</a>
 		</div>
 	</div>

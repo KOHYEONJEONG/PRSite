@@ -15,7 +15,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Modify Info </title>
+  <title> Modify MyPage </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -100,7 +100,7 @@ function display2(){
     <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
-		<h2 align="left">&nbsp;Modify Info</h2>	</br>
+		<h2 align="left">&nbsp;Modify MyPage</h2>	</br>
 	  </div>		
 	  <div class="row">
         <div class="col-md-6">

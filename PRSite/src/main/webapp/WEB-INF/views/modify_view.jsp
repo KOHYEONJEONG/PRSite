@@ -14,7 +14,7 @@ charset=UTF-8" pageEncoding="UTF-8" %>
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Influencer Recommend Site </title>
+  <title> ModifyView </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -33,22 +33,21 @@ charset=UTF-8" pageEncoding="UTF-8" %>
 
 	<script type="text/javascript">
 		function check_write(){
-			if (document.write_view.title.value =="") {
+			if (document.modify_v.title.value =="") {
 		 		alert("제목을 입력하세요.");
-		  		document.write_view.title.focus();
+		  		document.modify_view.title.focus();
 		  		return false;
 			}
 			
-			else if (document.write_view.content.value =="") {
+			else if (document.modify_v.content.value =="") {
 		 		alert("내용을 입력하세요.");
-		  		document.write_view.content.focus();
+		  		document.modify_view.content.focus();
 		  		return false;
 			}
 			else {return true;}
 		}
 		
 	</script>
-	
 	<%
 	boolean isLogin = false;
  	String Menu = "include/HeaderSection.jsp";
@@ -73,20 +72,17 @@ charset=UTF-8" pageEncoding="UTF-8" %>
 	}
 	
  %>
-	
 	<style type="text/css">
+	  textarea {
+	    resize: none;
+	  }
 	
-	table textarea {
-		resize: none;
-	}
 	</style>
-
 </head>
 
 <body class="sub_page">
 
-<!-- 상단바 -->
-    <div class="hero_area">
+  <div class="hero_area">
     <div class="bg-box">
       <img src="/project/resources/images/Main.PNG" alt="">
     </div>
@@ -94,7 +90,6 @@ charset=UTF-8" pageEncoding="UTF-8" %>
        <jsp:include page="<%=Menu %>" flush="false" />
     <!-- end header section -->
   </div>
-<!-- end -->
   
     <!-- pet section -->
 
@@ -103,45 +98,61 @@ charset=UTF-8" pageEncoding="UTF-8" %>
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Community
+          Modify View
         </h2>
       </div>
     </div>
   </section>
   
-  <!-- write_view section -->
-			<fieldset>
+  <!-- modify_view section -->
   	<div align="center" style="border:1px solid lightgray; margin:10px 470px 10px 470px; padding:10px" >
-        <form action="./write" name="write_view"  onSubmit="return check_write()">   
-         <table cellpadding="5px">
-            <tr width="20">
-               <td>
-                  <div id="title">
-                     <input type="text" placeholder="제목을 입력하세요" name="title" size="99">
-                  </div>
-               </td>
-            </tr>
-            <tr>
-               <td>
-                  <div id="contents">
-                  <textarea rows="22" cols="100" placeholder="글을 작성하세요." name="content"></textarea>
-                  </div>
-               </td>
-            </tr>
-            <tr align="right">
-               <td colspan="2">
-                  <div style="margin:10px 5px 0px 0px" align="center">
-                     <button type="submit">등록</button>
-                  </div>
-               </td>
-            </tr>
-         </table>
-      </form>
-   </div>
-   <br><br><br><br>
-			</fieldset>
+  		<form method=post action="./modify" name="modify_v"  onSubmit="return check_write()">	
+			<input type="hidden" value="${LoginID}" name="id">
+			
+			<table cellpadding="5px">
+			
+				<tr>
+					<td>
+						NO.
+					</td>
+					<td>
+						<input type="text" name="b_no" value="${content_view.bno}" readonly>
+					</td>
+				</tr>
+							
+				<tr width="20">
+				
+					<td>
+						TITLE
+					</td>
+					<td>
+						<div id="title">
+							<input type="text" name="title" size="99" value="${content_view.title}">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						CONTENT
+					</td>
+					<td>
+						<div id="contents">
+						<textarea rows="22" cols="100" name="content">${content_view.content}</textarea>
+						</div>
+					</td>
+				</tr>
+				<tr align="right">
+					<td colspan="2">
+						<div style="margin:10px 5px 0px 0px" align="right">
+							<button type="submit">수정하기</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
 	<br><br><br><br>
-  <!-- end write_view section -->
+  <!-- end modify_view section -->
   
   <!-- footer section -->
   	<jsp:include page="include/FooterSection.jsp" flush="false" />

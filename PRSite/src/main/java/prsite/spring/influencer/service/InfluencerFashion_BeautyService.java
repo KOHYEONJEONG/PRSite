@@ -29,7 +29,7 @@ public class InfluencerFashion_BeautyService implements IInfluencerService {
 			HashMap<String, String> hash = new HashMap<String, String>();
 			hash.put("id",influencerDto.getId());
 			hash.put("info",influencerDto.getInfo());
-			hash.put("name",dao.memberName(influencerDto.getId()));
+			hash.put("name",dao.memberName(influencerDto.getId()));//Member테이블에서 이름만 가져오기.
 			hashlist.add(hash);
 		}
 		

@@ -19,7 +19,7 @@ import prsite.spring.subscibe.dao.SubscribeDao;
 
 public class MemberProfileService implements IMemberService {
 	
-//회원 정보 가져오기, 구독한 인플루언서 가져오기(수정해야함)
+//회원 정보 가져오기, 구독한 인플루언서 가져오기
 	
 	@Override
 	public void execute(Model model) {
@@ -29,7 +29,7 @@ public class MemberProfileService implements IMemberService {
 		HttpServletRequest request = (HttpServletRequest)map.get("request");
 		HttpSession session = request.getSession();
 		
-		String id = (String) session.getAttribute("LoginID");
+		String id = (String)session.getAttribute("LoginID");
 		
 		System.out.println("==========MemberProfileService===========" );
 		System.out.println("id==" + id);

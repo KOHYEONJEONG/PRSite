@@ -106,10 +106,10 @@ function check() {
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Hot Influencer 1
+                      Hot Influencer 1 (광고)
                     </h1>
                     <p>
-                      김메주와 고양이들 알아? </br>
+                      김메주와 고양이들 알아? <br/>
                       4마리의 다양한 고양이를 볼 수 있는 '김메주와 고양이들' 채널과 그 집사의 일상 브이로그를 담은 '김메주' 채널까지!!
                       일상과 반려동물 영상 둘 다 즐기고 싶다면 당장 보자!
                     </p>
@@ -129,10 +129,10 @@ function check() {
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Hot Influencer 2
+                      Hot Influencer 2 (광고)
                     </h1>
                     <p>
-                      여기가 주먹맛집...? </br>
+                      여기가 주먹맛집...? <br/>
                       홈카페 영상으로 유명한 yedy101 다양한 디저트 레시피와 음료 레시피를 볼 수 있어요.
                       귀여운 고양이는 덤                     
                     </p>
@@ -152,10 +152,10 @@ function check() {
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Hot Influencer 3
+                      Hot Influencer 3 (광고)
                     </h1>
                     <p>
-                      쭈친 모여라!!!!</br>
+                      쭈친 모여라!!!!<br/>
                       호주 사는 해쭈의 천방지축 어리둥절 빙글빙글 돌아가는 브이로그!
                       귀여운 고양이 새삼이와 KO패밀리의 즐거운 일상이 궁금하다면 보러가자
                     </p>
@@ -183,19 +183,22 @@ function check() {
     <!-- end slider section -->
   </div>
 	
-	</br>
-	</br>
-	<!-- 검색창 -->
+	<br/>
+	<br/>
+	
+	<!-- 검색창 start -->
 	<div class="form_container" align="center">
 	<form method=get action="./InfluencerSearch" name="searchbar"  onSubmit="return check()">
 
-		<input type="text" name="search" class="form_container" placeholder="아이디나 키워드를 입력하세요." size="50" id="search"/>
+		<input type="text" name="search" class="form_container" placeholder="인플루언서 아이디 입력하세요." size="50" id="search"/>
 		<button type="submit" id="sbutton"><img src="/project/resources/img/search_icon.jpg" width="30" height="30"></button>
 	</form>
 	</div>
+	<!-- end -->
+	
 	<div>
 	</div>
-	</br></br></br>
+	<br/><br/><br/>
 	
   <!-- offer section -->
 <div class="container">

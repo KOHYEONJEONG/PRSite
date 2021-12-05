@@ -72,14 +72,14 @@ public class CommunityDao implements ICommunityDao {
 	}
 
 	@Override
-	public CommunityDto contentView(int bno) {
+	public CommunityDto contentView(int bno) {//게시글 id로 다 불러옴.
 		String query = "select * from community where bno =" + bno;
 		CommunityDto communityDto = this.template.queryForObject(query, new BeanPropertyRowMapper<CommunityDto>(CommunityDto.class));
 		return communityDto;
 	}
 
 	@Override
-	public void communityDelete(final int bno) {
+	public void communityDelete(final int bno) {//게시글 id로 삭제.
 		String query="delete from community where bno=?";
 		this.template.update(query, new PreparedStatementSetter(){
 			@Override
@@ -98,18 +98,18 @@ public class CommunityDao implements ICommunityDao {
 
 	@Override
 	public void communityModify(final int bno, final String title, final String content) {
-		String query = "update community set title=?, content=?, writedate=sysdate where bno=?";
+		String query = "update community set title=?, content=? where bno=?";
 		this.template.update(query,new PreparedStatementSetter(){
 			@Override
 			public void setValues(PreparedStatement preparedStatement) throws SQLException {
-				preparedStatement.setInt(1, bno);
-				preparedStatement.setString(2, title);
-				preparedStatement.setString(3, content);
+				preparedStatement.setString(1, title);
+				preparedStatement.setString(2, content);
+				preparedStatement.setInt(3, bno);
 			}
 		});
 	}
 
-	//게시판의 전체 게시물 수
+	//게시판의 전체 게시물 수(페이징 처리)
 	public int getRowTotal() {
 		ArrayList<CommunityDto> dtos = null;
 		String query = "select count(*) from community";
@@ -120,7 +120,7 @@ public class CommunityDao implements ICommunityDao {
 		return count ;
 	}
 
-	//페이지별 게시글 조회
+	
 
 
 

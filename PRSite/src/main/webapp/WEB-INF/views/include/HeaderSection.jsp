@@ -70,14 +70,30 @@
                 <a class="nav-link" href="community">커뮤니티</a>
               </li>
             </ul>
+            
+            
             <div class="user_option">
-              <a href="loginpage" class="user_link">
+            
+            <!--사람 이모티콘  + 닉네임 -->
+            <% String currentId = (String)session.getAttribute("LoginID");
+		  	if(currentId != null){ %>
+		  	 <a href="mypage" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-
-              <a href="loginpage" class="order_online">
+				<strong style="color: white;"> ${currentNickname}님</strong>
+				|
+				<a href="Logout" class="order_online">
+              	  로그아웃
+              	</a>
+				
+			<%} else { %>
+			<a href="loginpage" class="order_online">
                 Login|Join
               </a>
+             
+              
+			<%} %>
+             
             </div>
           </div>
         </nav>

@@ -92,7 +92,7 @@ a:visited {
 			<img src="/project/resources/images/Main.PNG" alt="">
 		</div>
 		<!-- header section strats -->
-		<jsp:include page="<%= Menu %>" flush="false" />
+		<jsp:include page="../include/HeaderSection.jsp" flush="false" />
 		<!-- end header section -->
 	</div>
 
@@ -160,7 +160,7 @@ a:visited {
 	<!-- end community section -->
 
 	<!-- footer section -->
-	<jsp:include page="include/FooterSection.jsp" flush="false" />
+	<jsp:include page="../include/FooterSection.jsp" flush="false" />
 	<!-- footer section -->
 
 	<!-- jQery -->

@@ -55,9 +55,9 @@ pageEncoding="UTF-8" %>
 	
 	<Script>
 		function move(){
-			location.href = "<%= request.getContextPath() %>/index";
+			location.href = "index";
 		}
-		setTimeout(move,2000);
+		setTimeout(move,1000);
 	</Script>
 	
 </body>

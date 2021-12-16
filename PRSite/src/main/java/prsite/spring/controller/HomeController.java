@@ -29,11 +29,10 @@ public class HomeController {
 	
 	/* JdbcTemplate */
 	public JdbcTemplate template;
+	
 	@Autowired
 	public  void setTemplate(JdbcTemplate template) {
 		this.template = template;
-		
-	
 		ConstantTemplate.template = this.template; // 모든 클래스에서 사용
 	}
 	
@@ -53,72 +52,45 @@ public class HomeController {
 		service = new InfluencerNewsAllService();//수정
 		service.execute(model);
 		
-		System.out.println("----home----");
+		System.out.println("----index----");
 		return "index";
-		
-		//Bootstrap 임시
-		//System.out.println("----index----");
-		//return "index";
+
 	}
-	
-	//Bootstrap 임시
-	/*
-	 * @RequestMapping("/index") public String index(Model model) {
-	 * System.out.println("----index----"); return "index"; }
-	 */
-	
-	//Bootstrap 임시
-	/*
-	 * @RequestMapping("/index") public String index(Model model) {
-	 * System.out.println("----index----"); return "index"; }
-	 */
-	
+		
 	@RequestMapping("/Logout")
 	public String Logout(Model model) {
 		System.out.println("----Logout----");
-		return "Logout";
-	}
-	
-	@RequestMapping("/menu")
-	public String menu(Model model) {
-		System.out.println("----menu----");
-		return "menu";
-	}
-	
-	@RequestMapping("/about")
-	public String about(Model model) {
-		System.out.println("----about----");
-		return "about";
+		return "login/Logout";
 	}
 	
 	@RequestMapping("/book")
 	public String book(Model model) {
 		System.out.println("----book----");
-		return "book";
+		return "category/book";
 	}
 	
 	@RequestMapping("/pet")
 	public String pet(Model model) {
 		System.out.println("----pet page----");
-		return "pet";
+		return "category/pet";
 	}
 	
 	@RequestMapping("/cook")
 	public String cook(Model model) {
 		System.out.println("----cook page----");
-		return "cook";
+		return "category/cook";
 	}
 	
 	@RequestMapping("/daily")
 	public String daily(Model model) {
 		System.out.println("----daily page----");
-		return "daily";
+		return "category/daily";
 	}
 
 	@RequestMapping("/loginpage")
 	public String loginpage(Model model) {
 		System.out.println("----ranking page----");
-		return "loginpage";
+		return "login/loginpage";
 	}
 	
 	// 에러페이지-------------------------------------

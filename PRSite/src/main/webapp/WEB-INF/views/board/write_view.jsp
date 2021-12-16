@@ -14,7 +14,7 @@ charset=UTF-8" pageEncoding="UTF-8" %>
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> ModifyView </title>
+  <title> Influencer Recommend Site </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -33,63 +33,43 @@ charset=UTF-8" pageEncoding="UTF-8" %>
 
 	<script type="text/javascript">
 		function check_write(){
-			if (document.modify_v.title.value =="") {
+			if (document.write_view.title.value =="") {
 		 		alert("제목을 입력하세요.");
-		  		document.modify_view.title.focus();
+		  		document.write_view.title.focus();
 		  		return false;
 			}
 			
-			else if (document.modify_v.content.value =="") {
+			else if (document.write_view.content.value =="") {
 		 		alert("내용을 입력하세요.");
-		  		document.modify_view.content.focus();
+		  		document.write_view.content.focus();
 		  		return false;
 			}
 			else {return true;}
 		}
 		
 	</script>
-	<%
-	boolean isLogin = false;
- 	String Menu = "include/HeaderSection.jsp";
- 	String LoginID = (String) session.getAttribute("LoginID");
- 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
- 	
- 	if( LoginID!=null){
- 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-		isLogin=true;
-	}
- 	else
- 	{
- 		isLogin=false;
- 	}
- 		
- 	if(isLogin){
-			System.out.println("isLogin==true");
-		Menu = "include/HeaderSection2.jsp";
-	}
-	else{
-		Menu = "include/HeaderSection.jsp";
-	}
 	
- %>
 	<style type="text/css">
-	  textarea {
-	    resize: none;
-	  }
 	
+	table textarea {
+		resize: none;
+	}
 	</style>
+
 </head>
 
 <body class="sub_page">
 
-  <div class="hero_area">
+<!-- 상단바 -->
+    <div class="hero_area">
     <div class="bg-box">
       <img src="/project/resources/images/Main.PNG" alt="">
     </div>
-    <!-- header section starts -->
-       <jsp:include page="<%=Menu %>" flush="false" />
+      <!-- START header section -->
+    	<jsp:include page="../include/HeaderSection.jsp" flush="false" />
     <!-- end header section -->
   </div>
+<!-- end -->
   
     <!-- pet section -->
 
@@ -98,64 +78,48 @@ charset=UTF-8" pageEncoding="UTF-8" %>
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Modify View
+          Community
         </h2>
       </div>
     </div>
   </section>
   
-  <!-- modify_view section -->
+  <!-- write_view section -->
+			<fieldset>
   	<div align="center" style="border:1px solid lightgray; margin:10px 470px 10px 470px; padding:10px" >
-  		<form method=post action="./modify" name="modify_v"  onSubmit="return check_write()">	
-			<input type="hidden" value="${LoginID}" name="id">
-			
-			<table cellpadding="5px">
-			
-				<tr>
-					<td>
-						NO.
-					</td>
-					<td>
-						<input type="text" name="b_no" value="${content_view.bno}" readonly>
-					</td>
-				</tr>
-							
-				<tr width="20">
-				
-					<td>
-						TITLE
-					</td>
-					<td>
-						<div id="title">
-							<input type="text" name="title" size="99" value="${content_view.title}">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						CONTENT
-					</td>
-					<td>
-						<div id="contents">
-						<textarea rows="22" cols="100" name="content">${content_view.content}</textarea>
-						</div>
-					</td>
-				</tr>
-				<tr align="right">
-					<td colspan="2">
-						<div style="margin:10px 5px 0px 0px" align="right">
-							<button type="submit">수정하기</button>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</form>
-	</div>
+        <form action="./write" name="write_view"  onSubmit="return check_write()">   
+         <table cellpadding="5px">
+            <tr width="20">
+               <td>
+                  <div id="title">
+                     <input type="text" placeholder="제목을 입력하세요" name="title" size="99">
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <div id="contents">
+                  <textarea rows="22" cols="100" placeholder="글을 작성하세요." name="content"></textarea>
+                  </div>
+               </td>
+            </tr>
+            <tr align="right">
+               <td colspan="2">
+                  <div style="margin:10px 5px 0px 0px" align="center">
+                     <button type="submit">등록</button>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </form>
+   </div>
+   <br><br><br><br>
+			</fieldset>
 	<br><br><br><br>
-  <!-- end modify_view section -->
+  <!-- end write_view section -->
   
   <!-- footer section -->
-  	<jsp:include page="include/FooterSection.jsp" flush="false" />
+  	<jsp:include page="../include/FooterSection.jsp" flush="false" />
   <!-- footer section -->
   
     <!-- jQery -->

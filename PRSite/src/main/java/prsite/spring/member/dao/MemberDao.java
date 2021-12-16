@@ -11,6 +11,8 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 
+import com.sun.xml.internal.ws.util.StringUtils;
+
 import prsite.spring.dto.MemberDto;
 import prsite.spring.util.ConstantTemplate;
 
@@ -33,7 +35,7 @@ public class MemberDao implements IMemberDao {
 
 	@Override
 	public void memberInsert(final MemberDto member) {
-		String query = "Insert into member(id, pwd, influyn, name) values (?,?,?,?)";
+		String query = "Insert into member(id, pwd, influyn, name, filename) values (?,?,?,?,?)";
 		this.template.update(query, new PreparedStatementSetter() {
 			@Override
 			public void setValues(PreparedStatement preparedStatement) throws SQLException {
@@ -41,6 +43,7 @@ public class MemberDao implements IMemberDao {
 				preparedStatement.setString(2, member.getPwd());
 				preparedStatement.setString(3, member.getInfluyn());
 				preparedStatement.setString(4, member.getName());
+				preparedStatement.setString(5, member.getFilename());
 			}
 		});
 
@@ -88,5 +91,20 @@ public class MemberDao implements IMemberDao {
 	}
 
 
+	public int joinIdCheck(String id){//아디디 중복체크검사
+		System.out.println("아이디  : "+id);
+		int cnt = -1;
+		String query ="select count(id) from member where id='"+id+"'";
+		String sid = this.template.queryForObject(query, String.class);
+	
+		if(sid.equals("0")) {
+			cnt = 0;
+		}else {
+			cnt = 1;
+		}
+		
+		System.out.println("아이디 중복체크결과 : "+cnt);
+		return cnt;
+	}//joinIdCheck 메서드닫음
 
 }

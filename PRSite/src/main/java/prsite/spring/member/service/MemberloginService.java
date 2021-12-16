@@ -31,6 +31,9 @@ public class MemberloginService implements IMemberService {
 		
 		//로그인되면 true, false 반환됨
 		result = dao.memberLogin(id, pwd);
+		
+		String name = dao.memberName(id);
+		
 		if(result==true) {
 			model.addAttribute("isLogin",true);
 			model.addAttribute("LoginID",id);
@@ -39,6 +42,8 @@ public class MemberloginService implements IMemberService {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("LoginID", id);
+			session.setAttribute("currentNickname", name);
+			
 		}else {
 			model.addAttribute("isLogin",result);
 			System.out.println("isLogin==" +result);

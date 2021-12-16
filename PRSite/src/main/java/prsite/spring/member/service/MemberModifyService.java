@@ -27,9 +27,10 @@ public class MemberModifyService implements IMemberService {
 		String pwd = request.getParameter("pwd");
 		String influyn = request.getParameter("influyn");
 		String name = request.getParameter("nickname");
+		String filename = request.getParameter("filename");
 		
 		//Member DB Ã³¸®
-		MemberDto member =new  MemberDto(id ,pwd,influyn, name);
+		MemberDto member =new  MemberDto(id ,pwd,influyn, name,filename);
 		MemberDao dao = new MemberDao();
 		dao.memberUpdate(member);
 		System.out.println("MemberDao UPDATE success");

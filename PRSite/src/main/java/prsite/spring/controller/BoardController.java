@@ -49,7 +49,7 @@ public class BoardController {
 		service = new CommunityListService();
 		service.execute(model);
 		
-		return "community";
+		return "board/community";
 	}
 	//end--------------------------------------------------------------
 
@@ -58,7 +58,7 @@ public class BoardController {
 	@RequestMapping("/write_view") 
 	public String write_view(Model model) { 
 		System.out.println("---------write_view()-----------");
-		return "write_view";
+		return "board/write_view";
 	}
 
 	//(2) 게시글 작성후 올리기 버튼 누르기
@@ -90,7 +90,7 @@ public class BoardController {
 
 		service.execute(model);
 
-		return "content_view";
+		return "board/content_view";
 	}
 
 
@@ -107,7 +107,7 @@ public class BoardController {
 
 		service.execute(model);
 
-		return "modify_view";
+		return "board/modify_view";
 	}
 	
 	
@@ -160,7 +160,7 @@ public class BoardController {
 		commentService = new CommentsListService();
 		service.execute(model);
 
-		return "redirect:list";// event가 끝나면 list화면으로 간다.
+		return "redirect:board/list";// event가 끝나면 list화면으로 간다.
 	}
 	
 	@RequestMapping("/CommentsInsert")
@@ -172,7 +172,7 @@ public class BoardController {
 		commentService = new CommentsInsertService();
 		service.execute(model);
 
-		return "redirect:list";// event가 끝나면 list화면으로 간다.
+		return "redirect:board/list";// event가 끝나면 list화면으로 간다.
 	}
 	
 	@RequestMapping("/CommunityDelete")

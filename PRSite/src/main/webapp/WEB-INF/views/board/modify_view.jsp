@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html;
+charset=UTF-8" pageEncoding="UTF-8" %>
+<! DOCTYPE html>
 <html>
-
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -15,7 +14,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Login Page </title>
+  <title> ModifyView </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -32,96 +31,112 @@
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
 
-<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
-<script type="text/javascript">
-function check() {
-	if(document.loginform.id.value == ""){
-		alert("아이디를 입력하세요.");
-		document.loginform.id.focus();
-		return false;
-	}
-	else if(document.loginform.pwd.value == ""){
-		alert("비밀번호를 입력하세요.");
-		document.loginform.pwd.focus();
-		return false;
-	}
-	else {return true;}
-}
-</script>
-
+	<script type="text/javascript">
+		function check_write(){
+			if (document.modify_v.title.value =="") {
+		 		alert("제목을 입력하세요.");
+		  		document.modify_view.title.focus();
+		  		return false;
+			}
+			
+			else if (document.modify_v.content.value =="") {
+		 		alert("내용을 입력하세요.");
+		  		document.modify_view.content.focus();
+		  		return false;
+			}
+			else {return true;}
+		}
+		
+	</script>
+	
+	<style type="text/css">
+	  textarea {
+	    resize: none;
+	  }
+	
+	</style>
 </head>
 
 <body class="sub_page">
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="/project/resources/images/hero-bg.jpg" alt="">
+      <img src="/project/resources/images/Main.PNG" alt="">
     </div>
-    <!-- header section strats -->
-    	<jsp:include page="include/HeaderSection.jsp" flush="false" />
-    <!-- end header section -->
+    
+        <!-- START header section -->
+    		<jsp:include page="../include/HeaderSection.jsp" flush="false" />
+    	<!-- end header section -->
   </div>
   
-  <!-- login section -->
-	<section class="book_section layout_padding" >
+    <!-- pet section -->
+
+
+  <section class="book_section layout_padding">
     <div class="container">
-		<div class="heading_container">	
-			<h2>LOGIN</h2>
-		</div>
-		
-	<div class="row">
-
-	<div class="col-md-6">
-	</div>
-	
-	<form action="./login" method="post"  name="loginform"  onSubmit="return check()">
-        	<div class="col-md-6">
-          		<div class="form_container">
-            
-            	<div>
-               		 <input type="text" class="form-control" placeholder="ID" name="id" size="100"/>
-             	</div>
-              	<div>
-
-               		 <input type="password" class="form-control" placeholder="Password" name="pwd" size="100"/>
-              	</div>
-              	
-              	<div class="btn_box">
-                	<button type="submit"  onclick='check()'>
-                		  Login
-               		</button>
-               		
-             	</div>           	
+      <div class="heading_container heading_center">
+        <h2>
+          Modify View
+        </h2>
+      </div>
+    </div>
+  </section>
+  
+  <!-- modify_view section -->
+  	<div align="center" style="border:1px solid lightgray; margin:10px 470px 10px 470px; padding:10px" >
+  		<form method=post action="./modify" name="modify_v"  onSubmit="return check_write()">	
+			<input type="hidden" value="${LoginID}" name="id">
+			
+			<table cellpadding="5px">
+			
+				<tr>
+					<td>
+						NO.
+					</td>
+					<td>
+						<input type="text" name="b_no" value="${content_view.bno}" readonly>
+					</td>
+				</tr>
+							
+				<tr width="20">
 				
-		   </div>
-         </div>
-	</form>	
+					<td>
+						TITLE
+					</td>
+					<td>
+						<div id="title">
+							<input type="text" name="title" size="99" value="${content_view.title}">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						CONTENT
+					</td>
+					<td>
+						<div id="contents">
+						<textarea rows="22" cols="100" name="content">${content_view.content}</textarea>
+						</div>
+					</td>
+				</tr>
+				<tr align="right">
+					<td colspan="2">
+						<div style="margin:10px 5px 0px 0px" align="right">
+							<button type="submit">수정하기</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</form>
 	</div>
-</section>
-<section class="book_section layout_padding" >
-    <div class="container">
-		<div class="heading_container">	
-			<h2>JOIN</h2>
-		</div>
-	<div class="row">
-	<div class="col-md-6">
-		<div class="form_container">
-			<button  onclick="location.href='./joinForm'">
-                		  Join
-            </button>
-		 </div>
-    </div>   		
-   	</div>	 
-</section>
-<!-- end login section -->
-
-
-
-<!-- footer section -->
-   <jsp:include page="include/FooterSection.jsp" flush="false" />
-<!-- footer section -->
-
-  <!-- jQery -->
+	<br><br><br><br>
+  <!-- end modify_view section -->
+  
+  <!-- footer section -->
+  	<jsp:include page="../include/FooterSection.jsp" flush="false" />
+  <!-- footer section -->
+  
+    <!-- jQery -->
   <script src="/project/resources/js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">

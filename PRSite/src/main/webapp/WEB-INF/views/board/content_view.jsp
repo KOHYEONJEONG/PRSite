@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html;
-charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+   request.setCharacterEncoding("UTF-8");
+%>
+
 <! DOCTYPE html>
 <html>
 <head>
@@ -14,7 +18,7 @@ charset=UTF-8" pageEncoding="UTF-8" %>
   <meta name="author" content="" />
   <link rel="shortcut icon" href="/project/resources/images/favicon.png" type="">
 
-  <title> Influencer Recommend Site </title>
+  <title> Content View </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
@@ -30,28 +34,9 @@ charset=UTF-8" pageEncoding="UTF-8" %>
   <link href="/project/resources/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
-
-	<script type="text/javascript">
-		function check_write(){
-			if (document.write_view.title.value =="") {
-		 		alert("제목을 입력하세요.");
-		  		document.write_view.title.focus();
-		  		return false;
-			}
-			
-			else if (document.write_view.content.value =="") {
-		 		alert("내용을 입력하세요.");
-		  		document.write_view.content.focus();
-		  		return false;
-			}
-			else {return true;}
-		}
-		
-	</script>
-	
-	<%
+<%
 	boolean isLogin = false;
- 	String Menu = "include/HeaderSection.jsp";
+ 	String Menu = "../include/HeaderSection.jsp";
  	String LoginID = (String) session.getAttribute("LoginID");
  	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
  	
@@ -66,35 +51,30 @@ charset=UTF-8" pageEncoding="UTF-8" %>
  		
  	if(isLogin){
 			System.out.println("isLogin==true");
-		Menu = "include/HeaderSection2.jsp";
+		Menu = "../include/HeaderSection2.jsp";
 	}
 	else{
-		Menu = "include/HeaderSection.jsp";
+		Menu = "../include/HeaderSection.jsp";
 	}
 	
  %>
-	
-	<style type="text/css">
-	
-	table textarea {
-		resize: none;
-	}
-	</style>
+  <style>
+     a:link { color:black; }
+     a:visited { color:black; }
+  </style>
 
 </head>
 
 <body class="sub_page">
 
-<!-- 상단바 -->
-    <div class="hero_area">
+  <div class="hero_area">
     <div class="bg-box">
       <img src="/project/resources/images/Main.PNG" alt="">
     </div>
     <!-- header section starts -->
-       <jsp:include page="<%=Menu %>" flush="false" />
+       <jsp:include page="../include/HeaderSection.jsp" flush="false" />
     <!-- end header section -->
   </div>
-<!-- end -->
   
     <!-- pet section -->
 
@@ -103,48 +83,88 @@ charset=UTF-8" pageEncoding="UTF-8" %>
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Community
+          Content View
         </h2>
       </div>
     </div>
   </section>
   
   <!-- write_view section -->
-			<fieldset>
-  	<div align="center" style="border:1px solid lightgray; margin:10px 470px 10px 470px; padding:10px" >
-        <form action="./write" name="write_view"  onSubmit="return check_write()">   
-         <table cellpadding="5px">
-            <tr width="20">
-               <td>
-                  <div id="title">
-                     <input type="text" placeholder="제목을 입력하세요" name="title" size="99">
-                  </div>
+   <div align="center" style="margin:10px 470px 10px 470px; padding:10px" >
+           <form method=post id="frm">   
+            <input type="hidden" name="b_no" value="${content_view.bno}">
+
+            <table cellpadding="15px" border="0" width="900">
+            
+               <tr>
+                  <td colspan="3">
+                     <div align="right">
+                        	${Writer.name} | ${content_view.writedate}
+                        
+                     </div>
+                     
+                  </td>
+               </tr>
+               
+               <tr style="border-bottom:1px solid #DCDCDC; border-top:1px solid #DCDCDC">
+                 <td width="30">
+                  TITLE
+                 </td>
+                 <td>
+                  :
+                 </td>
+                  <td>
+                     <div>${content_view.title}</div>
+                  </td>
+               </tr>
+               
+               <tr>
+                  <td>
+                  	CONTENT
+                  </td>
+                  
+                  <td>
+                     :
+                  </td>
+                  
+                  <td colspan="2"><p>
+                     ${content_view.content}
+                  </p>
+                  </td>
+               </tr>
+               
+               <tr>
+               <td colspan="3" align="center">
+               
+               <!-- 글쓴이와 로그인한 사람이 같은 경우만 보여지게 -->
+               	  <c:if test="${Writer.id eq LoginID}">
+	                  <a href="./modify_view?b_no=${content_view.bno}" >
+	                     <img alt="글수정" src="/project/resources/button/mod_b.gif">
+	                  </a>
+                  </c:if>
+                  
+                  
+                  <a href="community" >
+                     <img alt="글목록" src="/project/resources/button/list_b.gif">
+                  </a>
+                  
+                  
+                  <!-- 글쓴이와 로그인한 사람이 같은  경우만 보여지게 -->
+               	  <c:if test="${Writer.id eq LoginID}">
+	                  <a href="./delete?b_no=${content_view.bno}" >
+	                     <img alt="글삭제" src="/project/resources/button/del_b.gif">
+	                  </a>
+                  </c:if>
                </td>
-            </tr>
-            <tr>
-               <td>
-                  <div id="contents">
-                  <textarea rows="22" cols="100" placeholder="글을 작성하세요." name="content"></textarea>
-                  </div>
-               </td>
-            </tr>
-            <tr align="right">
-               <td colspan="2">
-                  <div style="margin:10px 5px 0px 0px" align="center">
-                     <button type="submit">등록</button>
-                  </div>
-               </td>
-            </tr>
-         </table>
-      </form>
+               </tr>
+            </table>
+         </form>
    </div>
    <br><br><br><br>
-			</fieldset>
-	<br><br><br><br>
-  <!-- end write_view section -->
+ <!-- end write_view section -->
   
   <!-- footer section -->
-  	<jsp:include page="include/FooterSection.jsp" flush="false" />
+     <jsp:include page="../include/FooterSection.jsp" flush="false" />
   <!-- footer section -->
   
     <!-- jQery -->

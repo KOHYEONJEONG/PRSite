@@ -52,19 +52,20 @@ public class InfluencerController {
 	
 	//index.jsp(메인화면)-----------------------------------------------------------------------------
 	//구독자수 추천
-	@RequestMapping("index")
-	public String InfluencerRcmm(Model model) {
-		
-		System.out.println("---------InfluencerRcmm() : /index -----------");
-		service = new InfluencerRcmmService();
-		service.execute(model);
-		
-		System.out.println("---------InfluencerNews() : /index -----------");
-		service = new InfluencerNewsAllService();
-		service.execute(model);
-		
-		return "index";//메인화면
-	}
+	 @RequestMapping("index") 
+	 public String InfluencerRcmm(Model model) {
+		 System.out.println("---------InfluencerRcmm() : /index -----------");
+		 service= new InfluencerRcmmService();
+		 service.execute(model);
+		 
+		 System.out.println("---------InfluencerNews() : /index -----------"); 
+		 service = new InfluencerNewsAllService(); 
+		 
+		 service.execute(model);
+		 
+	  return "index";//메인화면
+	  }
+
 	
 	//인플루언서 검색
 	@RequestMapping("InfluencerSearch")
@@ -96,7 +97,7 @@ public class InfluencerController {
 		service = new InfluencerProfileService();
 		model.addAttribute("request",request);
 		service.execute(model);
-		return "profile";
+		return "info/profile";
 	}
 
 	//인플루언서 카테고리별 불러오기
@@ -107,7 +108,7 @@ public class InfluencerController {
 		service = new InfluencerFashion_BeautyService();
 		service.execute(model);
 		
-		return "fashion";//메인화면
+		return "category/fashion";//메인화면
 	}
 	
 	

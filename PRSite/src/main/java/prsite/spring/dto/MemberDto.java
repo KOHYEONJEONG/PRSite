@@ -5,6 +5,7 @@ public class MemberDto {
 	private String pwd;
 	private String influyn;
 	private String name;
+	private String filename;
 	
 	public MemberDto() {
 	
@@ -15,6 +16,14 @@ public class MemberDto {
 		this.pwd = pwd;
 		this.influyn = influyn;
 		this.name = name;
+	}
+	
+	public MemberDto(String id, String pwd, String influyn, String name, String filename) {
+		this.id = id;
+		this.pwd = pwd;
+		this.influyn = influyn;
+		this.name = name;
+		this.filename = filename;
 	}
 	
 	public String getId() {
@@ -40,6 +49,14 @@ public class MemberDto {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	
 	

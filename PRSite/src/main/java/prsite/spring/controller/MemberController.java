@@ -6,8 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.sun.org.glassfish.external.statistics.annotations.Reset;
+
+import prsite.spring.member.dao.MemberDao;
 import prsite.spring.member.service.IMemberService;
 import prsite.spring.member.service.MemberJoinService;
 import prsite.spring.member.service.MemberModifyService;
@@ -35,6 +45,20 @@ public class MemberController {
 		ConstantTemplate.template = this.template;// static
 	}
 	
+	@RequestMapping(method=RequestMethod.POST, value="/idCheck")
+	@ResponseBody
+	public int idCheck(@RequestParam("id") String id) {
+		//아이디 체크
+		System.out.println("userIdCheck 진입 , id : " + id);
+		
+		MemberDao dao = new MemberDao();
+		
+		int cnt = dao.joinIdCheck(id);
+		
+		return  cnt;
+	}
+	
+	
 	// 로그인 성공하면 화면 변경 start----------------------------------------
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request, Model model) { 
@@ -55,7 +79,7 @@ public class MemberController {
 			return "redirect:index";//로그인되면 메인페이지로 이동
 		}
 		else {
-			return "loginpage"; //로그인 실패되면 다시 로그인 페이지로
+			return "login/loginpage"; //로그인 실패되면 다시 로그인 페이지로
 		}
 	}
 	// end---------------------------------------
@@ -65,22 +89,23 @@ public class MemberController {
 	@RequestMapping("/joinForm")
 	public String joinForm(Model model) {
 		System.out.println("----joinForm page----");
-		return "joinForm";
+		return "login/joinForm";
 	}
 
 	
 	// 2) 가입하기 버튼 누르면 로그인페이지로 이동됨
-	@RequestMapping("/MemberJoin")
-	public String MemberJoin(HttpServletRequest request, Model model) {
+	@RequestMapping(method=RequestMethod.POST, value ="/join")
+	public String join(MultipartHttpServletRequest request, Model model) {
 		//회원 가입 버튼 클릭(가입하기)
 		
-		System.out.println("---------MemberJoin()-----------");
+		System.out.println("---------join()-----------");
 		
 		model.addAttribute("request",request);
+		
 		service = new MemberJoinService();
 		service.execute(model);
 		
-		return "redirect:loginpage";//회원가입되면 login화면으로 이동.
+		return "login/loginpage";//회원가입되면 login화면으로 이동.
 	}
 	// end-----------------------------------------------
 	
@@ -95,7 +120,7 @@ public class MemberController {
 		service = new MemberProfileService();
 		service.execute(model);
 		
-		return "mypage";
+		return "info/mypage";
 	}
 	
 	// 2) 수정하기 버튼 누르면 ModiInfo.jsp로 이동.(수정할 내용보여지게) 
@@ -106,7 +131,7 @@ public class MemberController {
 		service = new MemberProfileService();
 		service.execute(model);
 		
-		return "ModiInfo";
+		return "info/ModiInfo";
 	}
 	
 	

@@ -43,30 +43,6 @@ charset=UTF-8"
 <link href="/project/resources/css/responsive.css" rel="stylesheet" />
 
 
-<%
-	boolean isLogin = false;
- 	String Menu = "include/HeaderSection.jsp";
- 	String LoginID = (String) session.getAttribute("LoginID");
- 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
- 	
- 	if( LoginID!=null){
- 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-		isLogin=true;
-	}
- 	else
- 	{
- 		isLogin=false;
- 	}
- 		
- 	if(isLogin){
-			System.out.println("isLogin==true");
-		Menu = "include/HeaderSection2.jsp";
-	}
-	else{
-		Menu = "include/HeaderSection.jsp";
-	}
-	
- %>
  <style type="text/css">
  	
  	#tds{
@@ -84,7 +60,7 @@ charset=UTF-8"
 		</div>
 		<!-- header section starts -->
 
-    	<jsp:include page="<%= Menu %>" flush="false" />
+    	<jsp:include page="include/HeaderSection.jsp" flush="false" />
     <!-- end header section -->
 
 	</div>

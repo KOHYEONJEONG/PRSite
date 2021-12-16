@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.ui.Model;
 
 import prsite.spring.dto.InfluencerDto;
+import prsite.spring.dto.MemberDto;
 import prsite.spring.dto.SubscribeDto;
 import prsite.spring.influencer.dao.InfluencerDao;
 import prsite.spring.member.dao.MemberDao;
@@ -36,10 +37,19 @@ public class InfluencerProfileService implements IInfluencerService {
 		// 인플루언서 정보
 		InfluencerDao dao = new InfluencerDao();
 		InfluencerDto dto = dao.influencerProfile(Iid);//IN버튼을 누르면 해당 인플루언서 ID가 넘어감.
+	
+		
 		model.addAttribute("dto", dto); //인플루언서 정보
 		System.out.println(dto.getId());
 		System.out.println(dto.getInfo());
 		System.out.println(dto.getCat());
+		
+		
+		
+		MemberDao dao2 = new MemberDao();
+		MemberDto dto2 =  dao2.memberProfile(Iid);
+		model.addAttribute("photo",dto2.getFilename());
+		
 		
 		//구독 상태 검사
 		Object isSub = new Object();

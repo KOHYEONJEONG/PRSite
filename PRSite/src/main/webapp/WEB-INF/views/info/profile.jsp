@@ -43,7 +43,7 @@
 <link href="/project/resources/css/style.css" rel="stylesheet" />
 <!-- responsive style -->
 <link href="/project/resources/css/responsive.css" rel="stylesheet" />
-
+<%-- 
 <%
    //현재 로그인한 사람에 id에 구독한 인플루언서 넣어주려고(SubScribe테이블)
    boolean isLogin = false;
@@ -62,7 +62,7 @@
       Menu = "include/HeaderSection.jsp";
    }
 %>
-
+ --%>
 <style type="text/css">
 table td {
 	text-align: center;
@@ -81,7 +81,7 @@ table td {
 			<img src="/project/resources/images/Main.PNG" alt="">
 		</div>
 		<!-- header section starts -->
-		<jsp:include page="<%=Menu%>" flush="false" />
+			<jsp:include page="../include/HeaderSection.jsp" flush="false" />
 		<!-- end header section -->
 	</div>
 
@@ -105,8 +105,18 @@ table td {
 								<table border="0" style="border-collapse: collapse;"
 									bordercolor="#481968" width="700">
 									<tr>
-										<td align="center"><img src="resources/img/rozy.jpg"
-											width="300" height="300">&nbsp;</td>
+										<td align="center">
+										
+										<c:if test="${empty photo}">
+										<!-- 이미지 등록을 안했을 경우 -->
+											<img src="resources/img/rozy.jpg" width="300" height="300">&nbsp;
+										</c:if>
+										
+										<c:if test="${not empty photo}">
+										<!-- 이미지 등록을 한경우 -->
+											<img src="${photo}" width="300" height="300">&nbsp;
+										</c:if>
+										</td>
 										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 										<td>
 											<table width="500" height="200">
@@ -220,7 +230,7 @@ table td {
 
 
 	<!-- footer section -->
-	<jsp:include page="include/FooterSection.jsp" flush="false" />
+	<jsp:include page="../include/FooterSection.jsp" flush="false" />
 	<!-- footer section -->
 
 	<!-- jQery -->

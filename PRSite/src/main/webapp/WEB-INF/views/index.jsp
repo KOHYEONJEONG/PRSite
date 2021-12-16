@@ -41,30 +41,6 @@
  </style>
 
 
- <%
-	boolean isLogin = false;
- 	String Menu = "include/HeaderSection.jsp";
- 	String LoginID = (String) session.getAttribute("LoginID");
- 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
- 	
- 	if( LoginID!=null){
- 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-		isLogin=true;
-	}
- 	else
- 	{
- 		isLogin=false;
- 	}
- 		
- 	if(isLogin){
-			System.out.println("isLogin==true");
-		Menu = "include/HeaderSection2.jsp";
-	}
-	else{
-		Menu = "include/HeaderSection.jsp";
-	}
-	
- %>
 
 <script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
 <script type="text/javascript">
@@ -90,7 +66,7 @@ function check() {
     
     <!-- header section starts -->
     
-    	<jsp:include page="<%= Menu %>" flush="false" />
+    	<jsp:include page="include/HeaderSection.jsp" flush="false" />
 
   	
     <!-- end header section -->

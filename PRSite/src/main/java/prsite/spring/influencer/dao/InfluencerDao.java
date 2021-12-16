@@ -137,20 +137,22 @@ public class InfluencerDao implements IInfluencerDao {
 
 	@Override
 	public ArrayList<InfluencerDto> influencerNews(String cat) { //카테고리별 신규 (: 최신 5인 )추천 => 카테고리별 페이지 내
+		//memsince : 가입날짜
 		ArrayList<InfluencerDto>dtos = null;
 		String query = "select * from ( select * from influencer where cat like '" + cat +"' order by memsince desc) where rownum<=5"; //상위 10
 		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
-		System.out.println("influencerNews() : "+dtos.size());
-		System.out.println("influencerNews() : "+dtos.get(0).getId());
+		System.out.println("메인(hot):influencerNews() : "+dtos.size());
+		System.out.println("메인 :influencerNews() : "+dtos.get(0).getId());
 		return dtos;
 	}
 	
 	public ArrayList<InfluencerDto> influencerNewsAll() { //카테고리별 신규 (: 최신 5인 )추천 => index : 메인 페이지
+		//memsince : 가입날짜
 		ArrayList<InfluencerDto>dtos = null;
-		String query = "select * from ( select * from influencer order by memsince desc) where rownum<=5"; //상위 10
+		String query = "select * from ( select * from influencer order by memsince desc) where rownum<=5";//상위 5
 		dtos= (ArrayList<InfluencerDto>)template.query(query, new BeanPropertyRowMapper<InfluencerDto>(InfluencerDto.class));
-		System.out.println("influencerNewsAll() : "+dtos.size()); 
-		System.out.println("influencerNewsAll() : "+dtos.get(0).getId()); 
+		System.out.println("메인(today):influencerNewsAll() : "+dtos.size()); 
+		System.out.println("메인 :influencerNewsAll() : "+dtos.get(0).getId()); 
 		return dtos;
 	}
 

@@ -45,35 +45,6 @@
 	  }
   </style>
  
- <%
- //로그인한 사람에 구독한 인플루언서 보여지게 하려고 + 정보
-	boolean isLogin = false;
- 	String Menu = "include/HeaderSection.jsp";
- 	String LoginID = (String) session.getAttribute("LoginID");
- 	System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
- 	
- 	if( LoginID!=null){
- 		System.out.println("LoginID==" + (String) session.getAttribute("LoginID"));
-		isLogin=true;
-	}
- 	else
- 	{
- 		isLogin=false;
- 	}
- 	
- 	//상단바 로그인 전/후
- 	if(isLogin){
-			System.out.println("isLogin==true");
-		Menu = "include/HeaderSection2.jsp";
-	}
-	else{
-		Menu = "include/HeaderSection.jsp";
-	}
- 	
- 	
-	
- %>
- 
  <script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
  <style type="text/css">
  	
@@ -90,10 +61,9 @@
     <div class="bg-box">
       <img src="/project/resources/images/Main.PNG" alt="">
     </div>
-    <!-- header section starts -->
-    	<jsp:include page="<%= Menu %>" flush="false" />
+     <!-- START header section -->
+    	<jsp:include page="../include/HeaderSection.jsp" flush="false" />
     <!-- end header section -->
-  </div>
 
 	<!-- my page section -->
 
@@ -272,7 +242,7 @@
 	<!-- end my page section -->
 
   <!-- footer section -->
-  	<jsp:include page="include/FooterSection.jsp" flush="false" />
+  	<jsp:include page="../include/FooterSection.jsp" flush="false" />
   <!-- footer section -->
   
     <!-- jQery -->

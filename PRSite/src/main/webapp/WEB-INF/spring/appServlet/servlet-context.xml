@@ -14,14 +14,17 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/WEB-INF/**" location="/WEB-INF/views/" />
 
+	<annotation-driven/>
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="prsite.spring.*" />
+	<context:component-scan base-package="prsite.spring..*" />
 	
 	<!-- Jdbc Template ~ DataSource : 2021/11/20 KHJ -->
 	<!-- DataSource: DB를 읽어오는 일 -->
@@ -43,10 +46,7 @@
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
 	
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-   		 <beans:property name="maxUploadSize" value="10000000" />
-   		 <beans:property name="defaultEncoding" value="UTF-8" />
-	</beans:bean>
+	<!-- web.xml에 정보 설정 -->
 
 	
 </beans:beans>

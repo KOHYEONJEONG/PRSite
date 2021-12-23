@@ -21,7 +21,9 @@
 <link rel="shortcut icon" href="/project/resources/images/favicon.png"
 	type="">
 
+
 <title>Profile(인플루언서)</title>
+<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
 
 <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css"
@@ -107,14 +109,15 @@ table td {
 									<tr>
 										<td align="center">
 										
-										<c:if test="${empty photo}">
+										<c:if test="${empty photo.filename}">
 										<!-- 이미지 등록을 안했을 경우 -->
 											<img src="resources/img/rozy.jpg" width="300" height="300">&nbsp;
 										</c:if>
 										
-										<c:if test="${not empty photo}">
+										<c:if test="${not empty photo.filename}">
 										<!-- 이미지 등록을 한경우 -->
 											<img src="${photo}" width="300" height="300">&nbsp;
+										
 										</c:if>
 										</td>
 										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>

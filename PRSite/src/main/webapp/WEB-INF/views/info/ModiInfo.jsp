@@ -17,6 +17,8 @@
 
   <title> Modify MyPage </title>
 
+<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
 
@@ -32,8 +34,6 @@
   <!-- responsive style -->
   <link href="/project/resources/css/responsive.css" rel="stylesheet" />
 
-
-<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
 <script type="text/javascript">
 function check_form(){
 

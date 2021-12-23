@@ -19,6 +19,8 @@
 
   <title> My Profile </title>
 
+<script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
+
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="/project/resources/css/bootstrap.css" />
 
@@ -45,7 +47,6 @@
 	  }
   </style>
  
- <script type="text/javascript" src="<c:url value="/static/js/jquery-3.4.1.min.js"/>"></script>
  <style type="text/css">
  	
  	#tds{
